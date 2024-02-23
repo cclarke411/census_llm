@@ -1,0 +1,736 @@
+{
+    "variables": {
+        "for": {
+            "label": "Census API FIPS 'for' clause",
+            "concept": "Census API Geography Specification",
+            "predicateType": "fips-for",
+            "group": "N/A",
+            "limit": 0,
+            "predicateOnly": true
+        },
+        "in": {
+            "label": "Census API FIPS 'in' clause",
+            "concept": "Census API Geography Specification",
+            "predicateType": "fips-in",
+            "group": "N/A",
+            "limit": 0,
+            "predicateOnly": true
+        },
+        "ucgid": {
+            "label": "Uniform Census Geography Identifier clause",
+            "concept": "Census API Geography Specification",
+            "predicateType": "ucgid",
+            "group": "N/A",
+            "limit": 0,
+            "predicateOnly": true,
+            "hasGeoCollectionSupport": true
+        },
+        "T02001_006N": {
+            "label": " !!Total:!!Male:!!65 years and over",
+            "concept": "SEX BY AGE (4 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02001",
+            "limit": 0,
+            "attributes": "T02001_006NA"
+        },
+        "T02003_011N": {
+            "label": " !!Total:!!Male:!!25 to 29 years",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_011NA"
+        },
+        "T02002_019N": {
+            "label": " !!Total:!!Female:!!55 to 64 years",
+            "concept": "SEX BY AGE (9 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02002",
+            "limit": 0,
+            "attributes": "T02002_019NA"
+        },
+        "T02002_007N": {
+            "label": " !!Total:!!Male:!!35 to 44 years",
+            "concept": "SEX BY AGE (9 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02002",
+            "limit": 0,
+            "attributes": "T02002_007NA"
+        },
+        "T02003_008N": {
+            "label": " !!Total:!!Male:!!20 years",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_008NA"
+        },
+        "T02003_036N": {
+            "label": " !!Total:!!Female:!!30 to 34 years",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_036NA"
+        },
+        "T02003_048N": {
+            "label": " !!Total:!!Female:!!80 to 84 years",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_048NA"
+        },
+        "T02003_012N": {
+            "label": " !!Total:!!Male:!!30 to 34 years",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_012NA"
+        },
+        "T02002_010N": {
+            "label": " !!Total:!!Male:!!65 to 74 years",
+            "concept": "SEX BY AGE (9 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02002",
+            "limit": 0,
+            "attributes": "T02002_010NA"
+        },
+        "T02003_024N": {
+            "label": " !!Total:!!Male:!!80 to 84 years",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_024NA"
+        },
+        "AIANHH": {
+            "label": "Geography",
+            "group": "N/A",
+            "limit": 0
+        },
+        "T02001_005N": {
+            "label": " !!Total:!!Male:!!45 to 64 years",
+            "concept": "SEX BY AGE (4 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02001",
+            "limit": 0,
+            "attributes": "T02001_005NA"
+        },
+        "T02003_010N": {
+            "label": " !!Total:!!Male:!!22 to 24 years",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_010NA"
+        },
+        "T02003_022N": {
+            "label": " !!Total:!!Male:!!70 to 74 years",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_022NA"
+        },
+        "T02002_018N": {
+            "label": " !!Total:!!Female:!!45 to 54 years",
+            "concept": "SEX BY AGE (9 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02002",
+            "limit": 0,
+            "attributes": "T02002_018NA"
+        },
+        "T02002_006N": {
+            "label": " !!Total:!!Male:!!25 to 34 years",
+            "concept": "SEX BY AGE (9 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02002",
+            "limit": 0,
+            "attributes": "T02002_006NA"
+        },
+        "T02003_007N": {
+            "label": " !!Total:!!Male:!!18 and 19 years",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_007NA"
+        },
+        "SUMLEVEL": {
+            "label": "Summary Level code",
+            "predicateType": "string",
+            "group": "N/A",
+            "limit": 0
+        },
+        "T02003_019N": {
+            "label": " !!Total:!!Male:!!62 to 64 years",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_019NA"
+        },
+        "T02003_047N": {
+            "label": " !!Total:!!Female:!!75 to 79 years",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_047NA"
+        },
+        "T02003_023N": {
+            "label": " !!Total:!!Male:!!75 to 79 years",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_023NA"
+        },
+        "T02002_021N": {
+            "label": " !!Total:!!Female:!!75 years and over",
+            "concept": "SEX BY AGE (9 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02002",
+            "limit": 0,
+            "attributes": "T02002_021NA"
+        },
+        "T02003_035N": {
+            "label": " !!Total:!!Female:!!25 to 29 years",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_035NA"
+        },
+        "T02001_004N": {
+            "label": " !!Total:!!Male:!!18 to 44 years",
+            "concept": "SEX BY AGE (4 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02001",
+            "limit": 0,
+            "attributes": "T02001_004NA"
+        },
+        "T02003_021N": {
+            "label": " !!Total:!!Male:!!67 to 69 years",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_021NA"
+        },
+        "T02003_033N": {
+            "label": " !!Total:!!Female:!!21 years",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_033NA"
+        },
+        "T02002_013N": {
+            "label": " !!Total:!!Female:!!Under 5 years",
+            "concept": "SEX BY AGE (9 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02002",
+            "limit": 0,
+            "attributes": "T02002_013NA"
+        },
+        "T02002_009N": {
+            "label": " !!Total:!!Male:!!55 to 64 years",
+            "concept": "SEX BY AGE (9 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02002",
+            "limit": 0,
+            "attributes": "T02002_009NA"
+        },
+        "T02003_018N": {
+            "label": " !!Total:!!Male:!!60 and 61 years",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_018NA"
+        },
+        "T02003_006N": {
+            "label": " !!Total:!!Male:!!15 to 17 years",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_006NA"
+        },
+        "T02002_012N": {
+            "label": " !!Total:!!Female:",
+            "concept": "SEX BY AGE (9 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02002",
+            "limit": 0,
+            "attributes": "T02002_012NA"
+        },
+        "T02003_034N": {
+            "label": " !!Total:!!Female:!!22 to 24 years",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_034NA"
+        },
+        "T02003_046N": {
+            "label": " !!Total:!!Female:!!70 to 74 years",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_046NA"
+        },
+        "T02001_003N": {
+            "label": " !!Total:!!Male:!!Under 18 years",
+            "concept": "SEX BY AGE (4 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02001",
+            "limit": 0,
+            "attributes": "T02001_003NA"
+        },
+        "T02003_032N": {
+            "label": " !!Total:!!Female:!!20 years",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_032NA"
+        },
+        "T02003_044N": {
+            "label": " !!Total:!!Female:!!65 and 66 years",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_044NA"
+        },
+        "T02003_020N": {
+            "label": " !!Total:!!Male:!!65 and 66 years",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_020NA"
+        },
+        "PLACE": {
+            "label": "Geography",
+            "group": "N/A",
+            "limit": 0
+        },
+        "T02002_008N": {
+            "label": " !!Total:!!Male:!!45 to 54 years",
+            "concept": "SEX BY AGE (9 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02002",
+            "limit": 0,
+            "attributes": "T02002_008NA"
+        },
+        "T02003_029N": {
+            "label": " !!Total:!!Female:!!10 to 14 years",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_029NA"
+        },
+        "T02003_005N": {
+            "label": " !!Total:!!Male:!!10 to 14 years",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_005NA"
+        },
+        "T02003_017N": {
+            "label": " !!Total:!!Male:!!55 to 59 years",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_017NA"
+        },
+        "T02002_011N": {
+            "label": " !!Total:!!Male:!!75 years and over",
+            "concept": "SEX BY AGE (9 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02002",
+            "limit": 0,
+            "attributes": "T02002_011NA"
+        },
+        "T02003_045N": {
+            "label": " !!Total:!!Female:!!67 to 69 years",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_045NA"
+        },
+        "T02001_002N": {
+            "label": " !!Total:!!Male:",
+            "concept": "SEX BY AGE (4 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02001",
+            "limit": 0,
+            "attributes": "T02001_002NA"
+        },
+        "T02003_043N": {
+            "label": " !!Total:!!Female:!!62 to 64 years",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_043NA"
+        },
+        "T02002_015N": {
+            "label": " !!Total:!!Female:!!18 to 24 years",
+            "concept": "SEX BY AGE (9 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02002",
+            "limit": 0,
+            "attributes": "T02002_015NA"
+        },
+        "T02002_003N": {
+            "label": " !!Total:!!Male:!!Under 5 years",
+            "concept": "SEX BY AGE (9 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02002",
+            "limit": 0,
+            "attributes": "T02002_003NA"
+        },
+        "T02003_031N": {
+            "label": " !!Total:!!Female:!!18 and 19 years",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_031NA"
+        },
+        "NATION": {
+            "label": "Geography",
+            "group": "N/A",
+            "limit": 0
+        },
+        "T02003_016N": {
+            "label": " !!Total:!!Male:!!50 to 54 years",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_016NA"
+        },
+        "T02003_028N": {
+            "label": " !!Total:!!Female:!!5 to 9 years",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_028NA"
+        },
+        "T02003_004N": {
+            "label": " !!Total:!!Male:!!5 to 9 years",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_004NA"
+        },
+        "T02001_001N": {
+            "label": " !!Total:",
+            "concept": "SEX BY AGE (4 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02001",
+            "limit": 0,
+            "attributes": "T02001_001NA"
+        },
+        "COUNTY": {
+            "label": "Geography",
+            "group": "N/A",
+            "limit": 0
+        },
+        "T02001_009N": {
+            "label": " !!Total:!!Female:!!18 to 44 years",
+            "concept": "SEX BY AGE (4 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02001",
+            "limit": 0,
+            "attributes": "T02001_009NA"
+        },
+        "T02003_030N": {
+            "label": " !!Total:!!Female:!!15 to 17 years",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_030NA"
+        },
+        "T02002_014N": {
+            "label": " !!Total:!!Female:!!5 to 17 years",
+            "concept": "SEX BY AGE (9 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02002",
+            "limit": 0,
+            "attributes": "T02002_014NA"
+        },
+        "T02003_042N": {
+            "label": " !!Total:!!Female:!!60 and 61 years",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_042NA"
+        },
+        "T02002_002N": {
+            "label": " !!Total:!!Male:",
+            "concept": "SEX BY AGE (9 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02002",
+            "limit": 0,
+            "attributes": "T02002_002NA"
+        },
+        "T02003_027N": {
+            "label": " !!Total:!!Female:!!Under 5 years",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_027NA"
+        },
+        "T02003_039N": {
+            "label": " !!Total:!!Female:!!45 to 49 years",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_039NA"
+        },
+        "T02002_001N": {
+            "label": " !!Total:",
+            "concept": "SEX BY AGE (9 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02002",
+            "limit": 0,
+            "attributes": "T02002_001NA"
+        },
+        "T02003_003N": {
+            "label": " !!Total:!!Male:!!Under 5 years",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_003NA"
+        },
+        "T02003_015N": {
+            "label": " !!Total:!!Male:!!45 to 49 years",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_015NA"
+        },
+        "T02001_008N": {
+            "label": " !!Total:!!Female:!!Under 18 years",
+            "concept": "SEX BY AGE (4 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02001",
+            "limit": 0,
+            "attributes": "T02001_008NA"
+        },
+        "T02002_005N": {
+            "label": " !!Total:!!Male:!!18 to 24 years",
+            "concept": "SEX BY AGE (9 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02002",
+            "limit": 0,
+            "attributes": "T02002_005NA"
+        },
+        "STATE": {
+            "label": "Geography",
+            "group": "N/A",
+            "limit": 0
+        },
+        "T02003_041N": {
+            "label": " !!Total:!!Female:!!55 to 59 years",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_041NA"
+        },
+        "T02002_017N": {
+            "label": " !!Total:!!Female:!!35 to 44 years",
+            "concept": "SEX BY AGE (9 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02002",
+            "limit": 0,
+            "attributes": "T02002_017NA"
+        },
+        "GEOCOMP": {
+            "label": "GEO_ID Component",
+            "required": "default displayed",
+            "predicateType": "string",
+            "group": "N/A",
+            "limit": 0
+        },
+        "T02003_038N": {
+            "label": " !!Total:!!Female:!!40 to 44 years",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_038NA"
+        },
+        "T02003_014N": {
+            "label": " !!Total:!!Male:!!40 to 44 years",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_014NA"
+        },
+        "T02003_026N": {
+            "label": " !!Total:!!Female:",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_026NA"
+        },
+        "T02002_020N": {
+            "label": " !!Total:!!Female:!!65 to 74 years",
+            "concept": "SEX BY AGE (9 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02002",
+            "limit": 0,
+            "attributes": "T02002_020NA"
+        },
+        "T02003_002N": {
+            "label": " !!Total:!!Male:",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_002NA"
+        },
+        "T01001_001N": {
+            "label": " !!Total",
+            "concept": "TOTAL POPULATION",
+            "predicateType": "int",
+            "group": "T01001",
+            "limit": 0,
+            "attributes": "T01001_001NA"
+        },
+        "T02001_011N": {
+            "label": " !!Total:!!Female:!!65 years and over",
+            "concept": "SEX BY AGE (4 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02001",
+            "limit": 0,
+            "attributes": "T02001_011NA"
+        },
+        "T02001_007N": {
+            "label": " !!Total:!!Female:",
+            "concept": "SEX BY AGE (4 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02001",
+            "limit": 0,
+            "attributes": "T02001_007NA"
+        },
+        "T02002_016N": {
+            "label": " !!Total:!!Female:!!25 to 34 years",
+            "concept": "SEX BY AGE (9 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02002",
+            "limit": 0,
+            "attributes": "T02002_016NA"
+        },
+        "T02002_004N": {
+            "label": " !!Total:!!Male:!!5 to 17 years",
+            "concept": "SEX BY AGE (9 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02002",
+            "limit": 0,
+            "attributes": "T02002_004NA"
+        },
+        "T02003_040N": {
+            "label": " !!Total:!!Female:!!50 to 54 years",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_040NA"
+        },
+        "GEO_ID": {
+            "label": "Geography",
+            "concept": "TOTAL POPULATION;SEX BY AGE (4 AGE CATEGORIES);SEX BY AGE (9 AGE CATEGORIES);SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "string",
+            "group": "T02001,T01001,T02002,T02003",
+            "limit": 0,
+            "attributes": "NAME"
+        },
+        "TRACT": {
+            "label": "Geography",
+            "group": "N/A",
+            "limit": 0
+        },
+        "T02003_049N": {
+            "label": " !!Total:!!Female:!!85 years and over",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_049NA"
+        },
+        "T02003_025N": {
+            "label": " !!Total:!!Male:!!85 years and over",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_025NA"
+        },
+        "T02003_037N": {
+            "label": " !!Total:!!Female:!!35 to 39 years",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_037NA"
+        },
+        "T02003_001N": {
+            "label": " !!Total:",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_001NA"
+        },
+        "T02003_013N": {
+            "label": " !!Total:!!Male:!!35 to 39 years",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_013NA"
+        },
+        "T02001_010N": {
+            "label": " !!Total:!!Female:!!45 to 64 years",
+            "concept": "SEX BY AGE (4 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02001",
+            "limit": 0,
+            "attributes": "T02001_010NA"
+        },
+        "T02003_009N": {
+            "label": " !!Total:!!Male:!!21 years",
+            "concept": "SEX BY AGE (23 AGE CATEGORIES)",
+            "predicateType": "int",
+            "group": "T02003",
+            "limit": 0,
+            "attributes": "T02003_009NA"
+        }
+    }
+}
