@@ -1,0 +1,2750 @@
+{
+  "variables": {
+    "for": {
+      "label": "Census API FIPS 'for' clause",
+      "concept": "Census API Geography Specification",
+      "predicateType": "fips-for",
+      "group": "N/A",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "in": {
+      "label": "Census API FIPS 'in' clause",
+      "concept": "Census API Geography Specification",
+      "predicateType": "fips-in",
+      "group": "N/A",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "ucgid": {
+      "label": "Uniform Census Geography Identifier clause",
+      "concept": "Census API Geography Specification",
+      "predicateType": "ucgid",
+      "group": "N/A",
+      "limit": 0,
+      "predicateOnly": true,
+      "hasGeoCollectionSupport": true
+    },
+    "DP1_0127P": {
+      "label": "Percent!!RELATIONSHIP!!Total population!!In group quarters!!Institutionalized population:!!Male",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0127PA"
+    },
+    "DP1_0006P": {
+      "label": "Percent!!SEX AND AGE!!Total population!!20 to 24 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0006PA"
+    },
+    "DP1_0115P": {
+      "label": "Percent!!RELATIONSHIP!!Total population!!In households!!Opposite-sex spouse",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0115PA"
+    },
+    "DP1_0103P": {
+      "label": "Percent!!HISPANIC OR LATINO BY RACE!!Total population!!Hispanic or Latino!!Two or More Races",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0103PA"
+    },
+    "DP1_0115C": {
+      "label": "Count!!RELATIONSHIP!!Total population!!In households!!Opposite-sex spouse",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0115CA"
+    },
+    "DP1_0103C": {
+      "label": "Count!!HISPANIC OR LATINO BY RACE!!Total population!!Hispanic or Latino!!Two or More Races",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0103CA"
+    },
+    "DP1_0018C": {
+      "label": "Count!!SEX AND AGE!!Total population!!80 to 84 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0018CA"
+    },
+    "DP1_0139C": {
+      "label": "Count!!HOUSEHOLDS BY TYPE!!Total households!!Male householder, no spouse or partner present:!!Living alone!!65 years and over",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0139CA"
+    },
+    "DP1_0127C": {
+      "label": "Count!!RELATIONSHIP!!Total population!!In group quarters!!Institutionalized population:!!Male",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0127CA"
+    },
+    "DP1_0006C": {
+      "label": "Count!!SEX AND AGE!!Total population!!20 to 24 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0006CA"
+    },
+    "DP1_0018P": {
+      "label": "Percent!!SEX AND AGE!!Total population!!80 to 84 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0018PA"
+    },
+    "DP1_0139P": {
+      "label": "Percent!!HOUSEHOLDS BY TYPE!!Total households!!Male householder, no spouse or partner present:!!Living alone!!65 years and over",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0139PA"
+    },
+    "SDELM": {
+      "label": "Geography",
+      "group": "N/A",
+      "limit": 0
+    },
+    "DP1_0017P": {
+      "label": "Percent!!SEX AND AGE!!Total population!!75 to 79 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0017PA"
+    },
+    "DP1_0138P": {
+      "label": "Percent!!HOUSEHOLDS BY TYPE!!Total households!!Male householder, no spouse or partner present:!!Living alone",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0138PA"
+    },
+    "DP1_0126P": {
+      "label": "Percent!!RELATIONSHIP!!Total population!!In group quarters!!Institutionalized population:",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0126PA"
+    },
+    "DP1_0005P": {
+      "label": "Percent!!SEX AND AGE!!Total population!!15 to 19 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0005PA"
+    },
+    "DP1_0114P": {
+      "label": "Percent!!RELATIONSHIP!!Total population!!In households!!Householder",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0114PA"
+    },
+    "DP1_0102P": {
+      "label": "Percent!!HISPANIC OR LATINO BY RACE!!Total population!!Hispanic or Latino!!Some Other Race alone",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0102PA"
+    },
+    "DP1_0126C": {
+      "label": "Count!!RELATIONSHIP!!Total population!!In group quarters!!Institutionalized population:",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0126CA"
+    },
+    "DP1_0005C": {
+      "label": "Count!!SEX AND AGE!!Total population!!15 to 19 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0005CA"
+    },
+    "DP1_0114C": {
+      "label": "Count!!RELATIONSHIP!!Total population!!In households!!Householder",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0114CA"
+    },
+    "DP1_0102C": {
+      "label": "Count!!HISPANIC OR LATINO BY RACE!!Total population!!Hispanic or Latino!!Some Other Race alone",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0102CA"
+    },
+    "DP1_0029C": {
+      "label": "Count!!SEX AND AGE!!Male population!!15 to 19 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0029CA"
+    },
+    "DP1_0017C": {
+      "label": "Count!!SEX AND AGE!!Total population!!75 to 79 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0017CA"
+    },
+    "DP1_0138C": {
+      "label": "Count!!HOUSEHOLDS BY TYPE!!Total households!!Male householder, no spouse or partner present:!!Living alone",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0138CA"
+    },
+    "DP1_0029P": {
+      "label": "Percent!!SEX AND AGE!!Male population!!15 to 19 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0029PA"
+    },
+    "DP1_0101P": {
+      "label": "Percent!!HISPANIC OR LATINO BY RACE!!Total population!!Hispanic or Latino!!Native Hawaiian and Other Pacific Islander alone",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0101PA"
+    },
+    "DP1_0149P": {
+      "label": "Percent!!HOUSING OCCUPANCY!!Total housing units!!Vacant housing units",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0149PA"
+    },
+    "DP1_0028P": {
+      "label": "Percent!!SEX AND AGE!!Male population!!10 to 14 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0028PA"
+    },
+    "DP1_0016P": {
+      "label": "Percent!!SEX AND AGE!!Total population!!70 to 74 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0016PA"
+    },
+    "DP1_0137P": {
+      "label": "Percent!!HOUSEHOLDS BY TYPE!!Total households!!Male householder, no spouse or partner present:",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0137PA"
+    },
+    "DP1_0125P": {
+      "label": "Percent!!RELATIONSHIP!!Total population!!In group quarters",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0125PA"
+    },
+    "DP1_0004P": {
+      "label": "Percent!!SEX AND AGE!!Total population!!10 to 14 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0004PA"
+    },
+    "DP1_0113P": {
+      "label": "Percent!!RELATIONSHIP!!Total population!!In households",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0113PA"
+    },
+    "DP1_0016C": {
+      "label": "Count!!SEX AND AGE!!Total population!!70 to 74 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0016CA"
+    },
+    "DP1_0137C": {
+      "label": "Count!!HOUSEHOLDS BY TYPE!!Total households!!Male householder, no spouse or partner present:",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0137CA"
+    },
+    "DP1_0125C": {
+      "label": "Count!!RELATIONSHIP!!Total population!!In group quarters",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0125CA"
+    },
+    "DP1_0004C": {
+      "label": "Count!!SEX AND AGE!!Total population!!10 to 14 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0004CA"
+    },
+    "DP1_0113C": {
+      "label": "Count!!RELATIONSHIP!!Total population!!In households",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0113CA"
+    },
+    "DP1_0101C": {
+      "label": "Count!!HISPANIC OR LATINO BY RACE!!Total population!!Hispanic or Latino!!Native Hawaiian and Other Pacific Islander alone",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0101CA"
+    },
+    "DP1_0149C": {
+      "label": "Count!!HOUSING OCCUPANCY!!Total housing units!!Vacant housing units",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0149CA"
+    },
+    "DP1_0028C": {
+      "label": "Count!!SEX AND AGE!!Male population!!10 to 14 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0028CA"
+    },
+    "DP1_0112P": {
+      "label": "Percent!!RELATIONSHIP!!Total population",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0112PA"
+    },
+    "CD": {
+      "label": "Geography",
+      "group": "N/A",
+      "limit": 0
+    },
+    "DP1_0100P": {
+      "label": "Percent!!HISPANIC OR LATINO BY RACE!!Total population!!Hispanic or Latino!!Asian alone",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0100PA"
+    },
+    "DP1_0039P": {
+      "label": "Percent!!SEX AND AGE!!Male population!!65 to 69 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0039PA"
+    },
+    "DP1_0148P": {
+      "label": "Percent!!HOUSING OCCUPANCY!!Total housing units!!Occupied housing units",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0148PA"
+    },
+    "DP1_0027P": {
+      "label": "Percent!!SEX AND AGE!!Male population!!5 to 9 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0027PA"
+    },
+    "DP1_0015P": {
+      "label": "Percent!!SEX AND AGE!!Total population!!65 to 69 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0015PA"
+    },
+    "DP1_0136P": {
+      "label": "Percent!!HOUSEHOLDS BY TYPE!!Total households!!Cohabiting couple household!!With own children under 18 [3]",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0136PA"
+    },
+    "DP1_0124P": {
+      "label": "Percent!!RELATIONSHIP!!Total population!!In households!!Nonrelatives",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0124PA"
+    },
+    "DP1_0003P": {
+      "label": "Percent!!SEX AND AGE!!Total population!!5 to 9 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0003PA"
+    },
+    "PLACE": {
+      "label": "Geography",
+      "group": "N/A",
+      "limit": 0
+    },
+    "SDUNI": {
+      "label": "Geography",
+      "group": "N/A",
+      "limit": 0
+    },
+    "DP1_0148C": {
+      "label": "Count!!HOUSING OCCUPANCY!!Total housing units!!Occupied housing units",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0148CA"
+    },
+    "DP1_0027C": {
+      "label": "Count!!SEX AND AGE!!Male population!!5 to 9 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0027CA"
+    },
+    "DP1_0015C": {
+      "label": "Count!!SEX AND AGE!!Total population!!65 to 69 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0015CA"
+    },
+    "DP1_0136C": {
+      "label": "Count!!HOUSEHOLDS BY TYPE!!Total households!!Cohabiting couple household!!With own children under 18 [3]",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0136CA"
+    },
+    "DP1_0124C": {
+      "label": "Count!!RELATIONSHIP!!Total population!!In households!!Nonrelatives",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0124CA"
+    },
+    "DP1_0003C": {
+      "label": "Count!!SEX AND AGE!!Total population!!5 to 9 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0003CA"
+    },
+    "DP1_0112C": {
+      "label": "Count!!RELATIONSHIP!!Total population",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0112CA"
+    },
+    "DP1_0039C": {
+      "label": "Count!!SEX AND AGE!!Male population!!65 to 69 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0039CA"
+    },
+    "DP1_0100C": {
+      "label": "Count!!HISPANIC OR LATINO BY RACE!!Total population!!Hispanic or Latino!!Asian alone",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0100CA"
+    },
+    "SLDL": {
+      "label": "Geography",
+      "group": "N/A",
+      "limit": 0
+    },
+    "SLDU": {
+      "label": "Geography",
+      "group": "N/A",
+      "limit": 0
+    },
+    "DP1_0119C": {
+      "label": "Count!!RELATIONSHIP!!Total population!!In households!!Child [2]",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0119CA"
+    },
+    "DP1_0107C": {
+      "label": "Count!!HISPANIC OR LATINO BY RACE!!Total population!!Not Hispanic or Latino!!American Indian and Alaska Native alone",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0107CA"
+    },
+    "DP1_0119P": {
+      "label": "Percent!!RELATIONSHIP!!Total population!!In households!!Child [2]",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0119PA"
+    },
+    "DP1_0107P": {
+      "label": "Percent!!HISPANIC OR LATINO BY RACE!!Total population!!Not Hispanic or Latino!!American Indian and Alaska Native alone",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0107PA"
+    },
+    "NECTA": {
+      "label": "Geography",
+      "group": "N/A",
+      "limit": 0
+    },
+    "DP1_0009C": {
+      "label": "Count!!SEX AND AGE!!Total population!!35 to 39 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0009CA"
+    },
+    "DP1_0118C": {
+      "label": "Count!!RELATIONSHIP!!Total population!!In households!!Same-sex unmarried partner",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0118CA"
+    },
+    "CNECTA": {
+      "label": "Geography",
+      "group": "N/A",
+      "limit": 0
+    },
+    "DP1_0106C": {
+      "label": "Count!!HISPANIC OR LATINO BY RACE!!Total population!!Not Hispanic or Latino!!Black or African American alone",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0106CA"
+    },
+    "DP1_0009P": {
+      "label": "Percent!!SEX AND AGE!!Total population!!35 to 39 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0009PA"
+    },
+    "DP1_0118P": {
+      "label": "Percent!!RELATIONSHIP!!Total population!!In households!!Same-sex unmarried partner",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0118PA"
+    },
+    "DP1_0106P": {
+      "label": "Percent!!HISPANIC OR LATINO BY RACE!!Total population!!Not Hispanic or Latino!!Black or African American alone",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0106PA"
+    },
+    "DP1_0105P": {
+      "label": "Percent!!HISPANIC OR LATINO BY RACE!!Total population!!Not Hispanic or Latino!!White alone",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0105PA"
+    },
+    "STATE": {
+      "label": "Geography",
+      "group": "N/A",
+      "limit": 0
+    },
+    "DIVISION": {
+      "label": "Geography",
+      "group": "N/A",
+      "limit": 0
+    },
+    "DP1_0129C": {
+      "label": "Count!!RELATIONSHIP!!Total population!!In group quarters!!Noninstitutionalized population:",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0129CA"
+    },
+    "DP1_0008C": {
+      "label": "Count!!SEX AND AGE!!Total population!!30 to 34 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0008CA"
+    },
+    "DP1_0117C": {
+      "label": "Count!!RELATIONSHIP!!Total population!!In households!!Opposite-sex unmarried partner",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0117CA"
+    },
+    "DP1_0105C": {
+      "label": "Count!!HISPANIC OR LATINO BY RACE!!Total population!!Not Hispanic or Latino!!White alone",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0105CA"
+    },
+    "DP1_0129P": {
+      "label": "Percent!!RELATIONSHIP!!Total population!!In group quarters!!Noninstitutionalized population:",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0129PA"
+    },
+    "DP1_0008P": {
+      "label": "Percent!!SEX AND AGE!!Total population!!30 to 34 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0008PA"
+    },
+    "DP1_0117P": {
+      "label": "Percent!!RELATIONSHIP!!Total population!!In households!!Opposite-sex unmarried partner",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0117PA"
+    },
+    "DP1_0116P": {
+      "label": "Percent!!RELATIONSHIP!!Total population!!In households!!Same-sex spouse",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0116PA"
+    },
+    "DP1_0104P": {
+      "label": "Percent!!HISPANIC OR LATINO BY RACE!!Total population!!Not Hispanic or Latino",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0104PA"
+    },
+    "DP1_0104C": {
+      "label": "Count!!HISPANIC OR LATINO BY RACE!!Total population!!Not Hispanic or Latino",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0104CA"
+    },
+    "SDSEC": {
+      "label": "Geography",
+      "group": "N/A",
+      "limit": 0
+    },
+    "DP1_0019C": {
+      "label": "Count!!SEX AND AGE!!Total population!!85 years and over",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0019CA"
+    },
+    "DP1_0128C": {
+      "label": "Count!!RELATIONSHIP!!Total population!!In group quarters!!Institutionalized population:!!Female",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0128CA"
+    },
+    "DP1_0007C": {
+      "label": "Count!!SEX AND AGE!!Total population!!25 to 29 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0007CA"
+    },
+    "DP1_0116C": {
+      "label": "Count!!RELATIONSHIP!!Total population!!In households!!Same-sex spouse",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0116CA"
+    },
+    "DP1_0019P": {
+      "label": "Percent!!SEX AND AGE!!Total population!!85 years and over",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0019PA"
+    },
+    "DP1_0128P": {
+      "label": "Percent!!RELATIONSHIP!!Total population!!In group quarters!!Institutionalized population:!!Female",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0128PA"
+    },
+    "DP1_0007P": {
+      "label": "Percent!!SEX AND AGE!!Total population!!25 to 29 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0007PA"
+    },
+    "DP1_0046P": {
+      "label": "Percent!!SEX AND AGE!!Male population!!Selected Age Categories!!21 years and over",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0046PA"
+    },
+    "DP1_0034P": {
+      "label": "Percent!!SEX AND AGE!!Male population!!40 to 44 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0034PA"
+    },
+    "DP1_0155P": {
+      "label": "Percent!!HOUSING OCCUPANCY!!Total housing units!!Vacant housing units!!All other vacants",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0155PA"
+    },
+    "DP1_0143P": {
+      "label": "Percent!!HOUSEHOLDS BY TYPE!!Total households!!Female householder, no spouse or partner present:!!Living alone!!65 years and over",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0143PA"
+    },
+    "DP1_0022P": {
+      "label": "Percent!!SEX AND AGE!!Total population!!Selected Age Categories!!21 years and over",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0022PA"
+    },
+    "DP1_0010P": {
+      "label": "Percent!!SEX AND AGE!!Total population!!40 to 44 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0010PA"
+    },
+    "DP1_0131P": {
+      "label": "Percent!!RELATIONSHIP!!Total population!!In group quarters!!Noninstitutionalized population:!!Female",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0131PA"
+    },
+    "DP1_0058P": {
+      "label": "Percent!!SEX AND AGE!!Female population!!40 to 44 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0058PA"
+    },
+    "DP1_0058C": {
+      "label": "Count!!SEX AND AGE!!Female population!!40 to 44 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0058CA"
+    },
+    "DP1_0046C": {
+      "label": "Count!!SEX AND AGE!!Male population!!Selected Age Categories!!21 years and over",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0046CA"
+    },
+    "AIANHH": {
+      "label": "Geography",
+      "group": "N/A",
+      "limit": 0
+    },
+    "DP1_0034C": {
+      "label": "Count!!SEX AND AGE!!Male population!!40 to 44 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0034CA"
+    },
+    "DP1_0155C": {
+      "label": "Count!!HOUSING OCCUPANCY!!Total housing units!!Vacant housing units!!All other vacants",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0155CA"
+    },
+    "DP1_0143C": {
+      "label": "Count!!HOUSEHOLDS BY TYPE!!Total households!!Female householder, no spouse or partner present:!!Living alone!!65 years and over",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0143CA"
+    },
+    "DP1_0022C": {
+      "label": "Count!!SEX AND AGE!!Total population!!Selected Age Categories!!21 years and over",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0022CA"
+    },
+    "DP1_0010C": {
+      "label": "Count!!SEX AND AGE!!Total population!!40 to 44 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0010CA"
+    },
+    "DP1_0131C": {
+      "label": "Count!!RELATIONSHIP!!Total population!!In group quarters!!Noninstitutionalized population:!!Female",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0131CA"
+    },
+    "DP1_0057P": {
+      "label": "Percent!!SEX AND AGE!!Female population!!35 to 39 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0057PA"
+    },
+    "SUBMCD": {
+      "label": "Geography",
+      "group": "N/A",
+      "limit": 0
+    },
+    "DP1_0045P": {
+      "label": "Percent!!SEX AND AGE!!Male population!!Selected Age Categories!!18 years and over",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0045PA"
+    },
+    "DP1_0033P": {
+      "label": "Percent!!SEX AND AGE!!Male population!!35 to 39 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0033PA"
+    },
+    "DP1_0154P": {
+      "label": "Percent!!HOUSING OCCUPANCY!!Total housing units!!Vacant housing units!!For seasonal, recreational, or occasional use",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0154PA"
+    },
+    "DP1_0142P": {
+      "label": "Percent!!HOUSEHOLDS BY TYPE!!Total households!!Female householder, no spouse or partner present:!!Living alone",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0142PA"
+    },
+    "DP1_0021P": {
+      "label": "Percent!!SEX AND AGE!!Total population!!Selected Age Categories!!18 years and over",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0021PA"
+    },
+    "DP1_0069P": {
+      "label": "Percent!!SEX AND AGE!!Female population!!Selected Age Categories!!18 years and over",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0069PA"
+    },
+    "DP1_0130P": {
+      "label": "Percent!!RELATIONSHIP!!Total population!!In group quarters!!Noninstitutionalized population:!!Male",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0130PA"
+    },
+    "REGION": {
+      "label": "Geography",
+      "group": "N/A",
+      "limit": 0
+    },
+    "DP1_0069C": {
+      "label": "Count!!SEX AND AGE!!Female population!!Selected Age Categories!!18 years and over",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0069CA"
+    },
+    "DP1_0057C": {
+      "label": "Count!!SEX AND AGE!!Female population!!35 to 39 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0057CA"
+    },
+    "DP1_0045C": {
+      "label": "Count!!SEX AND AGE!!Male population!!Selected Age Categories!!18 years and over",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0045CA"
+    },
+    "DP1_0033C": {
+      "label": "Count!!SEX AND AGE!!Male population!!35 to 39 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0033CA"
+    },
+    "DP1_0154C": {
+      "label": "Count!!HOUSING OCCUPANCY!!Total housing units!!Vacant housing units!!For seasonal, recreational, or occasional use",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0154CA"
+    },
+    "DP1_0142C": {
+      "label": "Count!!HOUSEHOLDS BY TYPE!!Total households!!Female householder, no spouse or partner present:!!Living alone",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0142CA"
+    },
+    "DP1_0021C": {
+      "label": "Count!!SEX AND AGE!!Total population!!Selected Age Categories!!18 years and over",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0021CA"
+    },
+    "DP1_0130C": {
+      "label": "Count!!RELATIONSHIP!!Total population!!In group quarters!!Noninstitutionalized population:!!Male",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0130CA"
+    },
+    "DP1_0068P": {
+      "label": "Percent!!SEX AND AGE!!Female population!!Selected Age Categories!!16 years and over",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0068PA"
+    },
+    "DP1_0056P": {
+      "label": "Percent!!SEX AND AGE!!Female population!!30 to 34 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0056PA"
+    },
+    "DP1_0044P": {
+      "label": "Percent!!SEX AND AGE!!Male population!!Selected Age Categories!!16 years and over",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0044PA"
+    },
+    "DP1_0032P": {
+      "label": "Percent!!SEX AND AGE!!Male population!!30 to 34 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0032PA"
+    },
+    "DP1_0153P": {
+      "label": "Percent!!HOUSING OCCUPANCY!!Total housing units!!Vacant housing units!!Sold, not occupied",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0153PA"
+    },
+    "DP1_0141P": {
+      "label": "Percent!!HOUSEHOLDS BY TYPE!!Total households!!Female householder, no spouse or partner present:",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0141PA"
+    },
+    "DP1_0020P": {
+      "label": "Percent!!SEX AND AGE!!Total population!!Selected Age Categories!!16 years and over",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0020PA"
+    },
+    "DP1_0068C": {
+      "label": "Count!!SEX AND AGE!!Female population!!Selected Age Categories!!16 years and over",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0068CA"
+    },
+    "DP1_0056C": {
+      "label": "Count!!SEX AND AGE!!Female population!!30 to 34 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0056CA"
+    },
+    "DP1_0044C": {
+      "label": "Count!!SEX AND AGE!!Male population!!Selected Age Categories!!16 years and over",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0044CA"
+    },
+    "DP1_0032C": {
+      "label": "Count!!SEX AND AGE!!Male population!!30 to 34 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0032CA"
+    },
+    "DP1_0153C": {
+      "label": "Count!!HOUSING OCCUPANCY!!Total housing units!!Vacant housing units!!Sold, not occupied",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0153CA"
+    },
+    "DP1_0141C": {
+      "label": "Count!!HOUSEHOLDS BY TYPE!!Total households!!Female householder, no spouse or partner present:",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0141CA"
+    },
+    "DP1_0020C": {
+      "label": "Count!!SEX AND AGE!!Total population!!Selected Age Categories!!16 years and over",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0020CA"
+    },
+    "DP1_0079P": {
+      "label": "Percent!!RACE!!Total population!!One Race!!Black or African American",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0079PA"
+    },
+    "DP1_0067P": {
+      "label": "Percent!!SEX AND AGE!!Female population!!85 years and over",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0067PA"
+    },
+    "DP1_0055P": {
+      "label": "Percent!!SEX AND AGE!!Female population!!25 to 29 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0055PA"
+    },
+    "DP1_0043P": {
+      "label": "Percent!!SEX AND AGE!!Male population!!85 years and over",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0043PA"
+    },
+    "DP1_0031P": {
+      "label": "Percent!!SEX AND AGE!!Male population!!25 to 29 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0031PA"
+    },
+    "DP1_0152P": {
+      "label": "Percent!!HOUSING OCCUPANCY!!Total housing units!!Vacant housing units!!For sale only",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0152PA"
+    },
+    "DP1_0140P": {
+      "label": "Percent!!HOUSEHOLDS BY TYPE!!Total households!!Male householder, no spouse or partner present:!!With own children under 18 [3]",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0140PA"
+    },
+    "DP1_0079C": {
+      "label": "Count!!RACE!!Total population!!One Race!!Black or African American",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0079CA"
+    },
+    "DP1_0140C": {
+      "label": "Count!!HOUSEHOLDS BY TYPE!!Total households!!Male householder, no spouse or partner present:!!With own children under 18 [3]",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0140CA"
+    },
+    "DP1_0067C": {
+      "label": "Count!!SEX AND AGE!!Female population!!85 years and over",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0067CA"
+    },
+    "TTRACT": {
+      "label": "Geography",
+      "group": "N/A",
+      "limit": 0
+    },
+    "DP1_0055C": {
+      "label": "Count!!SEX AND AGE!!Female population!!25 to 29 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0055CA"
+    },
+    "DP1_0043C": {
+      "label": "Count!!SEX AND AGE!!Male population!!85 years and over",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0043CA"
+    },
+    "DP1_0031C": {
+      "label": "Count!!SEX AND AGE!!Male population!!25 to 29 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0031CA"
+    },
+    "DP1_0152C": {
+      "label": "Count!!HOUSING OCCUPANCY!!Total housing units!!Vacant housing units!!For sale only",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0152CA"
+    },
+    "DP1_0123P": {
+      "label": "Percent!!RELATIONSHIP!!Total population!!In households!!Other relatives",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0123PA"
+    },
+    "DP1_0002P": {
+      "label": "Percent!!SEX AND AGE!!Total population!!Under 5 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0002PA"
+    },
+    "DP1_0111P": {
+      "label": "Percent!!HISPANIC OR LATINO BY RACE!!Total population!!Not Hispanic or Latino!!Two or More Races",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0111PA"
+    },
+    "DP1_0038P": {
+      "label": "Percent!!SEX AND AGE!!Male population!!60 to 64 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0038PA"
+    },
+    "DP1_0159P": {
+      "label": "Percent!!HOUSING TENURE!!Occupied housing units!!Owner-occupied housing units",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0159PA"
+    },
+    "DP1_0147P": {
+      "label": "Percent!!HOUSING OCCUPANCY!!Total housing units",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0147PA"
+    },
+    "DP1_0026P": {
+      "label": "Percent!!SEX AND AGE!!Male population!!Under 5 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0026PA"
+    },
+    "DP1_0014P": {
+      "label": "Percent!!SEX AND AGE!!Total population!!60 to 64 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0014PA"
+    },
+    "DP1_0135P": {
+      "label": "Percent!!HOUSEHOLDS BY TYPE!!Total households!!Cohabiting couple household",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0135PA"
+    },
+    "PRINCITY": {
+      "label": "Geography",
+      "group": "N/A",
+      "limit": 0
+    },
+    "DP1_0038C": {
+      "label": "Count!!SEX AND AGE!!Male population!!60 to 64 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0038CA"
+    },
+    "DP1_0159C": {
+      "label": "Count!!HOUSING TENURE!!Occupied housing units!!Owner-occupied housing units",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0159CA"
+    },
+    "DP1_0147C": {
+      "label": "Count!!HOUSING OCCUPANCY!!Total housing units",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0147CA"
+    },
+    "DP1_0026C": {
+      "label": "Count!!SEX AND AGE!!Male population!!Under 5 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0026CA"
+    },
+    "DP1_0014C": {
+      "label": "Count!!SEX AND AGE!!Total population!!60 to 64 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0014CA"
+    },
+    "DP1_0135C": {
+      "label": "Count!!HOUSEHOLDS BY TYPE!!Total households!!Cohabiting couple household",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0135CA"
+    },
+    "DP1_0123C": {
+      "label": "Count!!RELATIONSHIP!!Total population!!In households!!Other relatives",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0123CA"
+    },
+    "DP1_0002C": {
+      "label": "Count!!SEX AND AGE!!Total population!!Under 5 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0002CA"
+    },
+    "DP1_0111C": {
+      "label": "Count!!HISPANIC OR LATINO BY RACE!!Total population!!Not Hispanic or Latino!!Two or More Races",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0111CA"
+    },
+    "DP1_0013P": {
+      "label": "Percent!!SEX AND AGE!!Total population!!55 to 59 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0013PA"
+    },
+    "DP1_0134P": {
+      "label": "Percent!!HOUSEHOLDS BY TYPE!!Total households!!Married couple household!!With own children under 18 [3]",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0134PA"
+    },
+    "DP1_0122P": {
+      "label": "Percent!!RELATIONSHIP!!Total population!!In households!!Grandchild!!Under 18 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0122PA"
+    },
+    "DP1_0001P": {
+      "label": "Percent!!SEX AND AGE!!Total population",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0001PA"
+    },
+    "DP1_0110P": {
+      "label": "Percent!!HISPANIC OR LATINO BY RACE!!Total population!!Not Hispanic or Latino!!Some Other Race alone",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0110PA"
+    },
+    "DP1_0049P": {
+      "label": "Percent!!SEX AND AGE!!Female population",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0049PA"
+    },
+    "DP1_0037P": {
+      "label": "Percent!!SEX AND AGE!!Male population!!55 to 59 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0037PA"
+    },
+    "DP1_0158P": {
+      "label": "Percent!!HOUSING TENURE!!Occupied housing units",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0158PA"
+    },
+    "DP1_0146P": {
+      "label": "Percent!!HOUSEHOLDS BY TYPE!!Total households!!Households with individuals 65 years and over",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0146PA"
+    },
+    "DP1_0025P": {
+      "label": "Percent!!SEX AND AGE!!Male population",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0025PA"
+    },
+    "DP1_0049C": {
+      "label": "Count!!SEX AND AGE!!Female population",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0049CA"
+    },
+    "DP1_0037C": {
+      "label": "Count!!SEX AND AGE!!Male population!!55 to 59 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0037CA"
+    },
+    "DP1_0158C": {
+      "label": "Count!!HOUSING TENURE!!Occupied housing units",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0158CA"
+    },
+    "DP1_0146C": {
+      "label": "Count!!HOUSEHOLDS BY TYPE!!Total households!!Households with individuals 65 years and over",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0146CA"
+    },
+    "DP1_0025C": {
+      "label": "Count!!SEX AND AGE!!Male population",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0025CA"
+    },
+    "DP1_0013C": {
+      "label": "Count!!SEX AND AGE!!Total population!!55 to 59 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0013CA"
+    },
+    "DP1_0134C": {
+      "label": "Count!!HOUSEHOLDS BY TYPE!!Total households!!Married couple household!!With own children under 18 [3]",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0134CA"
+    },
+    "DP1_0122C": {
+      "label": "Count!!RELATIONSHIP!!Total population!!In households!!Grandchild!!Under 18 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0122CA"
+    },
+    "DP1_0001C": {
+      "label": "Count!!SEX AND AGE!!Total population",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0001CA"
+    },
+    "DP1_0110C": {
+      "label": "Count!!HISPANIC OR LATINO BY RACE!!Total population!!Not Hispanic or Latino!!Some Other Race alone",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0110CA"
+    },
+    "DP1_0145P": {
+      "label": "Percent!!HOUSEHOLDS BY TYPE!!Total households!!Households with individuals under 18 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0145PA"
+    },
+    "DP1_0024P": {
+      "label": "Percent!!SEX AND AGE!!Total population!!Selected Age Categories!!65 years and over",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0024PA"
+    },
+    "DP1_0012P": {
+      "label": "Percent!!SEX AND AGE!!Total population!!50 to 54 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0012PA"
+    },
+    "DP1_0133P": {
+      "label": "Percent!!HOUSEHOLDS BY TYPE!!Total households!!Married couple household",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0133PA"
+    },
+    "DP1_0121P": {
+      "label": "Percent!!RELATIONSHIP!!Total population!!In households!!Grandchild",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0121PA"
+    },
+    "DP1_0048P": {
+      "label": "Percent!!SEX AND AGE!!Male population!!Selected Age Categories!!65 years and over",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0048PA"
+    },
+    "DP1_0036P": {
+      "label": "Percent!!SEX AND AGE!!Male population!!50 to 54 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0036PA"
+    },
+    "DP1_0157P": {
+      "label": "Percent!!VACANCY RATES!!Rental vacancy rate (percent) [5]",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0157PA"
+    },
+    "CSA": {
+      "label": "Geography",
+      "group": "N/A",
+      "limit": 0
+    },
+    "DP1_0048C": {
+      "label": "Count!!SEX AND AGE!!Male population!!Selected Age Categories!!65 years and over",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0048CA"
+    },
+    "DP1_0036C": {
+      "label": "Count!!SEX AND AGE!!Male population!!50 to 54 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0036CA"
+    },
+    "DP1_0157C": {
+      "label": "Count!!VACANCY RATES!!Rental vacancy rate (percent) [5]",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0157CA"
+    },
+    "DP1_0145C": {
+      "label": "Count!!HOUSEHOLDS BY TYPE!!Total households!!Households with individuals under 18 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0145CA"
+    },
+    "DP1_0024C": {
+      "label": "Count!!SEX AND AGE!!Total population!!Selected Age Categories!!65 years and over",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0024CA"
+    },
+    "DP1_0012C": {
+      "label": "Count!!SEX AND AGE!!Total population!!50 to 54 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0012CA"
+    },
+    "DP1_0133C": {
+      "label": "Count!!HOUSEHOLDS BY TYPE!!Total households!!Married couple household",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0133CA"
+    },
+    "DP1_0121C": {
+      "label": "Count!!RELATIONSHIP!!Total population!!In households!!Grandchild",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0121CA"
+    },
+    "DP1_0035P": {
+      "label": "Percent!!SEX AND AGE!!Male population!!45 to 49 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0035PA"
+    },
+    "DP1_0156P": {
+      "label": "Percent!!VACANCY RATES!!Homeowner vacancy rate (percent) [4]",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0156PA"
+    },
+    "DP1_0144P": {
+      "label": "Percent!!HOUSEHOLDS BY TYPE!!Total households!!Female householder, no spouse or partner present:!!With own children under 18 [3]",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0144PA"
+    },
+    "DP1_0023P": {
+      "label": "Percent!!SEX AND AGE!!Total population!!Selected Age Categories!!62 years and over",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0023PA"
+    },
+    "DP1_0011P": {
+      "label": "Percent!!SEX AND AGE!!Total population!!45 to 49 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0011PA"
+    },
+    "DP1_0132P": {
+      "label": "Percent!!HOUSEHOLDS BY TYPE!!Total households",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0132PA"
+    },
+    "DP1_0120P": {
+      "label": "Percent!!RELATIONSHIP!!Total population!!In households!!Child [2]!!Under 18 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0120PA"
+    },
+    "DP1_0059P": {
+      "label": "Percent!!SEX AND AGE!!Female population!!45 to 49 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0059PA"
+    },
+    "DP1_0047P": {
+      "label": "Percent!!SEX AND AGE!!Male population!!Selected Age Categories!!62 years and over",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0047PA"
+    },
+    "GEO_ID": {
+      "label": "Geography",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "string",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "NAME"
+    },
+    "DP1_0059C": {
+      "label": "Count!!SEX AND AGE!!Female population!!45 to 49 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0059CA"
+    },
+    "TRACT": {
+      "label": "Geography",
+      "group": "N/A",
+      "limit": 0
+    },
+    "DP1_0047C": {
+      "label": "Count!!SEX AND AGE!!Male population!!Selected Age Categories!!62 years and over",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0047CA"
+    },
+    "DP1_0035C": {
+      "label": "Count!!SEX AND AGE!!Male population!!45 to 49 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0035CA"
+    },
+    "DP1_0156C": {
+      "label": "Count!!VACANCY RATES!!Homeowner vacancy rate (percent) [4]",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0156CA"
+    },
+    "DP1_0144C": {
+      "label": "Count!!HOUSEHOLDS BY TYPE!!Total households!!Female householder, no spouse or partner present:!!With own children under 18 [3]",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0144CA"
+    },
+    "DP1_0023C": {
+      "label": "Count!!SEX AND AGE!!Total population!!Selected Age Categories!!62 years and over",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0023CA"
+    },
+    "DP1_0011C": {
+      "label": "Count!!SEX AND AGE!!Total population!!45 to 49 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0011CA"
+    },
+    "DP1_0132C": {
+      "label": "Count!!HOUSEHOLDS BY TYPE!!Total households",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0132CA"
+    },
+    "DP1_0120C": {
+      "label": "Count!!RELATIONSHIP!!Total population!!In households!!Child [2]!!Under 18 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0120CA"
+    },
+    "DP1_0098P": {
+      "label": "Percent!!HISPANIC OR LATINO BY RACE!!Total population!!Hispanic or Latino!!Black or African American alone",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0098PA"
+    },
+    "DP1_0086P": {
+      "label": "Percent!!TOTAL RACES TALLIED [1]!!Total races tallied!!White alone or in combination with one or more other races",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0086PA"
+    },
+    "DP1_0074P": {
+      "label": "Percent!!MEDIAN AGE BY SEX!!Male",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0074PA"
+    },
+    "DP1_0062P": {
+      "label": "Percent!!SEX AND AGE!!Female population!!60 to 64 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0062PA"
+    },
+    "DP1_0050P": {
+      "label": "Percent!!SEX AND AGE!!Female population!!Under 5 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0050PA"
+    },
+    "DP1_0074C": {
+      "label": "Count!!MEDIAN AGE BY SEX!!Male",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0074CA"
+    },
+    "DP1_0062C": {
+      "label": "Count!!SEX AND AGE!!Female population!!60 to 64 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0062CA"
+    },
+    "DP1_0050C": {
+      "label": "Count!!SEX AND AGE!!Female population!!Under 5 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0050CA"
+    },
+    "DP1_0098C": {
+      "label": "Count!!HISPANIC OR LATINO BY RACE!!Total population!!Hispanic or Latino!!Black or African American alone",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0098CA"
+    },
+    "DP1_0086C": {
+      "label": "Count!!TOTAL RACES TALLIED [1]!!Total races tallied!!White alone or in combination with one or more other races",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0086CA"
+    },
+    "DP1_0097P": {
+      "label": "Percent!!HISPANIC OR LATINO BY RACE!!Total population!!Hispanic or Latino!!White alone",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0097PA"
+    },
+    "DP1_0085P": {
+      "label": "Percent!!TOTAL RACES TALLIED [1]!!Total races tallied",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0085PA"
+    },
+    "DP1_0073P": {
+      "label": "Percent!!MEDIAN AGE BY SEX!!Both sexes",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0073PA"
+    },
+    "DP1_0061P": {
+      "label": "Percent!!SEX AND AGE!!Female population!!55 to 59 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0061PA"
+    },
+    "SUMLEVEL": {
+      "label": "Summary Level code",
+      "predicateType": "string",
+      "group": "N/A",
+      "limit": 0
+    },
+    "DP1_0085C": {
+      "label": "Count!!TOTAL RACES TALLIED [1]!!Total races tallied",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0085CA"
+    },
+    "DP1_0073C": {
+      "label": "Count!!MEDIAN AGE BY SEX!!Both sexes",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0073CA"
+    },
+    "DP1_0061C": {
+      "label": "Count!!SEX AND AGE!!Female population!!55 to 59 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0061CA"
+    },
+    "DP1_0097C": {
+      "label": "Count!!HISPANIC OR LATINO BY RACE!!Total population!!Hispanic or Latino!!White alone",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0097CA"
+    },
+    "DP1_0060P": {
+      "label": "Percent!!SEX AND AGE!!Female population!!50 to 54 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0060PA"
+    },
+    "DP1_0096P": {
+      "label": "Percent!!HISPANIC OR LATINO BY RACE!!Total population!!Hispanic or Latino",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0096PA"
+    },
+    "DP1_0084P": {
+      "label": "Percent!!RACE!!Total population!!Two or More Races",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0084PA"
+    },
+    "DP1_0072P": {
+      "label": "Percent!!SEX AND AGE!!Female population!!Selected Age Categories!!65 years and over",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0072PA"
+    },
+    "DP1_0096C": {
+      "label": "Count!!HISPANIC OR LATINO BY RACE!!Total population!!Hispanic or Latino",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0096CA"
+    },
+    "DP1_0084C": {
+      "label": "Count!!RACE!!Total population!!Two or More Races",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0084CA"
+    },
+    "DP1_0072C": {
+      "label": "Count!!SEX AND AGE!!Female population!!Selected Age Categories!!65 years and over",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0072CA"
+    },
+    "DP1_0060C": {
+      "label": "Count!!SEX AND AGE!!Female population!!50 to 54 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0060CA"
+    },
+    "DP1_0071P": {
+      "label": "Percent!!SEX AND AGE!!Female population!!Selected Age Categories!!62 years and over",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0071PA"
+    },
+    "METDIV": {
+      "label": "Geography",
+      "group": "N/A",
+      "limit": 0
+    },
+    "DP1_0095P": {
+      "label": "Percent!!HISPANIC OR LATINO BY RACE!!Total population",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0095PA"
+    },
+    "DP1_0083P": {
+      "label": "Percent!!RACE!!Total population!!One Race!!Some Other Race",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0083PA"
+    },
+    "DP1_0095C": {
+      "label": "Count!!HISPANIC OR LATINO BY RACE!!Total population",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0095CA"
+    },
+    "DP1_0083C": {
+      "label": "Count!!RACE!!Total population!!One Race!!Some Other Race",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0083CA"
+    },
+    "DP1_0071C": {
+      "label": "Count!!SEX AND AGE!!Female population!!Selected Age Categories!!62 years and over",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0071CA"
+    },
+    "DP1_0078P": {
+      "label": "Percent!!RACE!!Total population!!One Race!!White",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0078PA"
+    },
+    "DP1_0066P": {
+      "label": "Percent!!SEX AND AGE!!Female population!!80 to 84 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0066PA"
+    },
+    "DP1_0054P": {
+      "label": "Percent!!SEX AND AGE!!Female population!!20 to 24 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0054PA"
+    },
+    "DP1_0042P": {
+      "label": "Percent!!SEX AND AGE!!Male population!!80 to 84 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0042PA"
+    },
+    "DP1_0151P": {
+      "label": "Percent!!HOUSING OCCUPANCY!!Total housing units!!Vacant housing units!!Rented, not occupied",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0151PA"
+    },
+    "DP1_0030P": {
+      "label": "Percent!!SEX AND AGE!!Male population!!20 to 24 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0030PA"
+    },
+    "DP1_0151C": {
+      "label": "Count!!HOUSING OCCUPANCY!!Total housing units!!Vacant housing units!!Rented, not occupied",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0151CA"
+    },
+    "DP1_0030C": {
+      "label": "Count!!SEX AND AGE!!Male population!!20 to 24 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0030CA"
+    },
+    "DP1_0078C": {
+      "label": "Count!!RACE!!Total population!!One Race!!White",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0078CA"
+    },
+    "DP1_0066C": {
+      "label": "Count!!SEX AND AGE!!Female population!!80 to 84 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0066CA"
+    },
+    "DP1_0054C": {
+      "label": "Count!!SEX AND AGE!!Female population!!20 to 24 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0054CA"
+    },
+    "DP1_0042C": {
+      "label": "Count!!SEX AND AGE!!Male population!!80 to 84 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0042CA"
+    },
+    "DP1_0089P": {
+      "label": "Percent!!TOTAL RACES TALLIED [1]!!Total races tallied!!Asian alone or in combination with one or more other races",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0089PA"
+    },
+    "DP1_0077P": {
+      "label": "Percent!!RACE!!Total population!!One Race",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0077PA"
+    },
+    "DP1_0065P": {
+      "label": "Percent!!SEX AND AGE!!Female population!!75 to 79 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0065PA"
+    },
+    "DP1_0053P": {
+      "label": "Percent!!SEX AND AGE!!Female population!!15 to 19 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0053PA"
+    },
+    "DP1_0041P": {
+      "label": "Percent!!SEX AND AGE!!Male population!!75 to 79 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0041PA"
+    },
+    "DP1_0150P": {
+      "label": "Percent!!HOUSING OCCUPANCY!!Total housing units!!Vacant housing units!!For rent",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0150PA"
+    },
+    "DP1_0041C": {
+      "label": "Count!!SEX AND AGE!!Male population!!75 to 79 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0041CA"
+    },
+    "DP1_0150C": {
+      "label": "Count!!HOUSING OCCUPANCY!!Total housing units!!Vacant housing units!!For rent",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0150CA"
+    },
+    "DP1_0089C": {
+      "label": "Count!!TOTAL RACES TALLIED [1]!!Total races tallied!!Asian alone or in combination with one or more other races",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0089CA"
+    },
+    "DP1_0077C": {
+      "label": "Count!!RACE!!Total population!!One Race",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0077CA"
+    },
+    "DP1_0065C": {
+      "label": "Count!!SEX AND AGE!!Female population!!75 to 79 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0065CA"
+    },
+    "DP1_0053C": {
+      "label": "Count!!SEX AND AGE!!Female population!!15 to 19 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0053CA"
+    },
+    "DP1_0088P": {
+      "label": "Percent!!TOTAL RACES TALLIED [1]!!Total races tallied!!American Indian and Alaska Native alone or in combination with one or more other races",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0088PA"
+    },
+    "COUSUB": {
+      "label": "Geography",
+      "group": "N/A",
+      "limit": 0
+    },
+    "DP1_0076P": {
+      "label": "Percent!!RACE!!Total population",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0076PA"
+    },
+    "DP1_0064P": {
+      "label": "Percent!!SEX AND AGE!!Female population!!70 to 74 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0064PA"
+    },
+    "DP1_0052P": {
+      "label": "Percent!!SEX AND AGE!!Female population!!10 to 14 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0052PA"
+    },
+    "DP1_0040P": {
+      "label": "Percent!!SEX AND AGE!!Male population!!70 to 74 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0040PA"
+    },
+    "DP1_0052C": {
+      "label": "Count!!SEX AND AGE!!Female population!!10 to 14 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0052CA"
+    },
+    "DP1_0040C": {
+      "label": "Count!!SEX AND AGE!!Male population!!70 to 74 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0040CA"
+    },
+    "DP1_0088C": {
+      "label": "Count!!TOTAL RACES TALLIED [1]!!Total races tallied!!American Indian and Alaska Native alone or in combination with one or more other races",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0088CA"
+    },
+    "CONCIT": {
+      "label": "Geography",
+      "group": "N/A",
+      "limit": 0
+    },
+    "DP1_0076C": {
+      "label": "Count!!RACE!!Total population",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0076CA"
+    },
+    "DP1_0064C": {
+      "label": "Count!!SEX AND AGE!!Female population!!70 to 74 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0064CA"
+    },
+    "DP1_0099P": {
+      "label": "Percent!!HISPANIC OR LATINO BY RACE!!Total population!!Hispanic or Latino!!American Indian and Alaska Native alone",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0099PA"
+    },
+    "DP1_0087P": {
+      "label": "Percent!!TOTAL RACES TALLIED [1]!!Total races tallied!!Black or African American alone or in combination with one or more other races",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0087PA"
+    },
+    "DP1_0075P": {
+      "label": "Percent!!MEDIAN AGE BY SEX!!Female",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0075PA"
+    },
+    "DP1_0063P": {
+      "label": "Percent!!SEX AND AGE!!Female population!!65 to 69 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0063PA"
+    },
+    "DP1_0051P": {
+      "label": "Percent!!SEX AND AGE!!Female population!!5 to 9 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0051PA"
+    },
+    "DP1_0160P": {
+      "label": "Percent!!HOUSING TENURE!!Occupied housing units!!Renter-occupied housing units",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0160PA"
+    },
+    "CBSA": {
+      "label": "Geography",
+      "group": "N/A",
+      "limit": 0
+    },
+    "DP1_0063C": {
+      "label": "Count!!SEX AND AGE!!Female population!!65 to 69 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0063CA"
+    },
+    "DP1_0051C": {
+      "label": "Count!!SEX AND AGE!!Female population!!5 to 9 years",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0051CA"
+    },
+    "DP1_0160C": {
+      "label": "Count!!HOUSING TENURE!!Occupied housing units!!Renter-occupied housing units",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0160CA"
+    },
+    "DP1_0099C": {
+      "label": "Count!!HISPANIC OR LATINO BY RACE!!Total population!!Hispanic or Latino!!American Indian and Alaska Native alone",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0099CA"
+    },
+    "DP1_0087C": {
+      "label": "Count!!TOTAL RACES TALLIED [1]!!Total races tallied!!Black or African American alone or in combination with one or more other races",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0087CA"
+    },
+    "DP1_0075C": {
+      "label": "Count!!MEDIAN AGE BY SEX!!Female",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0075CA"
+    },
+    "ANRC": {
+      "label": "Geography",
+      "group": "N/A",
+      "limit": 0
+    },
+    "DP1_0090C": {
+      "label": "Count!!TOTAL RACES TALLIED [1]!!Total races tallied!!Native Hawaiian and Other Pacific Islander alone or in combination with one or more other races",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0090CA"
+    },
+    "DP1_0090P": {
+      "label": "Percent!!TOTAL RACES TALLIED [1]!!Total races tallied!!Native Hawaiian and Other Pacific Islander alone or in combination with one or more other races",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0090PA"
+    },
+    "TRISUBREM": {
+      "label": "Geography",
+      "group": "N/A",
+      "limit": 0
+    },
+    "NECTADIV": {
+      "label": "Geography",
+      "group": "N/A",
+      "limit": 0
+    },
+    "DP1_0109P": {
+      "label": "Percent!!HISPANIC OR LATINO BY RACE!!Total population!!Not Hispanic or Latino!!Native Hawaiian and Other Pacific Islander alone",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0109PA"
+    },
+    "DP1_0109C": {
+      "label": "Count!!HISPANIC OR LATINO BY RACE!!Total population!!Not Hispanic or Latino!!Native Hawaiian and Other Pacific Islander alone",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0109CA"
+    },
+    "DP1_0108C": {
+      "label": "Count!!HISPANIC OR LATINO BY RACE!!Total population!!Not Hispanic or Latino!!Asian alone",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0108CA"
+    },
+    "DP1_0108P": {
+      "label": "Percent!!HISPANIC OR LATINO BY RACE!!Total population!!Not Hispanic or Latino!!Asian alone",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0108PA"
+    },
+    "ZCTA": {
+      "label": "Geography",
+      "group": "N/A",
+      "limit": 0
+    },
+    "DP1_0070C": {
+      "label": "Count!!SEX AND AGE!!Female population!!Selected Age Categories!!21 years and over",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0070CA"
+    },
+    "DP1_0082P": {
+      "label": "Percent!!RACE!!Total population!!One Race!!Native Hawaiian and Other Pacific Islander",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0082PA"
+    },
+    "DP1_0070P": {
+      "label": "Percent!!SEX AND AGE!!Female population!!Selected Age Categories!!21 years and over",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0070PA"
+    },
+    "DP1_0094P": {
+      "label": "Percent!!HISPANIC OR LATINO!!Total population!!Not Hispanic or Latino",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0094PA"
+    },
+    "NATION": {
+      "label": "Geography",
+      "group": "N/A",
+      "limit": 0
+    },
+    "DP1_0094C": {
+      "label": "Count!!HISPANIC OR LATINO!!Total population!!Not Hispanic or Latino",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0094CA"
+    },
+    "DP1_0082C": {
+      "label": "Count!!RACE!!Total population!!One Race!!Native Hawaiian and Other Pacific Islander",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0082CA"
+    },
+    "COUNTY": {
+      "label": "Geography",
+      "group": "N/A",
+      "limit": 0
+    },
+    "DP1_0081C": {
+      "label": "Count!!RACE!!Total population!!One Race!!Asian",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0081CA"
+    },
+    "DP1_0093P": {
+      "label": "Percent!!HISPANIC OR LATINO!!Total population!!Hispanic or Latino (of any race)",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0093PA"
+    },
+    "DP1_0081P": {
+      "label": "Percent!!RACE!!Total population!!One Race!!Asian",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0081PA"
+    },
+    "DP1_0093C": {
+      "label": "Count!!HISPANIC OR LATINO!!Total population!!Hispanic or Latino (of any race)",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0093CA"
+    },
+    "DP1_0092C": {
+      "label": "Count!!HISPANIC OR LATINO!!Total population",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0092CA"
+    },
+    "DP1_0080C": {
+      "label": "Count!!RACE!!Total population!!One Race!!American Indian and Alaska Native",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0080CA"
+    },
+    "DP1_0092P": {
+      "label": "Percent!!HISPANIC OR LATINO!!Total population",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0092PA"
+    },
+    "DP1_0080P": {
+      "label": "Percent!!RACE!!Total population!!One Race!!American Indian and Alaska Native",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0080PA"
+    },
+    "GEOCOMP": {
+      "label": "GEO_ID Component",
+      "required": "default displayed",
+      "predicateType": "string",
+      "group": "N/A",
+      "limit": 0
+    },
+    "DP1_0091C": {
+      "label": "Count!!TOTAL RACES TALLIED [1]!!Total races tallied!!Some Other Race alone or in combination with one or more other races",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "int",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0091CA"
+    },
+    "DP1_0091P": {
+      "label": "Percent!!TOTAL RACES TALLIED [1]!!Total races tallied!!Some Other Race alone or in combination with one or more other races",
+      "concept": "PROFILE OF GENERAL POPULATION AND HOUSING CHARACTERISTICS",
+      "predicateType": "float",
+      "group": "DP1",
+      "limit": 0,
+      "attributes": "DP1_0091PA"
+    }
+  }
+}
