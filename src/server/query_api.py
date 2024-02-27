@@ -1,3 +1,8 @@
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
 ### SAMPLES
 api_access_url = "http://api.census.gov/data/2020/dec/dp"
 
@@ -30,3 +35,43 @@ variables = {
 
 geography_fips = {"state": "49", "county": ["011", "013"]}
 ###
+
+class Query:
+    def __init__(self, api_access_url: str , variables: dict, geography_fips: str):
+        self.url = api_access_url
+        self.variables = variables
+        self.geographies = geography_fips
+        
+    def build_query(self):
+        query = [self.url, '?get=']
+        
+        # specify dataset variables to extract
+        vars = list(self.variables.keys())
+        vars_csv = ','.join(vars)
+        query.append(vars_csv)
+        
+        #specify geographies to include
+        tract,state,county = ('*','*','*')        
+        if 'tract' in self.geographies:
+            tract = self.geographies['tract']
+            if type(tract) == list:
+                tract = ','.join(tract)
+        if 'state' in self.geographies:
+            state = self.geographies['state']
+            if type(state) == list:
+                state = ','.join(state)
+        if 'county' in self.geographies:
+            county = self.geographies['county']
+            if type(county) == list:
+                county = ','.join(county)
+        geo_string = f'&for=tract:{tract}&in=state:{state}&in=county:{county}'
+
+        query.append(geo_string)
+        key = os.getenv("CENSUS_API_KEY")
+        api_key = f'$key={key}'
+        query.append(api_key)
+        
+        return ''.join(query)
+
+test = Query(api_access_url, variables, geography_fips)
+test.build_query()
