@@ -1,5 +1,7 @@
 from dotenv import load_dotenv
 import os
+import requests
+import pandas as pd
 
 load_dotenv()
 
@@ -66,12 +68,30 @@ class Query:
                 county = ','.join(county)
         geo_string = f'&for=tract:{tract}&in=state:{state}&in=county:{county}'
 
+        # include api key at the end of the query
         query.append(geo_string)
         key = os.getenv("CENSUS_API_KEY")
-        api_key = f'$key={key}'
+        api_key = f'&key={key}'
         query.append(api_key)
         
         return ''.join(query)
+    
+    def get_data(self):
+        try:
+            api_url = self.build_query()
+            response = requests.get(api_url)
+            response.raise_for_status()
+            data = response.json()
+            return data
+        except requests.RequestException as e:
+            print(f"An error occurred: {e}")
+            
+    def format_data(self):
+        df = pd.DataFrame(self.get_data())
+        df.columns = df.iloc[0]
+        df = df[1:]
+        return df
+            
 
 test = Query(api_access_url, variables, geography_fips)
-test.build_query()
+test.format_data()
