@@ -91,7 +91,15 @@ class Query:
         df.columns = df.iloc[0]
         df = df[1:]
         return df
+    
+    def explanation(self):
+        explanation = "Column Descriptions are as follows:\n"
+        for var in self.variables.items():
+            var_str = f'{var[0]} is defined as {var[1]["label"]}\n'
+            explanation += var_str
+        return explanation
             
 
 test = Query(api_access_url, variables, geography_fips)
+print(test.explanation())
 test.format_data()
