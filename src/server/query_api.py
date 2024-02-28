@@ -94,8 +94,3 @@ class Query:
             var_str = f'{var[0]} is defined as {var[1]["label"]}\n'
             explanation += var_str
         return explanation
-            
-
-test = Query(api_access_url, variables, geography_fips)
-print(test.explanation())
-test.format_data()

@@ -44,3 +44,20 @@ with st.sidebar:
     st.markdown("""Examples: How many men are under 45 in
                  Connectict? How many people commute to work via public transit
                  in New York versus Los Angeles?""")
+    
+    footer="""<style>
+.footer {
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+background-color: white;
+color: black;
+text-align: center;
+}
+</style>
+<div class="footer">
+<p>Developed with ❤ by Abe Burton and Divij Sinha 2024</p>
+</div>
+"""
+st.markdown(footer,unsafe_allow_html=True)
