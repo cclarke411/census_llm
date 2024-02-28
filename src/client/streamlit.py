@@ -8,7 +8,7 @@ import os
 
 # main paige content allowing for queries and data display
 st.title("Census Query Bot")
-input = st.text_input("Ask the Census Bot what you want to know!")
+input = st.text_input("Ask the Census Bot what you want to know from Census Data!")
 @st.cache_data
 def load_data():
     query = q.Query(q.api_access_url, q.variables, q.geography_fips)
@@ -24,7 +24,12 @@ st.text(info[1])
 # sidebar with helpful chatbot
 load_dotenv()
 with st.sidebar:
-    st.title("GPT Clone To explain site")
+    
+    user_openai_key = st.text_input("Enter your OpenAI API Key")
+    user_census_key = st.text_input("Enter your Census API Key")
+    
+    st.title("Census Info ChatBot")
+    st.write("ChatBot gives Census info and context")
     client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
     if "openai_model" not in st.session_state:
@@ -37,7 +42,7 @@ with st.sidebar:
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
 
-    if prompt := st.chat_input("How can I help?"):
+    if prompt := st.chat_input("Ask me about this app!"):
         st.session_state.messages.append({"role": "user", "content": prompt})
         with st.chat_message("user"):
             st.markdown(prompt)

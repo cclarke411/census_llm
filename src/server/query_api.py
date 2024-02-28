@@ -53,11 +53,7 @@ class Query:
         query.append(vars_csv)
         
         #specify geographies to include
-        tract,state,county = ('*','*','*')        
-        if 'tract' in self.geographies:
-            tract = self.geographies['tract']
-            if type(tract) == list:
-                tract = ','.join(tract)
+        state,county = ('*','*')        
         if 'state' in self.geographies:
             state = self.geographies['state']
             if type(state) == list:
@@ -66,7 +62,7 @@ class Query:
             county = self.geographies['county']
             if type(county) == list:
                 county = ','.join(county)
-        geo_string = f'&for=tract:{tract}&in=state:{state}&in=county:{county}'
+        geo_string = f'&for=county:{county}&in=state:{state}'
 
         # include api key at the end of the query
         query.append(geo_string)
