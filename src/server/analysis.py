@@ -17,16 +17,18 @@ class Analysis:
         self.info = self.df_info()
     
     def df_info(self):
-        description = self.df.describe()
-        buffer = io.StringIO()
-        info = self.df.info(buf=buffer)
-        info = buffer.getvalue()
-        value_counts = self.df.value_counts()
-        
         column_info = {}
         for d in self.variables:
             column_info[d] = self.variables[d]['label']
-        return column_info, description, info, value_counts
+        description = self.df.describe()
+        
+        buffer = io.StringIO()
+        self.df.info(buf=buffer)
+        info_string = buffer.getvalue()
+        
+        value_counts = self.df.value_counts()
+        
+        return column_info, description, info_string, value_counts
     
     def prompt(self):
         template = """You are a python output interpreter.
