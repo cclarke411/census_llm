@@ -54,6 +54,3 @@ class Analysis:
         model = ChatOpenAI(model="gpt-3.5-turbo", temperature=0)
         chain = prompt | model | StrOutputParser()
         return chain.invoke({"information": self.info})
-    
-test = Analysis(query = q.Query(q.api_access_url,q.variables, q.geography_fips))
-print(test.prompt())
