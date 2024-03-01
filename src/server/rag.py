@@ -21,8 +21,7 @@ sc = SourceChain()
 ans = sc.invoke(query)
 
 sr = SourceRAG()
-res = sr.invoke(query, ans["variable"], ans["dataset"])
-doc = res["input_documents"][0]
+doc = sr.invoke(query, ans["variable"], ans["dataset"])
 
 vr = VariableRAG(doc.metadata["c_variablesLink"])
 res = vr.invoke(query, ans["variable"], ans["dataset"])
