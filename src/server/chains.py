@@ -31,7 +31,7 @@ def format_docs(docs):
     formatted_str = ""
     for idx, doc in enumerate(docs):
         formatted_str += f"DOCUMENT {idx+1}\nCONTENT: {doc.page_content}\n\n\n\n"
-    print(formatted_str)
+    # print(formatted_str)
     return formatted_str
 
 
@@ -58,6 +58,24 @@ def save_docembedding(embeddings_folder_path, datasets):
     xml_docs = splitter.create_documents(data, metadata)
     docembeddings = FAISS.from_documents(xml_docs, OpenAIEmbeddings())
     docembeddings.save_local(embeddings_folder_path)
+
+
+class RephraseChain:
+    def __init__(self) -> None:
+        self.template = """Rephrase the following question, if needed, to be more helpful in identifying variables
+        
+        Format it as a json with the key rephrased_question
+        -----
+        
+        Question: {question}
+        """
+        self.prompt = ChatPromptTemplate.from_template(self.template)
+        self.model = ChatOpenAI(model="gpt-3.5-turbo", temperature=0)
+        self.output_parser = SimpleJsonOutputParser()
+        self.chain = self.prompt | self.model | self.output_parser
+
+    def invoke(self, question: str):
+        return self.chain.invoke({"question": question})
 
 
 class SourceChain:
@@ -173,20 +191,30 @@ class VariableRAG:
         self.save_variables(variable_url)
 
         self.template = """
+        ##CONTEXT:##
         You are a helpful Census Agent. Only use the provided metadata to answer.
         You are given the question entered by the user, the categories relevant to the question, and the dataset.
+
+        ##OBJECTIVE:##
+        You are trying to identify all the DOCUMENT relevant to the question.
+        If the DOCUMENT directly answer the question, choose all the DOCUMENT.
+        If the DOCUMENT do not directly answer the question, choose the DOCUMENT that bring you closer to answering the question
+
+        ##INFORMATION PROVIDED:##
         You are also given a list of DOCUMENT. EACH DOCUMENT REPRESENTS A VARIABLE (or a VARIABLE STEM).
         Your task is to choose the best one or multiple DOCUMENT from the given list of DOCUMENT.
+        
+
         Remember, each DOCUMENT could be just the partial variable.   
         Remember, each DOCUMENT could be the full variable.   
         Remember, more that one DOCUMENT could be accurate.   
         Do not give multiples if they represent the general same theme. 
         Do give multiples if they are different and add variety. 
-        Identify one or multiple the DOCUMENT that best matches the Question, Identified Queries, and the Dataset.
 
         Set Answer equal to a json with the keys "doc_title" and "doc_content" and a value of lists.
         In case of choosing multiple DOCUMENT, set the keys "doc_title" and "doc_content" to lists.
         
+        INFORMATION:::
         List of Variable Stems: 
         {context}
 
@@ -246,20 +274,21 @@ class VariableRAG:
                 k = self.results["doc_content"][0]
             else:
                 k = self.results["doc_content"]
+            k = k.split("---")[0].replace("CONTENT:", "").strip()
             self.docretriever = FAISS.load_local(
                 self.docembedding_folder_path / k,
                 OpenAIEmbeddings(),
             ).as_retriever(
                 search_kwargs={"k": 20},
             )
-            a = self.docretriever.get_relevant_documents(question)
-            if len(a) == 1:
+            rel_docs = self.docretriever.get_relevant_documents(question)
+            if len(rel_docs) == 1:
                 break
             else:
                 print("continue")
                 continue
 
-        return self.results
+        return rel_docs
 
     def get_variable_data(self):
         key = "variables"
