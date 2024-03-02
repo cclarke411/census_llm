@@ -47,7 +47,7 @@ def get_data(file_path, key, keep):
         dataset_strings = []
         for keep_var in keep:
             dataset_strings.append(dataset.get(keep_var, ""))
-        dataset_tuple = ("---".join(dataset_strings), dataset)
+        dataset_tuple = ("---".join(dataset_strings).replace(":", "").strip(), dataset)
         datasets_to_keep.append(dataset_tuple)
     return datasets_to_keep
 
@@ -213,6 +213,7 @@ class VariableRAG:
 
         Set Answer equal to a json with the keys "doc_title" and "doc_content" and a value of lists.
         In case of choosing multiple DOCUMENT, set the keys "doc_title" and "doc_content" to lists.
+        RETURN THE DOCUMENTS AS IS, DO NOT CHANGE ANYTHING.
         
         INFORMATION:::
         List of Variable Stems: 
@@ -243,9 +244,9 @@ class VariableRAG:
 
     def invoke(self, question, categories, dataset):
 
-        key = "root"
+        path = "root"
         self.docretriever = FAISS.load_local(
-            self.docembedding_folder_path / key, OpenAIEmbeddings()
+            self.docembedding_folder_path / path, OpenAIEmbeddings()
         ).as_retriever(
             search_kwargs={"k": 20},
         )
@@ -271,12 +272,16 @@ class VariableRAG:
             print(self.results)
             print("~!~!~!")
             if isinstance(self.results["doc_content"], list):
-                k = self.results["doc_content"][0]
+                next_path = self.results["doc_content"][0]
             else:
-                k = self.results["doc_content"]
-            k = k.split("---")[0].replace("CONTENT:", "").strip()
+                next_path = self.results["doc_content"]
+            next_path = (
+                next_path.replace("CONTENT:", "").strip().split("---")[0].strip()
+            )
+            next_path = "!!".join((path, next_path))
+            path = next_path
             self.docretriever = FAISS.load_local(
-                self.docembedding_folder_path / k,
+                self.docembedding_folder_path / next_path,
                 OpenAIEmbeddings(),
             ).as_retriever(
                 search_kwargs={"k": 20},
@@ -297,7 +302,7 @@ class VariableRAG:
         v = VarTree()
         for data, metadata in datasets:
             branch = metadata["label"].strip().replace(":", "")
-            branch = re.sub("^!!", "", branch).split("!!")
+            branch = re.sub("^!!", "", branch).strip().split("!!")
             v.append(branch, (data, metadata))
         return v
 
@@ -315,14 +320,16 @@ class VariableRAG:
 
 
 def save_variable_embedding(docembedding_folder_path, level, v):
-    datasets = []
-    metadatas = []
     if len(v.children.keys()) == 0:
         datasets = [v.dataset[0]]
-        metadatasets = [v.dataset[1]]
+        metadatas = [v.dataset[1]]
     else:
+        datasets = []
+        metadatas = []
         for key, child in v.children.items():
-            save_variable_embedding(docembedding_folder_path, key, child)
+            save_variable_embedding(
+                docembedding_folder_path, "!!".join((level, key)), child
+            )
             metadata = {}
             metadata["key"] = key
             cur_dataset = []
