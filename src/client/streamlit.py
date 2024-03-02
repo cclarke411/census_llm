@@ -22,10 +22,10 @@ load_dotenv()
 with st.sidebar:
     st.markdown('**Enter your OpenAI API Key**')
     user_openai_key = st.text_input("For accessing GPT")
-    st.write('*Get your OpenAI key here* :thumbsup: https://help.openai.com/en/articles/4936850-where-do-i-find-my-openai-api-key')
+    st.write('*Get your OpenAI key here* :point_down: https://help.openai.com/en/articles/4936850-where-do-i-find-my-openai-api-key')
     st.markdown('**Enter your Census API Key**')
     user_census_key = st.text_input("For accessing Census Data")
-    st.write('*Get your Census API key here* :thumbsup: https://api.census.gov/data/key_signup.html')
+    st.write('*Get your Census API key here* :point_down: https://api.census.gov/data/key_signup.html')
 
     if user_openai_key == '' and not environment_keys:
         st.error(f'Please enter your OpenAI API Key!', icon="🚨")
