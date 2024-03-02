@@ -304,7 +304,7 @@ class VariableRAG:
                 print("continue")
                 continue
 
-        return rel_docs
+        return rel_docs[0]
 
     def get_variable_data(self):
         key = "variables"
