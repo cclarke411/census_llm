@@ -62,7 +62,10 @@ class Query:
             county = self.geographies['county']
             if type(county) == list:
                 county = ','.join(county)
-        geo_string = f'&for=county:{county}&in=state:{state}'
+            geo_string = f'&for=county:{county}&in=state:{state}'
+        else:
+            geo_string = f'&for=state:{state}'
+            
 
         # include api key at the end of the query
         query.append(geo_string)
