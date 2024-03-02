@@ -105,12 +105,9 @@ with st.container():
         st.write("**Analyzing your query...**")
         sc = SourceChain()
         ans = sc.invoke(ans["rephrased_question"])
-        st.write("**Geographic Region to Search For:**")
-        st.write(ans["geography"])
-        st.write("**Dataset to Search For:**")
-        st.write(ans["relevant_dataset"])
-        st.write("**Variables to Search For:**")
-        st.write(ans["variables"])
+        st.write("**Geographic Region to Search For:** ",ans["geography"])
+        st.write("**Dataset to Search For:** ",ans["relevant_dataset"])
+        st.write("**Variables to Search For:** ",ans["variables"])
 
         st.write("**Identifying Data Sources...**")
         sr = SourceRAG()
@@ -121,10 +118,10 @@ with st.container():
         
         st.write("**Searching in Data Source...**")
         vr = VariableRAG(doc.metadata["c_variablesLink"])
-        res = vr.invoke(query, ans["variables"], ans["relevant_dataset"])
+        vars = vr.invoke(query, ans["variables"], ans["relevant_dataset"])
         st.write("**Variables Found:**")
-        st.write(res)
-        access_variable_code = res.metadata["code"]
+        st.write(vars)
+        access_variable_code = vars.metadata["code"]
         st.write('Variable Code',access_variable_code)
         st.write('**Geographies Found:**')
         geos = []
@@ -135,9 +132,8 @@ with st.container():
         st.write(geos)
         
         st.write("**Pulling Data...**")
-        st.write(access_link, res, {"state": "49"})
         # todo figure out geography formatting with divij
-        df = q.Query(api_access_url=access_link, variables=res, geography={"state": "49", "county": ["011", "013"]}).format_data()
+        df = q.Query(api_access_url=access_link, variables=vars, geography={"state": "49", "county": ["011", "013"]}).format_data()
         st.dataframe(df)
         
         # todo analysis re-queries census unnecessarily
