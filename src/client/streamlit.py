@@ -65,6 +65,10 @@ with st.sidebar:
         First, read through the description above of the Census and ACS datasets.
         Anything you can think of within the scope of those datasets is fair game to ask!
         
+        We've restricted the API to look for states and counties, so for best results,
+        make sure your questions are either about the US, or are on the state or county level.
+        City or Census Tract level questions will have worse output.
+        
         If the model can find relevant data, it will give you the best response it can.
         
         If the output doesn't make sense or nothing is returned, try tweaking your
