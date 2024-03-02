@@ -56,7 +56,9 @@ def save_docembedding(embeddings_folder_path, datasets):
     data, metadata = zip(*datasets)
     splitter = CharacterTextSplitter(chunk_size=2750, chunk_overlap=0)
     xml_docs = splitter.create_documents(data, metadata)
-    docembeddings = FAISS.from_documents(xml_docs, OpenAIEmbeddings())
+    docembeddings = FAISS.from_documents(
+        xml_docs, OpenAIEmbeddings(api_key=os.environ["OPENAIKEY"])
+    )
     docembeddings.save_local(embeddings_folder_path)
 
 
@@ -70,7 +72,9 @@ class RephraseChain:
         Question: {question}
         """
         self.prompt = ChatPromptTemplate.from_template(self.template)
-        self.model = ChatOpenAI(model="gpt-3.5-turbo", temperature=0)
+        self.model = ChatOpenAI(
+            model="gpt-3.5-turbo", temperature=0, api_key=os.environ["OPENAIKEY"]
+        )
         self.output_parser = SimpleJsonOutputParser()
         self.chain = self.prompt | self.model | self.output_parser
 
@@ -98,7 +102,9 @@ class SourceChain:
         Question: {question}
         """
         self.prompt = ChatPromptTemplate.from_template(self.template)
-        self.model = ChatOpenAI(model="gpt-3.5-turbo", temperature=0)
+        self.model = ChatOpenAI(
+            model="gpt-3.5-turbo", temperature=0, api_key=os.environ["OPENAIKEY"]
+        )
         self.output_parser = RegexParser(
             regex=r"Geography:(.*?)\nVariable: (.*)\nDataset:(.*)",
             output_keys=["geography", "variable", "dataset"],
@@ -135,7 +141,9 @@ class SourceRAG:
             template=self.template,
             input_variables=["context", "question", "categories", "dataset"],
         )
-        self.model = ChatOpenAI(model="gpt-3.5-turbo", temperature=0)
+        self.model = ChatOpenAI(
+            model="gpt-3.5-turbo", temperature=0, api_key=os.environ["OPENAIKEY"]
+        )
         self.output_parser = SimpleJsonOutputParser()
 
     def invoke(self, question, categories, dataset):
@@ -182,7 +190,9 @@ class SourceRAG:
         if not os.path.exists(api_discovery_path):
             datasets = self.get_api_discovery_data()
             save_docembedding(api_discovery_path, datasets)
-        docembeddings = FAISS.load_local(api_discovery_path, OpenAIEmbeddings())
+        docembeddings = FAISS.load_local(
+            api_discovery_path, OpenAIEmbeddings(api_key=os.environ["OPENAIKEY"])
+        )
         return docembeddings
 
 
@@ -229,7 +239,9 @@ class VariableRAG:
             input_variables=["context", "question", "categories", "dataset"],
         )
         self.docembedding_folder_path = self.get_variable_docembedding()
-        self.model = ChatOpenAI(model="gpt-3.5-turbo", temperature=0)
+        self.model = ChatOpenAI(
+            model="gpt-3.5-turbo", temperature=0, api_key=os.environ["OPENAIKEY"]
+        )
         self.output_parser = SimpleJsonOutputParser()
 
     def save_variables(self, variable_url):
@@ -246,7 +258,8 @@ class VariableRAG:
 
         path = "root"
         self.docretriever = FAISS.load_local(
-            self.docembedding_folder_path / path, OpenAIEmbeddings()
+            self.docembedding_folder_path / path,
+            OpenAIEmbeddings(api_key=os.environ["OPENAIKEY"]),
         ).as_retriever(
             search_kwargs={"k": 20},
         )
@@ -282,7 +295,7 @@ class VariableRAG:
             path = next_path
             self.docretriever = FAISS.load_local(
                 self.docembedding_folder_path / next_path,
-                OpenAIEmbeddings(),
+                OpenAIEmbeddings(api_key=os.environ["OPENAIKEY"]),
             ).as_retriever(
                 search_kwargs={"k": 20},
             )
@@ -343,7 +356,9 @@ def save_variable_embedding(docembedding_folder_path, level, v):
 
     splitter = CharacterTextSplitter(chunk_size=2750, chunk_overlap=0)
     docs = splitter.create_documents(datasets, metadatas)
-    docembeddings = FAISS.from_documents(docs, OpenAIEmbeddings())
+    docembeddings = FAISS.from_documents(
+        docs, OpenAIEmbeddings(api_key=os.environ["OPENAIKEY"])
+    )
     docembeddings.save_local(docembedding_folder_path / level)
 
 
