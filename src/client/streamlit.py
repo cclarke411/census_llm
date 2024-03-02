@@ -8,6 +8,8 @@ from dotenv import load_dotenv
 import streamlit as st
 import os
 from dotenv import load_dotenv
+from server.chains import SourceChain, SourceRAG, VariableRAG, RephraseChain, GeographyRAG
+import json
 
 
 load_dotenv()
@@ -93,17 +95,30 @@ input = st.text_input("Ask the Census Bot what you want to know from Census Data
 
 with st.container():
     @st.cache_data
-    def run(input):
-        query = q.Query(q.api_access_url, q.variables, q.geography_fips)
-        df = query.format_data()
-        st.dataframe(df)
-        explanation = query.explanation()
-        st.text(explanation)
-        analysis = a.Analysis(query).prompt()
-        st.text(analysis)
-        print(input)
+    def run(query):
+        rc = RephraseChain()
+        ans = rc.invoke(query)
+        st.write(ans)
+        sc = SourceChain()
+        ans = sc.invoke(ans["rephrased_question"])
+        st.write(ans)
+        sr = SourceRAG()
+        doc = sr.invoke(query, ans["variables"], ans["relevant_dataset"])
+        st.write(doc.page_content)
+        vr = VariableRAG(doc.metadata["c_variablesLink"])
+        res = vr.invoke(query, ans["variables"], ans["relevant_dataset"])
+        st.write(res)
+        st.write(res.metadata['code'])
+        geos = []
+        g = GeographyRAG()
+        for geo in ans["geography"]:
+            res = g.invoke(geo)
+            geos.append(res)
+        st.write(geos)
+
         return None
-    run('input goes here')
+    if input != '':
+        run(input)
 
     
 footer="""<style>
