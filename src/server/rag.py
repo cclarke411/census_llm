@@ -27,9 +27,11 @@ print(ans)
 sr = SourceRAG()
 doc = sr.invoke(query, ans["variables"], ans["relevant_dataset"])
 print(doc.page_content)
+access_link = doc.metadata["distribution"][0]["accessURL"]
 vr = VariableRAG(doc.metadata["c_variablesLink"])
 res = vr.invoke(query, ans["variables"], ans["relevant_dataset"])
 print(res)
+access_variable_code = res.metadata["code"]
 geos = []
 g = GeographyRAG()
 for geo in ans["geography"]:
