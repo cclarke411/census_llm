@@ -96,25 +96,54 @@ input = st.text_input("Ask the Census Bot what you want to know from Census Data
 with st.container():
     @st.cache_data
     def run(query):
+
         rc = RephraseChain()
         ans = rc.invoke(query)
-        st.write(ans)
+        st.write("**Rephrased Question**")
+        st.write(ans["rephrased_question"])
+
+        st.write("**Analyzing your query...**")
         sc = SourceChain()
         ans = sc.invoke(ans["rephrased_question"])
-        st.write(ans)
+        st.write("**Geographic Region to Search For:**")
+        st.write(ans["geography"])
+        st.write("**Dataset to Search For:**")
+        st.write(ans["relevant_dataset"])
+        st.write("**Variables to Search For:**")
+        st.write(ans["variables"])
+
+        st.write("**Identifying Data Sources...**")
         sr = SourceRAG()
         doc = sr.invoke(query, ans["variables"], ans["relevant_dataset"])
+        st.write("**Found Data Source:**")
         st.write(doc.page_content)
+        access_link = doc.metadata["distribution"][0]["accessURL"]
+        
+        st.write("**Searching in Data Source...**")
         vr = VariableRAG(doc.metadata["c_variablesLink"])
         res = vr.invoke(query, ans["variables"], ans["relevant_dataset"])
+        st.write("**Variables Found:**")
         st.write(res)
-        st.write(res.metadata['code'])
+        access_variable_code = res.metadata["code"]
+        st.write('Variable Code',access_variable_code)
+        st.write('**Geographies Found:**')
         geos = []
         g = GeographyRAG()
         for geo in ans["geography"]:
             res = g.invoke(geo)
             geos.append(res)
         st.write(geos)
+        
+        st.write("**Pulling Data...**")
+        st.write(access_link, res, {"state": "49"})
+        # todo figure out geography formatting with divij
+        df = q.Query(api_access_url=access_link, variables=res, geography={"state": "49", "county": ["011", "013"]}).format_data()
+        st.dataframe(df)
+        
+        # todo analysis re-queries census unnecessarily
+        st.write("**Analyzing Data...**")
+        analysis = a.Analysis(q.Query(api_access_url=access_link, variables=res, geography={"state": "49"})).prompt()
+        st.write(analysis)
 
         return None
     if input != '':

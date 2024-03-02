@@ -55,7 +55,7 @@ def save_docembedding(embeddings_folder_path, datasets, separator="\n\n"):
     )
     xml_docs = splitter.create_documents(data, metadata)
     docembeddings = FAISS.from_documents(
-        xml_docs, OpenAIEmbeddings(api_key=os.environ["OPENAIKEY"])
+        xml_docs, OpenAIEmbeddings(api_key=os.environ["OPENAI_API_KEY"])
     )
     docembeddings.save_local(embeddings_folder_path)
 
@@ -71,7 +71,7 @@ class RephraseChain:
         """
         self.prompt = ChatPromptTemplate.from_template(self.template)
         self.model = ChatOpenAI(
-            model="gpt-3.5-turbo", temperature=0, api_key=os.environ["OPENAIKEY"]
+            model="gpt-3.5-turbo", temperature=0, api_key=os.environ["OPENAI_API_KEY"]
         )
         self.output_parser = SimpleJsonOutputParser()
         self.chain = self.prompt | self.model | self.output_parser
@@ -104,7 +104,7 @@ class SourceChain:
         """
         self.prompt = ChatPromptTemplate.from_template(self.template)
         self.model = ChatOpenAI(
-            model="gpt-3.5-turbo", temperature=0, api_key=os.environ["OPENAIKEY"]
+            model="gpt-3.5-turbo", temperature=0, api_key=os.environ["OPENAI_API_KEY"]
         )
         self.output_parser = SimpleJsonOutputParser()
         self.chain = self.prompt | self.model | self.output_parser
@@ -140,7 +140,7 @@ class SourceRAG:
             input_variables=["context", "question", "categories", "dataset"],
         )
         self.model = ChatOpenAI(
-            model="gpt-3.5-turbo", temperature=0, api_key=os.environ["OPENAIKEY"]
+            model="gpt-3.5-turbo", temperature=0, api_key=os.environ["OPENAI_API_KEY"]
         )
         self.output_parser = SimpleJsonOutputParser()
 
@@ -189,7 +189,7 @@ class SourceRAG:
             datasets = self.get_api_discovery_data()
             save_docembedding(api_discovery_path, datasets)
         docembeddings = FAISS.load_local(
-            api_discovery_path, OpenAIEmbeddings(api_key=os.environ["OPENAIKEY"])
+            api_discovery_path, OpenAIEmbeddings(api_key=os.environ["OPENAI_API_KEY"])
         )
         return docembeddings
 
@@ -238,7 +238,7 @@ class VariableRAG:
         )
         self.docembedding_folder_path = self.get_variable_docembedding()
         self.model = ChatOpenAI(
-            model="gpt-3.5-turbo", temperature=0, api_key=os.environ["OPENAIKEY"]
+            model="gpt-3.5-turbo", temperature=0, api_key=os.environ["OPENAI_API_KEY"]
         )
         self.output_parser = SimpleJsonOutputParser()
 
@@ -257,7 +257,7 @@ class VariableRAG:
         path = "root"
         self.docretriever = FAISS.load_local(
             self.docembedding_folder_path / path,
-            OpenAIEmbeddings(api_key=os.environ["OPENAIKEY"]),
+            OpenAIEmbeddings(api_key=os.environ["OPENAI_API_KEY"]),
         ).as_retriever(
             search_kwargs={"k": 20},
         )
@@ -293,7 +293,7 @@ class VariableRAG:
             path = next_path
             self.docretriever = FAISS.load_local(
                 self.docembedding_folder_path / next_path,
-                OpenAIEmbeddings(api_key=os.environ["OPENAIKEY"]),
+                OpenAIEmbeddings(api_key=os.environ["OPENAI_API_KEY"]),
             ).as_retriever(
                 search_kwargs={"k": 20},
             )
@@ -355,7 +355,7 @@ def save_variable_embedding(docembedding_folder_path, level, v):
     splitter = CharacterTextSplitter(chunk_size=2750, chunk_overlap=0)
     docs = splitter.create_documents(datasets, metadatas)
     docembeddings = FAISS.from_documents(
-        docs, OpenAIEmbeddings(api_key=os.environ["OPENAIKEY"])
+        docs, OpenAIEmbeddings(api_key=os.environ["OPENAI_API_KEY"])
     )
     docembeddings.save_local(docembedding_folder_path / level)
 
@@ -440,7 +440,7 @@ class GeographyRAG:
             input_variables=["context", "question"],
         )
         self.model = ChatOpenAI(
-            model="gpt-3.5-turbo", temperature=0, api_key=os.environ["OPENAIKEY"]
+            model="gpt-3.5-turbo", temperature=0, api_key=os.environ["OPENAI_API_KEY"]
         )
         self.output_parser = SimpleJsonOutputParser()
 
@@ -472,6 +472,6 @@ class GeographyRAG:
             datasets = self.get_fips_data()
             save_docembedding(fips_path, datasets, separator="\n")
         docembeddings = FAISS.load_local(
-            fips_path, OpenAIEmbeddings(api_key=os.environ["OPENAIKEY"])
+            fips_path, OpenAIEmbeddings(api_key=os.environ["OPENAI_API_KEY"])
         )
         return docembeddings
