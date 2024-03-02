@@ -376,3 +376,70 @@ class VarTree:
             v = VarTree()
             v.append(branch[1:], label_dataset)
             self.children[branch[0]] = v
+
+
+class GeographyRAG:
+    def __init__(self) -> None:
+        self.template = """
+        You are a helpful Census Agent. Only use the provided metadata to answer.
+        You are given a list of geographies, using the attached section, find the relevant list of states and counties as applicable. 
+        If geography specified is not a state or county, find the most relevant state or county.
+        If no geography is specified leave it empty.
+        Return the corresponding FIPS codes only, not the names.
+
+        Set Answer equal to a json with the keys "states" and "counties". 
+        "states" should be a list of all the states.
+        "counties" should be a dictionary with the key being the State Level FIPS code, and the value being a list of County level FIPS codes.
+
+        Provided List:
+        {context}
+
+        Geographies: {question}
+        Answer: """
+
+        self.docembeddings = self.get_fips_docembedding()
+        self.docretriever = self.docembeddings.as_retriever(
+            search_kwargs={"k": 1},
+        )
+        self.prompt = PromptTemplate(
+            template=self.template,
+            input_variables=["context", "question"],
+        )
+        self.model = ChatOpenAI(
+            model="gpt-3.5-turbo", temperature=0, api_key=os.environ["OPENAIKEY"]
+        )
+        self.output_parser = SimpleJsonOutputParser()
+
+    def invoke(self, question):
+        self.chain = (
+            {
+                "context": itemgetter("question") | self.docretriever | format_docs,
+                "question": itemgetter("question"),
+            }
+            | self.prompt
+            | self.model
+            | self.output_parser
+        )
+
+        self.results = self.chain.invoke({"question": question})
+        return self.results
+
+    def get_fips_data(self):
+        file_path = script_dir / Path("data/fips/")
+        datasets_w_meta = []
+        for file_name in os.listdir(file_path):
+            with open(file_path / file_name, "r") as f:
+                datasets_w_meta.append(
+                    (f.read().replace("\n", "\n\n"), {"file_name": file_name})
+                )
+        return datasets_w_meta
+
+    def get_fips_docembedding(self):
+        fips_path = script_dir / "faiss_index" / "llm_faiss_index_fips"
+        if not os.path.exists(fips_path):
+            datasets = self.get_fips_data()
+            save_docembedding(fips_path, datasets)
+        docembeddings = FAISS.load_local(
+            fips_path, OpenAIEmbeddings(api_key=os.environ["OPENAIKEY"])
+        )
+        return docembeddings
