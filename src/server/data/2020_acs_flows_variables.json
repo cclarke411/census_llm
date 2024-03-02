@@ -1,0 +1,305 @@
+{
+  "variables": {
+    "for": {
+      "label": "Census API FIPS 'for' clause",
+      "concept": "Census API Geography Specification",
+      "predicateType": "fips-for",
+      "group": "N/A",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "in": {
+      "label": "Census API FIPS 'in' clause",
+      "concept": "Census API Geography Specification",
+      "predicateType": "fips-in",
+      "group": "N/A",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "ucgid": {
+      "label": "Uniform Census Geography Identifier clause",
+      "concept": "Census API Geography Specification",
+      "predicateType": "ucgid",
+      "group": "N/A",
+      "limit": 0,
+      "predicateOnly": true,
+      "hasGeoCollectionSupport": true
+    },
+    "METRO1": {
+      "label": "Metropolitan statistical area code of reference geography",
+      "group": "N/A",
+      "limit": 0
+    },
+    "STATE1": {
+      "label": "FIPS county code of reference geography",
+      "predicateType": "string",
+      "group": "N/A",
+      "limit": 0
+    },
+    "FROMDIFFCTY_M": {
+      "label": "Movers from different county, same state margin of error",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0,
+      "attributes": "FROMDIFFCTY"
+    },
+    "TODIFFCTY_M": {
+      "label": "Movers to different county, same state margin of error",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0,
+      "attributes": "TODIFFCTY"
+    },
+    "METRO2": {
+      "label": "Metropolitan statistical area code of second geography",
+      "predicateType": "string",
+      "group": "N/A",
+      "limit": 0
+    },
+    "STATE2": {
+      "label": "State code/world region code of second geography",
+      "predicateType": "string",
+      "group": "N/A",
+      "limit": 0
+    },
+    "MOVEDNET_M": {
+      "label": "Total net migration margin of error",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0,
+      "attributes": "MOVEDNET"
+    },
+    "STATE1_NAME": {
+      "label": "FIPS State name of reference geography",
+      "predicateType": "string",
+      "group": "N/A",
+      "limit": 0
+    },
+    "FROMELSEWHEREUSPR_M": {
+      "label": "Movers from outside metro area in the United States or Puerto Rico margin of error",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0,
+      "attributes": "FROMELSEWHEREUSPR"
+    },
+    "TODIFFMETRO_M": {
+      "label": "Movers to different metro area margin of error",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0,
+      "attributes": "TODIFFMETRO"
+    },
+    "POP1YR_M": {
+      "label": "Population 1 year and over margin of error",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0,
+      "attributes": "POP1YR"
+    },
+    "SUMLEV2": {
+      "label": "Geographic summary level of second geography",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "COUNTY1_NAME": {
+      "label": "FIPS county name of reference geography",
+      "predicateType": "string",
+      "group": "N/A",
+      "limit": 0
+    },
+    "POP1YRAGO_M": {
+      "label": "Population living in county 1 year ago margin of error",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0,
+      "attributes": "POP1YRAGO"
+    },
+    "TOELSEWHEREUSPR_M": {
+      "label": "Movers to outside metro area in the United States or Puerto Rico margin of error",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0,
+      "attributes": "TOELSEWHEREUSPR"
+    },
+    "METRO1_NAME": {
+      "label": "Metropolitan statistical area name of reference geography",
+      "predicateType": "string",
+      "group": "N/A",
+      "limit": 0
+    },
+    "MCD2": {
+      "label": "FIPS MCD code of second geography",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "SAMEMCD_M": {
+      "label": "Movers within same MCD margin of error",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0,
+      "attributes": "SAMEMCD"
+    },
+    "MCD1": {
+      "label": "FIPS MCD code of reference geography",
+      "group": "N/A",
+      "limit": 0
+    },
+    "COUNTY2_NAME": {
+      "label": "FIPS county name of second geography (blank for world region)",
+      "predicateType": "string",
+      "group": "N/A",
+      "limit": 0
+    },
+    "SAMEMETRO_M": {
+      "label": "Movers within same metro area margin of error",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0,
+      "attributes": "SAMEMETRO"
+    },
+    "MOVEDOUT_M": {
+      "label": "Total outbound migration margin of error",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0,
+      "attributes": "MOVEDOUT"
+    },
+    "MCD2_NAME": {
+      "label": "MCD name of second geography (blank for world region)",
+      "predicateType": "string",
+      "group": "N/A",
+      "limit": 0
+    },
+    "GEOID1": {
+      "label": "Combined codes for the reference geography",
+      "predicateType": "string",
+      "group": "N/A",
+      "limit": 0
+    },
+    "GEOID2": {
+      "label": "Combined codes for the second geography",
+      "predicateType": "string",
+      "group": "N/A",
+      "limit": 0
+    },
+    "COUNTY1": {
+      "label": "FIPS county code of reference geography",
+      "group": "N/A",
+      "limit": 0
+    },
+    "TOPUERTORICO_M": {
+      "label": "Movers to Puerto Rico margin of error",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0,
+      "attributes": "TOPUERTORICO"
+    },
+    "COUNTY2": {
+      "label": "FIPS county code of second geography",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "MOVEDIN_M": {
+      "label": "Total inbound migration margin of error",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0,
+      "attributes": "MOVEDIN"
+    },
+    "SAMECOUNTY_M": {
+      "label": "Movers within same county margin of error",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0,
+      "attributes": "SAMECOUNTY"
+    },
+    "FULL1_NAME": {
+      "label": "Full name of reference geography",
+      "predicateType": "string",
+      "group": "N/A",
+      "limit": 0
+    },
+    "METRO2_NAME": {
+      "label": "Metropolitan statistical area name of second geography",
+      "predicateType": "string",
+      "group": "N/A",
+      "limit": 0
+    },
+    "FROMDIFFMETRO_M": {
+      "label": "Movers from different metro area in the United States or Puerto Rico margin of error",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0,
+      "attributes": "FROMDIFFMETRO"
+    },
+    "NONMOVERS_M": {
+      "label": "Same residence 1 year ago (nonmovers) margin of error",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0,
+      "attributes": "NONMOVERS"
+    },
+    "FROMDIFFMCD_M": {
+      "label": "Movers from different MCD, same state margin of error",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0,
+      "attributes": "FROMDIFFMCD"
+    },
+    "TODIFFMCD_M": {
+      "label": "Movers to different MCD, same state margin of error",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0,
+      "attributes": "TODIFFMCD"
+    },
+    "STATE2_NAME": {
+      "label": "State code/world region name of second geography",
+      "predicateType": "string",
+      "group": "N/A",
+      "limit": 0
+    },
+    "FROMDIFFSTATE_M": {
+      "label": "Movers from different state margin of error",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0,
+      "attributes": "FROMDIFFSTATE"
+    },
+    "SUMLEV1": {
+      "label": "Geographic summary level of reference geography",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "MCD1_NAME": {
+      "label": "MCD name of reference geography",
+      "predicateType": "string",
+      "group": "N/A",
+      "limit": 0
+    },
+    "FULL2_NAME": {
+      "label": "Full name of second geography",
+      "predicateType": "string",
+      "group": "N/A",
+      "limit": 0
+    },
+    "FROMABROAD_M": {
+      "label": "Movers from abroad margin of error",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0,
+      "attributes": "FROMABROAD"
+    },
+    "TODIFFSTATE_M": {
+      "label": "Movers to different state margin of error",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0,
+      "attributes": "TODIFFSTATE"
+    }
+  }
+}
