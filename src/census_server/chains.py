@@ -481,7 +481,7 @@ class GeographyRAG:
         return docembeddings
 
 
-class Query:
+class CensusQuery:
 
     def __init__(
         self, api_access_url: str, variables: dict, geography: dict, census_key
@@ -490,6 +490,7 @@ class Query:
         self.url = api_access_url
         self.variables = variables
         self.geographies = geography
+        self.df = None
 
     def build_query(self):
         query = [self.url, "?get="]
@@ -520,7 +521,7 @@ class Query:
 
         return "".join(query)
 
-    def get_data(self):
+    def dl_data(self):
         try:
             api_url = self.build_query()
             print(api_url)
@@ -533,10 +534,15 @@ class Query:
             print(f"An error occurred: {e}")
 
     def format_data(self):
-        df = pd.DataFrame(self.get_data())
+        df = pd.DataFrame(self.dl_data())
         df.columns = df.iloc[0]
         df = df[1:]
         return df
+
+    def get_data(self):
+        if self.df is None:
+            self.df = self.format_data()
+        return self.df
 
     def explanation(self):
         explanation = "Column Descriptions are as follows:\n"
@@ -546,12 +552,11 @@ class Query:
         return explanation
 
 
-class Analysis:
+class AnalysisChain:
 
-    def __init__(self, query):
-        self.query = query
-        self.df = self.query.format_data()
-        self.variables = self.query.variables
+    def __init__(self, df, variables):
+        self.df = df
+        self.variables = variables
         self.info = self.df_info()
 
     def df_info(self):
@@ -568,7 +573,7 @@ class Analysis:
 
         return column_info, description, info_string, value_counts
 
-    def prompt(self):
+    def invoke(self):
         template = """You are a python output interpreter.
         
         You will recieve 4 pieces of information about a pandas dataframe

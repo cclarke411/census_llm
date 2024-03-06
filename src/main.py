@@ -9,8 +9,8 @@ from census_server.chains import (
     VariableRAG,
     RephraseChain,
     GeographyRAG,
-    Query,
-    Analysis,
+    CensusQuery,
+    AnalysisChain,
 )
 
 load_dotenv()
@@ -69,19 +69,20 @@ def run(query, open_ai_key, census_key):
 
     st.write("**Pulling Data...**")
     # todo figure out geography formatting with divij
-    query = Query(
+    query = CensusQuery(
         api_access_url=access_link,
         variables=vars,
         geography={"state": "49", "county": ["011", "013"]},
         census_key=census_key,
     )
-    df = query.format_data()
+    df = query.get_data()
     st.dataframe(df)
 
     # todo analysis re-queries census unnecessarily
     st.write("**Analyzing Data...**")
-    analysis = Analysis(query).prompt()
-    st.write(analysis)
+    analysis = AnalysisChain(df, vars)
+    res = analysis.invoke()
+    st.write(res)
 
     return None
 
