@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd
 
 import os
 from dotenv import load_dotenv
@@ -24,6 +25,29 @@ if "CENSUS_API_KEY" in os.environ:
     census_key_flag = True
 
 
+def process_geos(geos):
+    states_only = {"state": []}
+    fixed_geos = {}
+    for geo in geos:
+        if "county" in geo:
+            if geo["state"] in fixed_geos:
+                fixed_geos[geo["state"]]["county"].append(geo["county"])
+            else:
+                fixed_geos[geo["state"]] = {
+                    "state": geo["state"],
+                    "county": [geo["county"]],
+                }
+        else:
+            states_only["state"].append(geo["state"])
+    if len(states_only["state"]) > 0:
+        final_geos = [states_only]
+    else:
+        final_geos = []
+    for _, geo in fixed_geos.items():
+        final_geos.append(geo)
+    return final_geos
+
+
 @st.cache_data
 def run(query, open_ai_key, census_key):
 
@@ -47,28 +71,35 @@ def run(query, open_ai_key, census_key):
     variable_rag = VariableTreeChain(doc.metadata["c_variablesLink"], open_ai_key)
     vars = variable_rag.invoke(query, ans["variables"], ans["relevant_dataset"])
     st.write("**Variables Found:**")
-    # st.write(vars)
+    var_df = pd.DataFrame([(var["code"], var["label"]) for var in vars.values()])
+    var_df.columns = ["code", "label"]
+    st.write(var_df)
 
     st.write("**Geographic Region to Search For:** ", ans["geography"])
 
     geos = []
     geo_rag = GeographyRAG(open_ai_key)
     for geo in ans["geography"]:
+        print(f"invoking {geo}")
         res = geo_rag.invoke(geo)
         geos.append(res)
-
+    geos = process_geos(geos)
     st.write("**Geographies Found:**")
     st.write(geos)
 
     st.write("**Pulling Data...**")
     # todo figure out geography formatting with divij
-    query = CensusQuery(
-        api_access_url=access_link,
-        variables=vars,
-        geography={"state": "49", "county": ["011", "013"]},
-        census_key=census_key,
-    )
-    df = query.get_data()
+    dfs = []
+    for geo in geos:
+        query = CensusQuery(
+            api_access_url=access_link,
+            variables=vars,
+            geography=geo,
+            census_key=census_key,
+        )
+        df = query.get_data()
+        dfs.append(df)
+    df = pd.concat(dfs)
     st.dataframe(df)
 
     # todo analysis re-queries census unnecessarily

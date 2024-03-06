@@ -51,7 +51,7 @@ print(geos)
 # %%
 geos = []
 geo_rag = GeographyRAG(os.environ["OPENAI_API_KEY"])
-for geo in ["Utah", "NY", "Chicago", "baltimore"]:
+for geo in ["Utah", "NY", "Chicago", "DuPage, IL", "baltimore"]:
     res = geo_rag.invoke(geo)
     geos.append(res)
 
@@ -60,9 +60,17 @@ fixed_geos = {}
 for geo in geos:
     if "county" in geo:
         if geo["state"] in fixed_geos:
-            fixed_geos[geo["state"]].append(geo["county"])
+            fixed_geos[geo["state"]]["county"].append(geo["county"])
         else:
-            fixed_geos[geo["state"]] = [geo["county"]]
+            fixed_geos[geo["state"]] = {
+                "state": geo["state"],
+                "county": [geo["county"]],
+            }
     else:
         states_only["state"].append(geo["state"])
+
+final_geos = [states_only]
+for _, geo in fixed_geos.items():
+    final_geos.append(geo)
+final_geos
 # %%

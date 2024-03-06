@@ -444,17 +444,18 @@ class CensusQuery:
         # specify dataset variables to extract
         vars = list(self.variables.keys())
         vars_csv = ",".join(vars)
+        print(vars_csv)
         query.append(vars_csv)
 
         # specify geographies to include
         state, county = ("*", "*")
         if "state" in self.geographies:
             state = self.geographies["state"]
-            if type(state) == list:
+            if isinstance(state, list):
                 state = ",".join(state)
         if "county" in self.geographies:
             county = self.geographies["county"]
-            if type(county) == list:
+            if isinstance(county, list):
                 county = ",".join(county)
             geo_string = f"&for=county:{county}&in=state:{state}"
         else:
