@@ -1,0 +1,2982 @@
+{
+  "variables": {
+    "for": {
+      "label": "Census API FIPS 'for' clause",
+      "concept": "Census API Geography Specification",
+      "predicateType": "fips-for",
+      "group": "N/A",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "in": {
+      "label": "Census API FIPS 'in' clause",
+      "concept": "Census API Geography Specification",
+      "predicateType": "fips-in",
+      "group": "N/A",
+      "limit": 0,
+      "predicateOnly": true
+    },
+    "ucgid": {
+      "label": "Uniform Census Geography Identifier clause",
+      "concept": "Census API Geography Specification",
+      "predicateType": "ucgid",
+      "group": "N/A",
+      "limit": 0,
+      "predicateOnly": true,
+      "hasGeoCollectionSupport": true
+    },
+    "Pop_18_24_ACSMOE_14_18": {
+      "label": "MOE - Persons ages 18 through 24 (Derived)",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Pop_65plus_ACS_14_18": {
+      "label": "Persons ages 65 and over in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "No_Plumb_ACSMOE_14_18": {
+      "label": "MOE - Housing units without complete plumbing facilities",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Tot_Occp_Units_ACS_14_18": {
+      "label": "Percentage calculated by dividing Tot_Occp_Units_ACS_14_18 by Tot_Housing_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Civ_emp_16p_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Civ_emp_16plus_ACS_14_18 by Civ_labor_16plus_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "HHD_PPL_Und_18_ACS_14_18": {
+      "label": "Households with one ore more people under 18 years old in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Pop_NoCompDevic_ACSMOE_14_18": {
+      "label": "MOE - Population in households that do not have computing device of any kind",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_NonFamily_HHD_ACS_14_18": {
+      "label": "Percentage calculated by dividing NonFamily_HHD_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Born_foreign_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Born_foreign_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "NH_SOR_alone_ACS_14_18": {
+      "label": "Some other race alone, not Hispanic or Latino population in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Civ_unemp_16p_ACS_14_18": {
+      "label": "Percentage calculated by dividing Civ_unemp_16plus_ACS_14_18 by Civ_labor_16plus_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_NoHealthIns_65P_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing NoHealthIns_65P_ACS_14_18 by Civ_noninst_pop_65P_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Children_in_Pov_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Children_in_Pov_ACS_14_18 by Children_PovDet_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Age5p_Spanish_ACS_14_18": {
+      "label": "Persons 5 years and over who speak English less than very well and speak Spanish at home in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Age5p_Vietnamese_ACS_14_18": {
+      "label": "Persons 5 years and over who speak English less than very well and speak Vietnamese at home in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Age5p_Vietnames_ACS_14_18": {
+      "label": "Percentage calculated by dividing Age5p_Vietnamese_ACS_14_18 by Pop_5yrs_Over_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Prs_Blw_Pov_Lev_ACS_14_18": {
+      "label": "Percentage calculated by dividing Prs_Blw_Pov_Lev_ACS_14_18 by Pov_Univ_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Not_HS_Grad_ACS_14_18": {
+      "label": "Percentage calculated by dividing Not_HS_Grad_ACS_14_18 by Pop_25yrs_Over_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Age5p_OthEuro_ACS_14_18": {
+      "label": "Persons 5 years and over who speak English less than very well and speak some other Indo-European language at home in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Geog_Level": {
+      "label": "State-level or county-level records",
+      "predicateType": "string",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Inst_GQ_CEN_2010": {
+      "label": "Institutionalized Group Quarters Population in the 2010 Census",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Pop_Disabled_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Pop_Disabled_ACS_14_18 by Civ_Noninst_Pop_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Age5p_Spanish_ACSMOE_14_18": {
+      "label": "MOE - Persons 5 years and over who speak English less than very well and speak Spanish at home",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Age5p_Arabic_ACS_14_18": {
+      "label": "Percentage calculated by dividing Age5p_Arabic_ACS_14_18 by Pop_5yrs_Over_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Civ_emp_16p_ACS_14_18": {
+      "label": "Percentage calculated by dividing Civ_emp_16plus_ACS_14_18 by Civ_labor_16plus_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Tot_Vacant_Units_ACSMOE_14_18": {
+      "label": "MOE - Total Vacant Housing Units",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Pop_w_BroadComp_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Pop_w_BroadComp_ACS_14_18 by Pop_in_HHD_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "MLT_U2_9_STRC_ACSMOE_14_18": {
+      "label": "MOE - Housing units in structures containing two to nine housing units",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Pop_18_24_ACS_14_18": {
+      "label": "Percentage calculated by dividing Pop_18_24_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_TwoPHealthIns_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Two_Plus_Health_Ins_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Not_MrdCple_HHD_ACS_14_18": {
+      "label": "Percentage calculated by dividing Not_MrdCple_HHD_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_ENG_VW_API_ACS_14_18": {
+      "label": "Percentage calculated by dividing ENG_VW_API_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_NH_SOR_alone_CEN_2010": {
+      "label": "Percentage calculated by dividing NH_SOR_alone_CEN_2010 by Tot_Population_CEN_2010",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_ENG_VW_SPAN_ACS_14_18": {
+      "label": "Percentage calculated by dividing ENG_VW_SPAN_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "ENG_VW_API_ACSMOE_14_18": {
+      "label": "MOE - Asian and PI - Limited English speaking household (Use Tot ACS Occ HU as denominator)",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Pop_25yrs_Over_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Pop_25yrs_Over_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Owner_Occp_HU_ACS_14_18": {
+      "label": "Number of owner occupied units in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Renter_Occp_HU_CEN_2010": {
+      "label": "Percentage calculated by dividing Renter_Occp_HU_CEN_2010 by Tot_Occp_Units_CEN_2010",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Civ_emp_25_44_ACS_14_18": {
+      "label": "Civilians aged 25 to 44 who are employed in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Pov_Univ_ACSMOE_14_18": {
+      "label": "MOE - Population for whom poverty level is determined (denominator for persons blw pov.)",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Othr_Lang_ACS_14_18": {
+      "label": "Percentage calculated by dividing Othr_Lang_ACS_14_18 by Pop_5yrs_Over_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Age5p_Only_Eng_ACS_14_18": {
+      "label": "Percentage calculated by dividing Age5p_Only_English_ACS_14_18 by Pop_5yrs_Over_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Diff_HU_1yr_Ago_ACS_14_18": {
+      "label": "Percentage calculated by dividing Diff_HU_1yr_Ago_ACS_14_18 by Pop_1yr_Over_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Mobile_Homes_ACS_14_18": {
+      "label": "Mobile Homes in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Males_ACS_14_18": {
+      "label": "Number of Males in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Pop_w_BroadComp_ACSMOE_14_18": {
+      "label": "MOE - Population in households that have both broadband Internet access and a computing device of any kind",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Sngl_Prns_HHD_ACS_14_18": {
+      "label": "Single Person households in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_HHD_PPL_Und_18_CEN_2010": {
+      "label": "Percentage calculated by dividing HHD_PPL_Und_18_CEN_2010 by Tot_Occp_Units_CEN_2010",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_ENG_VW_INDOEURO_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing ENG_VW_INDO_EURO_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_NON_US_Cit_ACS_14_18": {
+      "label": "Percentage calculated by dividing NON_US_Cit_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_NH_White_alone_ACS_14_18": {
+      "label": "Percentage calculated by dividing NH_White_alone_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Pop_25yrs_Over_ACS_14_18": {
+      "label": "Percentage calculated by dividing Pop_25yrs_Over_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Pop_under_5_CEN_2010": {
+      "label": "Persons less than age 5 in the 2010 Census",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Pop_5yrs_Over_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Pop_5yrs_Over_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Pop_w_BroadComp_ACS_14_18": {
+      "label": "Population in households that have both broadband Internet access and a computing device of any kind in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Age5p_Korean_ACS_14_18": {
+      "label": "Percentage calculated by dividing Age5p_Korean_ACS_14_18 by Pop_5yrs_Over_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "NonFamily_HHD_CEN_2010": {
+      "label": "Nonfamily households: Unrelated Household in the 2010 Census",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "NH_Blk_alone_ACSMOE_14_18": {
+      "label": "MOE - Black or African American alone, not Hispanic or Latino population",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Recent_Built_HU_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Recent_Built_HU_ACS_14_18 by Tot_Housing_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "NH_White_alone_ACS_14_18": {
+      "label": "White alone, not Hispanic or Latino population in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_HHD_Moved_in_ACS_14_18": {
+      "label": "Percentage calculated by dividing HHD_Moved_in_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Pop_NoCompDevic_ACS_14_18": {
+      "label": "Population in households that do not have computing device of any kind in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Pop_25yrs_Over_ACSMOE_14_18": {
+      "label": "MOE - Number of people 25 years old and over (denominator for educ. attainment)",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Tot_Vacant_Units_ACS_14_18": {
+      "label": "Total Vacant Housing Units in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "NH_NHOPI_alone_CEN_2010": {
+      "label": "Non-Hispanic Native Hawaiian and Other Pacific Islander only in the 2010 Census",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_NH_Asian_alone_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing NH_Asian_alone_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Age5p_Russian_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Age5p_Russian_ACS_14_18 by Pop_5yrs_Over_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "US_Cit_Nat_ACS_14_18": {
+      "label": "Persons who are US naturalized citizens in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Rel_Family_HHD_ACSMOE_14_18": {
+      "label": "MOE - Related family households",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "HHD_w_Broadband_ACS_14_18": {
+      "label": "Households that have broadband Internet access in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "avg_Tot_Prns_in_HHD_CEN_2010": {
+      "label": "Percentage calculated by dividing Tot_Prns_in_HHD_CEN_2010 by Tot_Occp_Units_CEN_2010",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Tot_Occp_Units_ACS_14_18": {
+      "label": "Total Occupied Housing Units in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "State_name": {
+      "label": "State Name",
+      "predicateType": "string",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Tot_Prns_in_HHD_ACS_14_18": {
+      "label": "Total Persons in households in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_NH_Asian_alone_ACS_14_18": {
+      "label": "Percentage calculated by dividing NH_Asian_alone_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "NH_Blk_alone_CEN_2010": {
+      "label": "Non-Hispanic Black/African American only in the 2010 Census",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Mobile_Homes_ACSMOE_14_18": {
+      "label": "MOE - Mobile Homes",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Rel_Family_HHD_CEN_2010": {
+      "label": "Percentage calculated by dividing Rel_Family_HHD_CEN_2010 by Tot_Occp_Units_CEN_2010",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "State": {
+      "label": "FIPS State: 2-digit code",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Age5p_Tagalog_ACS_14_18": {
+      "label": "Percentage calculated by dividing Age5p_Tagalog_ACS_14_18 by Pop_5yrs_Over_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Prs_Blw_Pov_Lev_ACSMOE_14_18": {
+      "label": "MOE - Number of people classified as below the poverty level",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Median_Age_ACS_14_18": {
+      "label": "Median Age in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "ENG_VW_OTHER_ACS_14_18": {
+      "label": "Other - Limited English speaking household (Use Tot ACS Occ HU as denominator) in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Born_US_ACS_14_18": {
+      "label": "Persons who are US citizens at birth in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "HHD_w_OnlySPhne_ACSMOE_14_18": {
+      "label": "MOE - Households that have only a smartphone and no other computing device",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Civ_emp_16plus_ACS_14_18": {
+      "label": "Civilians aged 16 years and over and employed in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Civ_emp_16plus_ACSMOE_14_18": {
+      "label": "MOE - Civilians aged 16 years and over and employed",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Civ_labor_45_64_ACS_14_18": {
+      "label": "Civilians aged 45 to 64 in the labor force in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Rel_Family_HHD_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Rel_Family_HHD_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Pop_1yr_Over_ACS_14_18": {
+      "label": "Percentage calculated by dividing Pop_1yr_Over_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Age5p_Spanish_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Age5p_Spanish_ACS_14_18 by Pop_5yrs_Over_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Tot_Population_ACSMOE_14_18": {
+      "label": "MOE - Total Population",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "NH_Asian_alone_ACSMOE_14_18": {
+      "label": "MOE - Asian alone, not Hispanic or Latino population",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Age5p_German_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Age5p_German_ACS_14_18 by Pop_5yrs_Over_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_HHD_Moved_in_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing HHD_Moved_in_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Tot_Housing_Units_ACS_14_18": {
+      "label": "Total Housing Units in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Age5p_Chinese_ACS_14_18": {
+      "label": "Percentage calculated by dividing Age5p_Chinese_ACS_14_18 by Pop_5yrs_Over_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_NonFamily_HHD_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing NonFamily_HHD_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_ENG_VW_INDOEURO_ACS_14_18": {
+      "label": "Percentage calculated by dividing ENG_VW_INDO_EURO_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Civ_noninst_pop1964_ACSMOE_14_18": {
+      "label": "MOE - Civilian noninstitutionalized population aged 19 to 64",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Age5p_Arabic_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Age5p_Arabic_ACS_14_18 by Pop_5yrs_Over_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Tot_Vacant_Units_CEN_2010": {
+      "label": "Total vacant Housing Units in the 2010 Census",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Pop_5_17_ACSMOE_14_18": {
+      "label": "MOE - Persons ages 5 through 17",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_NH_NHOPI_alone_ACS_14_18": {
+      "label": "Percentage calculated by dividing NH_NHOPI_alone_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Civ_noninst_pop_U19_ACSMOE_14_18": {
+      "label": "MOE - Civilian noninstitutionalized population aged under 19",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Pop_5yrs_Over_ACS_14_18": {
+      "label": "Percentage calculated by dividing Pop_5yrs_Over_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Age5p_Chinese_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Age5p_Chinese_ACS_14_18 by Pop_5yrs_Over_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Hispanic_CEN_2010": {
+      "label": "Persons of Hispanic Origin in the 2010 Census",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Civ_emp_45_64_ACS_14_18": {
+      "label": "Civilians aged 45 to 64 who are employed in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_College_ACS_14_18": {
+      "label": "Percentage calculated by dividing College_ACS_14_18 by Pop_25yrs_Over_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "ENG_VW_SPAN_ACS_14_18": {
+      "label": "Spanish - Limited English speaking household (Use Tot ACS Occ HU as denominator) in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "NH_NHOPI_alone_ACS_14_18": {
+      "label": "Native Hawaiian and Other Pacific Islander alone, not Hispanic or Latino population in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Vacant_Units_CEN_2010": {
+      "label": "Percentage calculated by dividing Tot_Vacant_Units_CEN_2010 by Tot_Housing_Units_CEN_2010",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Age5p_French_ACSMOE_14_18": {
+      "label": "MOE - Persons 5 years and over who speak English less than very well and speak French, Haitian, or Cajun at home",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Pop_45_64_CEN_2010": {
+      "label": "Persons aged 45 to 64 in the 2010 Census",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Diff_HU_1yr_Ago_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Diff_HU_1yr_Ago_ACS_14_18 by Pop_1yr_Over_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Not_HS_Grad_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Not_HS_Grad_ACS_14_18 by Pop_25yrs_Over_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Inst_GQ_CEN_2010": {
+      "label": "Percentage calculated by dividing Inst_GQ_CEN_2010 by Tot_Population_CEN_2010",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Med_HHD_Inc_ACSMOE_14_18": {
+      "label": "MOE - Median Household Income - Tract level",
+      "predicateType": "string",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_ENG_VW_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing ENG_VW_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Pop_65plus_CEN_2010": {
+      "label": "Persons aged 65 and over in the 2010 Census",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Civ_emp_25_44_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Civ_emp_25_44_ACS_14_18 by Civ_labor_25_44_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_College_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing College_ACS_14_18 by Pop_25yrs_Over_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Civ_unemp_45_64_ACS_14_18": {
+      "label": "Civilians aged 45 to 64 who are unemployed in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_NoHealthIns_U19_ACS_14_18": {
+      "label": "Percentage calculated by dividing NoHealthIns_U19_ACS_14_18 by Civ_noninst_pop_U19_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "avg_Agg_House_Value_ACS_14_18": {
+      "label": "Percentage calculated by dividing Aggr_House_Value_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "string",
+      "group": "N/A",
+      "limit": 0
+    },
+    "PUB_ASST_INC_ACS_14_18": {
+      "label": "With Public Assistance Income in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Pov_Univ_ACS_14_18": {
+      "label": "Population for whom poverty level is determined (denominator for persons blw pov.) in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_NH_AIAN_alone_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing NH_AIAN_alone_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Civ_unemp_25_44_ACS_14_18": {
+      "label": "Percentage calculated by dividing Civ_unemp_25_44_ACS_14_18 by Civ_labor_25_44_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Rel_Family_HHD_ACS_14_18": {
+      "label": "Percentage calculated by dividing Rel_Family_HHD_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_MrdCple_HHD_ACS_14_18": {
+      "label": "Percentage calculated by dividing MrdCple_Fmly_HHD_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "NoHealthIns_U19_ACSMOE_14_18": {
+      "label": "MOE - Population under age 19 with no health insurance",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Recent_Built_HU_ACS_14_18": {
+      "label": "Percentage calculated by dividing Recent_Built_HU_ACS_14_18 by Tot_Housing_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Age5p_Korean_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Age5p_Korean_ACS_14_18 by Pop_5yrs_Over_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Age5p_Only_English_ACS_14_18": {
+      "label": "Persons 5 years and over who speak only English in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Hispanic_ACS_14_18": {
+      "label": "Percentage calculated by dividing Hispanic_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Pop_5_17_ACS_14_18": {
+      "label": "Percentage calculated by dividing Pop_5_17_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Civ_Noninst_Pop_ACS_14_18": {
+      "label": "Civilian noninstitutionalized population in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Not_HS_Grad_ACS_14_18": {
+      "label": "Number of people 25 years old and over who are not high school graduates",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Non_Inst_GQ_CEN_2010": {
+      "label": "Percentage calculated by dividing Non_Inst_GQ_CEN_2010 by Tot_Population_CEN_2010",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Tot_Housing_Units_ACSMOE_14_18": {
+      "label": "MOE - Total Housing Units",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "MrdCple_w_child_ACS_14_18": {
+      "label": "Married-couple families with one or more children under age 18 in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Pop_25_44_ACS_14_18": {
+      "label": "Percentage calculated by dividing Pop_25_44_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_NO_PH_SRVC_ACS_14_18": {
+      "label": "Percentage calculated by dividing Occp_U_NO_PH_SRVC_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Schl_Enroll_3_4_ACS_14_18": {
+      "label": "Percentage calculated by dividing Schl_Enroll_3_4_ACS_14_18 by Population_age_3_4_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "NH_AIAN_alone_ACS_14_18": {
+      "label": "American Indian and Alaska Native alone, not Hispanic or Latino population in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Age5p_French_ACS_14_18": {
+      "label": "Persons 5 years and over who speak English less than very well and speak French, Haitian, or Cajun at home in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "ENG_VW_ACSMOE_14_18": {
+      "label": "MOE - Limited English speaking household (Use Tot ACS Occ HU as denominator)",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "MrdCple_Fmly_HHD_CEN_2010": {
+      "label": "Married-couple family households in the 2010 Census",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Renter_Occp_HU_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Renter_Occp_HU_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Civ_noninst_pop1964_ACS_14_18": {
+      "label": "Civilian noninstitutionalized population aged 19 to 64 in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_ENG_VW_ACS_14_18": {
+      "label": "Percentage calculated by dividing ENG_VW_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_No_Health_Ins_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing No_Health_Ins_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "MLT_U10p_ACS_14_18": {
+      "label": "Housing units in structures containing 10 or more housing units in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_PUB_ASST_INC_ACS_14_18": {
+      "label": "Percentage calculated by dividing PUB_ASST_INC_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Females_ACS_14_18": {
+      "label": "Percentage calculated by dividing Females_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Female_No_HB_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Female_No_HB_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "NH_Asian_alone_ACS_14_18": {
+      "label": "Asian alone, not Hispanic or Latino population in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Civ_unemp_16_24_ACS_14_18": {
+      "label": "Percentage calculated by dividing Civ_unemp_16_24_ACS_14_18 by Civ_labor_16_24_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Pop_18_24_CEN_2010": {
+      "label": "Percentage calculated by dividing Pop_18_24_CEN_2010 by Tot_Population_CEN_2010",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Crowd_Occp_U_ACSMOE_14_18": {
+      "label": "MOE - Occupied Units with more than 1.01 persons per room",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Pop_65plus_ACSMOE_14_18": {
+      "label": "MOE - Persons ages 65 and over",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Age5p_OthEuro_ACSMOE_14_18": {
+      "label": "MOE - Persons 5 years and over who speak English less than very well and speak some other Indo-European language at home",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Pop_65plus_ACS_14_18": {
+      "label": "Percentage calculated by dividing Pop_65plus_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_HHD_w_OnlySPhne_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing HHD_w_OnlySPhne_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_HHD_w_Broadband_ACS_14_18": {
+      "label": "Percentage calculated by dividing HHD_w_Broadband_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_NoHealthIns_65P_ACS_14_18": {
+      "label": "Percentage calculated by dividing NoHealthIns_65P_ACS_14_18 by Civ_noninst_pop_65P_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "avg_Agg_House_Value_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Aggr_House_Value_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "string",
+      "group": "N/A",
+      "limit": 0
+    },
+    "NH_Asian_alone_CEN_2010": {
+      "label": "Non-Hispanic Asian only in the 2010 Census",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "HHD_w_OnlySPhne_ACS_14_18": {
+      "label": "Households that have only a smartphone and no other computing device in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "GIDSTCO": {
+      "label": "State County: 5-digit code",
+      "predicateType": "string",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Civ_labor_25_44_ACS_14_18": {
+      "label": "Civilians aged 25 to 44 in the labor force in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_NH_Blk_alone_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing NH_Blk_alone_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Age5p_OthEuro_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Age5p_OthEuro_ACS_14_18 by Pop_5yrs_Over_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Othr_Lang_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Othr_Lang_ACS_14_18 by Pop_5yrs_Over_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Civ_unemp_45_64_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Civ_unemp_45_64_ACS_14_18 by Civ_labor_45_64_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "HHD_No_Internet_ACS_14_18": {
+      "label": "Households that have no Internet access in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Age5p_French_ACS_14_18": {
+      "label": "Percentage calculated by dividing Age5p_French_ACS_14_18 by Pop_5yrs_Over_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_NH_White_alone_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing NH_White_alone_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Age5p_Russian_ACSMOE_14_18": {
+      "label": "MOE - Persons 5 years and over who speak English less than very well and speak and speak Russian, Polish, or other Slavic languages at home",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Children_in_Pov_ACSMOE_14_18": {
+      "label": "MOE - Children under age 18 living in households that are below the poverty line",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Owner_Occp_HU_ACS_14_18": {
+      "label": "Percentage calculated by dividing Owner_Occp_HU_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "ENG_VW_ACS_14_18": {
+      "label": "Limited English speaking household (Use Tot ACS Occ HU as denominator) in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "HHD_PPL_Und_18_ACSMOE_14_18": {
+      "label": "MOE - Households with one ore more people under 18 years old",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "NoHealthIns1964_ACS_14_18": {
+      "label": "Population age 19 to 64 with no health insurance in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_NoHealthIns_U19_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing NoHealthIns_U19_ACS_14_18 by Civ_noninst_pop_U19_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Pop_Disabled_ACS_14_18": {
+      "label": "Total population with a disability in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_NH_Asian_alone_CEN_2010": {
+      "label": "Percentage calculated by dividing NH_Asian_alone_CEN_2010 by Tot_Population_CEN_2010",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_NoHealthIns1964_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing NoHealthIns1964_ACS_14_18 by Civ_noninst_pop1964_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Non_Inst_GQ_CEN_2010": {
+      "label": "Non-Institutionalized Group Quarters Population in the 2010 Census",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Pop_65plus_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Pop_65plus_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_NH_SOR_alone_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing NH_SOR_alone_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "HHD_NoCompDevic_ACS_14_18": {
+      "label": "Households that do not have a computing device of any kind in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_MLT_U2_9_STRC_ACS_14_18": {
+      "label": "Percentage calculated by dividing MLT_U2_9_STRC_ACS_14_18 by Tot_Housing_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_No_Health_Ins_ACS_14_18": {
+      "label": "Percentage calculated by dividing No_Health_Ins_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "avg_Tot_Prns_in_HHD_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Tot_Prns_in_HHD_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "NH_SOR_alone_CEN_2010": {
+      "label": "Non-Hispanic Some other race only in the 2010 Census",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_NON_US_Cit_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing NON_US_Cit_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Tot_GQ_CEN_2010": {
+      "label": "Percentage calculated by dividing Tot_GQ_CEN_2010 by Tot_Population_CEN_2010",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "HHD_NoCompDevic_ACSMOE_14_18": {
+      "label": "MOE - Households that do not have a computing device of any kind",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Occp_U_NO_PH_SRVC_ACS_14_18": {
+      "label": "Number of housing units without telephone service in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "PUB_ASST_INC_ACSMOE_14_18": {
+      "label": "MOE - With Public Assistance Income",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_URBANIZED_AREA_POP_CEN_2010": {
+      "label": "Percentage calculated by dividing URBANIZED_AREA_POP_CEN_2010 by Tot_Population_CEN_2010",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Rel_Under_6_CEN_2010": {
+      "label": "Percentage calculated by dividing Rel_Child_Under_6_CEN_2010 by Rel_Family_HHD_CEN_2010",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Pop_NoCompDevic_ACS_14_18": {
+      "label": "Percentage calculated by dividing Pop_NoCompDevic_ACS_14_18 by Pop_in_HHD_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Pop_Disabled_ACS_14_18": {
+      "label": "Percentage calculated by dividing Pop_Disabled_ACS_14_18 by Civ_Noninst_Pop_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Diff_HU_1yr_Ago_ACSMOE_14_18": {
+      "label": "MOE - Different House One Year Ago (Derived)",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Civ_labor_25_44_ACSMOE_14_18": {
+      "label": "MOE - Civilians aged 25 to 44 in the labor force",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "County_name": {
+      "label": "County Name",
+      "predicateType": "string",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Vacant_Units_ACS_14_18": {
+      "label": "Percentage calculated by dividing Tot_Vacant_Units_ACS_14_18 by Tot_Housing_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_HHD_PPL_Und_18_ACS_14_18": {
+      "label": "Percentage calculated by dividing HHD_PPL_Und_18_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_NO_PH_SRVC_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Occp_U_NO_PH_SRVC_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Pop_25_44_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Pop_25_44_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "URBANIZED_AREA_POP_CEN_2010": {
+      "label": "Population living in Area defined as an Urbanized Area (50,000 or greater) in the 2010 Census",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Pop_25_44_ACSMOE_14_18": {
+      "label": "MOE - Persons ages 25 through 44 (Derived)",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "NH_AIAN_alone_ACSMOE_14_18": {
+      "label": "MOE - American Indian and Alaska Native alone, not Hispanic or Latino population",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "No_Health_Ins_ACS_14_18": {
+      "label": "Number of people with no health insurance coverage in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_NH_Blk_alone_CEN_2010": {
+      "label": "Percentage calculated by dividing NH_Blk_alone_CEN_2010 by Tot_Population_CEN_2010",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "MLT_U2_9_STRC_ACS_14_18": {
+      "label": "Housing units in structures containing two to nine housing units in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Female_No_HB_ACS_14_18": {
+      "label": "Percentage calculated by dividing Female_No_HB_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_HHD_PPL_Und_18_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing HHD_PPL_Und_18_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "No_Plumb_ACS_14_18": {
+      "label": "Housing units without complete plumbing facilities in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "County": {
+      "label": "FIPS County: 3-digit code",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Othr_Lang_ACSMOE_14_18": {
+      "label": "MOE - Population 5 years and older that speak a language other than English at home",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Rel_Family_HHD_ACS_14_18": {
+      "label": "Related family households in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_RURAL_POP_CEN_2010": {
+      "label": "Percentage calculated by dividing RURAL_POP_CEN_2010 by Tot_Population_CEN_2010",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Civ_emp_16_24_ACS_14_18": {
+      "label": "Civilians aged 16 to 24 who are employed in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Not_MrdCple_HHD_ACSMOE_14_18": {
+      "label": "MOE - Households with no Married Couple present",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Civ_unemp_16plus_ACS_14_18": {
+      "label": "Civilians aged 16 years and over and unemployed in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "College_ACSMOE_14_18": {
+      "label": "MOE - Persons 25+ years and over with bachelors degree or higher",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Othr_Lang_ACS_14_18": {
+      "label": "Population 5 years and older that speak a language other than English at home in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "No_Health_Ins_ACSMOE_14_18": {
+      "label": "MOE - Number of people with no health insurance coverage",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Tot_Population_ACS_14_18": {
+      "label": "Total Population in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Children_in_Pov_ACS_14_18": {
+      "label": "Percentage calculated by dividing Children_in_Pov_ACS_14_18 by Children_PovDet_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Female_No_HB_CEN_2010": {
+      "label": "Percentage calculated by dividing Female_No_HB_CEN_2010 by Tot_Occp_Units_CEN_2010",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Female_No_HB_ACS_14_18": {
+      "label": "Households with a female householder, no husband present in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "NON_US_Cit_ACSMOE_14_18": {
+      "label": "MOE - Persons who are not US citizens in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Hispanic_ACS_14_18": {
+      "label": "Persons of Hispanic Origin in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Civ_emp_45_64_ACS_14_18": {
+      "label": "Percentage calculated by dividing Civ_emp_45_64_ACS_14_18 by Civ_labor_45_64_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Med_House_Value_ACS_14_18": {
+      "label": "Median House Value - Tract level in the ACS",
+      "predicateType": "string",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Sngl_Prns_HHD_ACS_14_18": {
+      "label": "Percentage calculated by dividing Sngl_Prns_HHD_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "One_Health_Ins_ACS_14_18": {
+      "label": "Number of people with one type of health insurance coverage in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Female_No_HB_CEN_2010": {
+      "label": "Households with a female householder, no husband present in the 2010 Census",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Prs_Blw_Pov_Lev_ACS_14_18": {
+      "label": "Number of people classified as below the poverty level in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Civ_unemp_25_44_ACSMOE_14_18": {
+      "label": "MOE - Civilians aged 25 to 44 who are unemployed",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Pop_1yr_Over_ACS_14_18": {
+      "label": "Number of people 1 year old and over (denominator for Diff HU 1 yr ago) in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Civ_emp_16_24_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Civ_emp_16_24_ACS_14_18 by Civ_labor_16_24_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Civ_emp_45_64_ACSMOE_14_18": {
+      "label": "MOE - Civilians aged 45 to 64 who are employed",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_HHD_No_Internet_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing HHD_No_Internet_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Males_CEN_2010": {
+      "label": "Number of Males in the 2010 Census",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Rel_Family_HHD_CEN_2010": {
+      "label": "Related family households in the 2010 Census",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Hispanic_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Hispanic_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Pop_under_5_ACS_14_18": {
+      "label": "Percentage calculated by dividing Pop_under_5_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Born_foreign_ACSMOE_14_18": {
+      "label": "MOE - Persons who are not US citizens at birth",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_ENG_VW_API_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing ENG_VW_API_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Renter_Occp_HU_CEN_2010": {
+      "label": "Number of renter occupied units in the 2010 Census",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Civ_emp_25_44_ACSMOE_14_18": {
+      "label": "MOE - Civilians aged 25 to 44 who are employed",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Pov_Univ_ACS_14_18": {
+      "label": "Percentage calculated by dividing Pov_Univ_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Females_CEN_2010": {
+      "label": "Percentage calculated by dividing Females_CEN_2010 by Tot_Population_CEN_2010",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "NoHealthIns1964_ACSMOE_14_18": {
+      "label": "MOE - Population age 19 to 64 with no health insurance",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Civ_unemp_45_64_ACSMOE_14_18": {
+      "label": "MOE - Civilians aged 45 to 64 who are unemployed",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_NH_NHOPI_alone_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing NH_NHOPI_alone_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "One_Health_Ins_ACSMOE_14_18": {
+      "label": "MOE - Number of people with one type of health insurance coverage",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Not_MrdCple_HHD_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Not_MrdCple_HHD_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Age5p_Korean_ACS_14_18": {
+      "label": "Persons 5 years and over who speak English less than very well and speak Korean at home in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Civ_emp_25_44_ACS_14_18": {
+      "label": "Percentage calculated by dividing Civ_emp_25_44_ACS_14_18 by Civ_labor_25_44_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "ENG_VW_INDO_EURO_ACSMOE_14_18": {
+      "label": "MOE - INDO EURO - Limited English speaking household (Use Tot ACS Occ HU as denominator)",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "avg_Agg_HH_INC_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Aggregate_HH_INC_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "string",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Children_in_Pov_ACS_14_18": {
+      "label": "Children under age 18 living in households that are below the poverty line in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_NH_AIAN_alone_CEN_2010": {
+      "label": "Percentage calculated by dividing NH_AIAN_alone_CEN_2010 by Tot_Population_CEN_2010",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Pop_under_5_CEN_2010": {
+      "label": "Percentage calculated by dividing Pop_under_5_CEN_2010 by Tot_Population_CEN_2010",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "NonFamily_HHD_ACS_14_18": {
+      "label": "Nonfamily households: Unrelated household in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Pop_18_24_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Pop_18_24_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Age5p_OthUnSp_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Age5p_OthUnSp_ACS_14_18 by Pop_5yrs_Over_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_NH_SOR_alone_ACS_14_18": {
+      "label": "Percentage calculated by dividing NH_SOR_alone_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Age5p_OthAsian_ACS_14_18": {
+      "label": "Percentage calculated by dividing Age5p_OthAsian_ACS_14_18 by Pop_5yrs_Over_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Pop_1yr_Over_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Pop_1yr_Over_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Pop_Disabled_ACSMOE_14_18": {
+      "label": "MOE - Total population with a disability",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "NH_White_alone_ACSMOE_14_18": {
+      "label": "MOE - White alone, not Hispanic or Latino population",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Pop_45_64_CEN_2010": {
+      "label": "Percentage calculated by dividing Pop_45_64_CEN_2010 by Tot_Population_CEN_2010",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Not_MrdCple_HHD_CEN_2010": {
+      "label": "Households with no Married Couple present in the 2010 Census",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Single_Unit_ACS_14_18": {
+      "label": "Housing units in structures containing only 1 housing unit in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Mobile_Homes_ACS_14_18": {
+      "label": "Percentage calculated by dividing Mobile_Homes_ACS_14_18 by Tot_Housing_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Not_HS_Grad_ACSMOE_14_18": {
+      "label": "MOE - Number of people 25 years old and over who are not high school graduates",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Age5p_OthUnSp_ACS_14_18": {
+      "label": "Persons 5 years and over who speak English less than very well and speak some other unspecified language at home in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "LAND_AREA": {
+      "label": "Land area (sq.mi.)",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Occp_U_NO_PH_SRVC_ACSMOE_14_18": {
+      "label": "MOE - Number of housing units without telephone service",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_MLT_U10p_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing MLT_U10p_ACS_14_18 by Tot_Housing_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Civ_labor_16_24_ACSMOE_14_18": {
+      "label": "MOE - Civilians aged 16 to 24 in the labor force",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "HHD_w_Broadband_ACSMOE_14_18": {
+      "label": "MOE - Households that have broadband Internet access",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Rel_Under_6_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Rel_Child_Under_6_ACS_14_18 by Rel_Family_HHD_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Pop_5_17_ACS_14_18": {
+      "label": "Persons ages 5 through 17 in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Males_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Males_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_US_Cit_Nat_ACS_14_18": {
+      "label": "Percentage calculated by dividing US_Cit_Nat_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Renter_Occp_HU_ACS_14_18": {
+      "label": "Percentage calculated by dividing Renter_Occp_HU_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Pop_5_17_CEN_2010": {
+      "label": "Persons aged 5 to 17 in the 2010 Census",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_HHD_NoCompDevic_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing HHD_NoCompDevic_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_NH_NHOPI_alone_CEN_2010": {
+      "label": "Percentage calculated by dividing NH_NHOPI_alone_CEN_2010 by Tot_Population_CEN_2010",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "US_Cit_Nat_ACSMOE_14_18": {
+      "label": "MOE - Persons who are US naturalized citizens in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Civ_emp_16_24_ACS_14_18": {
+      "label": "Percentage calculated by dividing Civ_emp_16_24_ACS_14_18 by Civ_labor_16_24_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Civ_labor_16plus_ACS_14_18": {
+      "label": "Civilians aged 16 years and over and in the labor force in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Tot_Prns_in_HHD_CEN_2010": {
+      "label": "Total Persons in households in the 2010 Census",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Renter_Occp_HU_ACSMOE_14_18": {
+      "label": "MOE - Number of renter occupied units",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "URBAN_CLUSTER_POP_CEN_2010": {
+      "label": "Population living in Area defined as an Urban Cluster Area (2,500-49,999) in the 2010 Census",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "MLT_U10p_ACSMOE_14_18": {
+      "label": "MOE - Housing units in structures containing 10 or more housing units",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Born_US_ACS_14_18": {
+      "label": "Percentage calculated by dividing Born_US_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_MrdCple_HHD_CEN_2010": {
+      "label": "Percentage calculated by dividing MrdCple_Fmly_HHD_CEN_2010 by Tot_Occp_Units_CEN_2010",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Sngl_Prns_HHD_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Sngl_Prns_HHD_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Children_PovDet_ACSMOE_14_18": {
+      "label": "MOE - Children under age 18 living in households for which poverty status is determined",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Single_Unit_ACS_14_18": {
+      "label": "Percentage calculated by dividing Single_Unit_ACS_14_18 by Tot_Housing_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Age5p_OthUnSp_ACSMOE_14_18": {
+      "label": "MOE - Persons 5 years and over who speak English less than very well and speak some other unspecified language at home",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Pop_18_24_ACS_14_18": {
+      "label": "Person ages 18 through 24 in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Aggregate_HH_INC_ACSMOE_14_18": {
+      "label": "MOE - Aggregate Household Income",
+      "predicateType": "string",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_No_Plumb_ACS_14_18": {
+      "label": "Percentage calculated by dividing No_Plumb_ACS_14_18 by Tot_Housing_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Renter_Occp_HU_ACS_14_18": {
+      "label": "Number of renter occupied units in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Age5p_Spanish_ACS_14_18": {
+      "label": "Percentage calculated by dividing Age5p_Spanish_ACS_14_18 by Pop_5yrs_Over_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Age5p_Vietnamese_ACSMOE_14_18": {
+      "label": "MOE - Persons 5 years and over who speak English less than very well and speak Vietnamese at home",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_ENG_VW_OTHER_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing ENG_VW_OTHER_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "NON_US_Cit_ACS_14_18": {
+      "label": "Persons who are not US citizens in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Age5p_Arabic_ACS_14_18": {
+      "label": "Persons 5 years and over who speak English less than very well and speak Arabic at home in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "NH_NHOPI_alone_ACSMOE_14_18": {
+      "label": "MOE - Native Hawaiian and Other Pacific Islander alone, not Hispanic or Latino population",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_ENG_VW_OTHER_ACS_14_18": {
+      "label": "Percentage calculated by dividing ENG_VW_OTHER_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Age5p_Chinese_ACS_14_18": {
+      "label": "Persons 5 years and over who speak English less than very well and speak Chinese at home in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_HHD_No_Internet_ACS_14_18": {
+      "label": "Percentage calculated by dividing HHD_No_Internet_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Age5p_OthEuro_ACS_14_18": {
+      "label": "Percentage calculated by dividing Age5p_OthEuro_ACS_14_18 by Pop_5yrs_Over_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Not_MrdCple_HHD_ACS_14_18": {
+      "label": "Households with no Married Couple present in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Age5p_German_ACSMOE_14_18": {
+      "label": "MOE - Persons 5 years and over who speak English less than very well and speak German or another West Germanic language at home",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Age5p_Tagalog_ACS_14_18": {
+      "label": "Persons 5 years and over who speak English less than very well and speak Tagalog at home in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_MrdCple_w_child_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing MrdCple_w_child_ACS_14_18 by MrdCple_Fmly_HHD_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "HHD_Moved_in_ACSMOE_14_18": {
+      "label": "MOE - Number of households, householder moved in 2010 or later",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_NonFamily_HHD_CEN_2010": {
+      "label": "Percentage calculated by dividing NonFamily_HHD_CEN_2010 by Tot_Occp_Units_CEN_2010",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Population_age_3_4_ACSMOE_14_18": {
+      "label": "MOE - Population age 3 and 4",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "ENG_VW_API_ACS_14_18": {
+      "label": "Asian and PI - Limited English speaking household (Use Tot ACS Occ HU as denominator) in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Mobile_Homes_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Mobile_Homes_ACS_14_18 by Tot_Housing_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Owner_Occp_HU_ACSMOE_14_18": {
+      "label": "MOE - Number of owner occupied units",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Pop_25_44_CEN_2010": {
+      "label": "Percentage calculated by dividing Pop_25_44_CEN_2010 by Tot_Population_CEN_2010",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Hispanic_CEN_2010": {
+      "label": "Percentage calculated by dividing Hispanic_CEN_2010 by Tot_Population_CEN_2010",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Civ_unemp_16p_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Civ_unemp_16plus_ACS_14_18 by Civ_labor_16plus_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_HHD_w_Broadband_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing HHD_w_Broadband_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Civ_noninst_pop_65P_ACSMOE_14_18": {
+      "label": "MOE - Civilian noninstitutionalized population aged 65 and over",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Aggregate_HH_INC_ACS_14_18": {
+      "label": "Aggregate Household Income in the ACS",
+      "predicateType": "string",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Civ_emp_16_24_ACSMOE_14_18": {
+      "label": "MOE - Civilians aged 16 to 24 who are employed",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_NH_AIAN_alone_ACS_14_18": {
+      "label": "Percentage calculated by dividing NH_AIAN_alone_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "College_ACS_14_18": {
+      "label": "Persons 25+ years and over with bachelors degree or higher in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Civ_unemp_25_44_ACS_14_18": {
+      "label": "Civilians aged 25 to 44 who are unemployed in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Aggr_House_Value_ACS_14_18": {
+      "label": "Aggregate housing unit value (dollars) in the ACS",
+      "predicateType": "string",
+      "group": "N/A",
+      "limit": 0
+    },
+    "avg_Tot_Prns_in_HHD_ACS_14_18": {
+      "label": "Percentage calculated by dividing Tot_Prns_in_HHD_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Population_age_3_4_ACS_14_18": {
+      "label": "Population age 3 and 4 in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Civ_Noninst_Pop_ACSMOE_14_18": {
+      "label": "MOE - Civilian noninstitutionalized population",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Civ_unemp_45_64_ACS_14_18": {
+      "label": "Percentage calculated by dividing Civ_unemp_45_64_ACS_14_18 by Civ_labor_45_64_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Age5p_Russian_ACS_14_18": {
+      "label": "Persons 5 years and over who speak English less than very well and speak and speak Russian, Polish, or other Slavic languages at home in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_TwoPHealthIns_ACS_14_18": {
+      "label": "Percentage calculated by dividing Two_Plus_Health_Ins_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Owner_Occp_HU_CEN_2010": {
+      "label": "Percentage calculated by dividing Owner_Occp_HU_CEN_2010 by Tot_Occp_Units_CEN_2010",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_HHD_w_Computer_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing HHD_w_Computer_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Civ_unemp_16_24_ACSMOE_14_18": {
+      "label": "MOE - Civilians aged 16 to 24 who are unemployed",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "NH_White_alone_CEN_2010": {
+      "label": "Non-Hispanic White only in the 2010 Census",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "NoHealthIns_U19_ACS_14_18": {
+      "label": "Population under age 19 with no health insurance in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Children_PovDet_ACS_14_18": {
+      "label": "Children under age 18 living in households for which poverty status is determined in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "NH_Blk_alone_ACS_14_18": {
+      "label": "Black or African American alone, not Hispanic or Latino population in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Schl_Enroll_3_4_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Schl_Enroll_3_4_ACS_14_18 by Population_age_3_4_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_MrdCple_HHD_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing MrdCple_Fmly_HHD_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Females_ACS_14_18": {
+      "label": "Number of Females in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Pop_25_44_ACS_14_18": {
+      "label": "Persons ages 25 through 44 in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Aggr_House_Value_ACSMOE_14_18": {
+      "label": "MOE - Aggregate housing unit value (dollars)",
+      "predicateType": "string",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Rel_Under_6_ACS_14_18": {
+      "label": "Percentage calculated by dividing Rel_Child_Under_6_ACS_14_18 by Rel_Family_HHD_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Pov_Univ_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Pov_Univ_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Pop_5yrs_Over_ACS_14_18": {
+      "label": "Population 5 years and older (denominator for language) in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Prs_Blw_Pov_Lev_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Prs_Blw_Pov_Lev_ACS_14_18 by Pov_Univ_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Age5p_Only_English_ACSMOE_14_18": {
+      "label": "MOE - Persons 5 years and over who speak only English",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Pop_45_64_ACS_14_18": {
+      "label": "Percentage calculated by dividing Pop_45_64_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Hispanic_ACSMOE_14_18": {
+      "label": "MOE - Persons of Hispanic Origin",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Age5p_French_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Age5p_French_ACS_14_18 by Pop_5yrs_Over_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_HHD_w_OnlySPhne_ACS_14_18": {
+      "label": "Percentage calculated by dividing HHD_w_OnlySPhne_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Civ_emp_45_64_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Civ_emp_45_64_ACS_14_18 by Civ_labor_45_64_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Crowd_Occp_U_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Crowd_Occp_U_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_ENG_VW_SPAN_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing ENG_VW_SPAN_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Females_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Females_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Civ_unemp_16_24_ACS_14_18": {
+      "label": "Civilians aged 16 to 24 who are unemployed in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Males_CEN_2010": {
+      "label": "Percentage calculated by dividing Males_CEN_2010 by Tot_Population_CEN_2010",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Pop_45_64_ACS_14_18": {
+      "label": "Persons ages 45 through 64 in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Rel_Child_Under_6_CEN_2010": {
+      "label": "Number of families with related children under 6 years old in the 2010 Census",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_One_Health_Ins_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing One_Health_Ins_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Born_foreign_ACS_14_18": {
+      "label": "Percentage calculated by dividing Born_foreign_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Age5p_German_ACS_14_18": {
+      "label": "Percentage calculated by dividing Age5p_German_ACS_14_18 by Pop_5yrs_Over_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_No_Plumb_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing No_Plumb_ACS_14_18 by Tot_Housing_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Females_CEN_2010": {
+      "label": "Number of Females in the 2010 Census",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_MrdCple_w_child_ACS_14_18": {
+      "label": "Percentage calculated by dividing MrdCple_w_child_ACS_14_18 by MrdCple_Fmly_HHD_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "HHD_Moved_in_ACS_14_18": {
+      "label": "Number of households, householder moved in 2010 or later in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Pop_under_5_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Pop_under_5_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Tot_GQ_CEN_2010": {
+      "label": "Total Group Quarters Population in the 2010 Census",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Female_No_HB_ACSMOE_14_18": {
+      "label": "MOE - Households with a female householder, no husband present",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Civ_labor_45_64_ACSMOE_14_18": {
+      "label": "MOE - Civilians aged 45 to 64 in the labor force",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_MLT_U2_9_STRC_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing MLT_U2_9_STRC_ACS_14_18 by Tot_Housing_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Age5p_Chinese_ACSMOE_14_18": {
+      "label": "MOE - Persons 5 years and over who speak English less than very well and speak Chinese at home",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Age5p_Arabic_ACSMOE_14_18": {
+      "label": "MOE - Persons 5 years and over who speak English less than very well and speak Arabic at home",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Schl_Enroll_3_4_ACS_14_18": {
+      "label": "Population age 3 and 4 that are enrolled in school in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Pop_under_5_ACSMOE_14_18": {
+      "label": "MOE - Person less than age 5",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Recent_Built_HU_ACS_14_18": {
+      "label": "Housing Units built in 2010 or later in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "ENG_VW_OTHER_ACSMOE_14_18": {
+      "label": "MOE - Other - Limited English speaking household (Use Tot ACS Occ HU as denominator)",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Tot_Occp_Units_CEN_2010": {
+      "label": "Total Occupied Housing Units in the 2010 Census",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Civ_noninst_pop_U19_ACS_14_18": {
+      "label": "Civilian noninstitutionalized population aged under 19 in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "MrdCple_w_child_ACSMOE_14_18": {
+      "label": "MOE - Married-couple families with one or more children under age 18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "HHD_No_Internet_ACSMOE_14_18": {
+      "label": "MOE - Households that have no Internet access",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Age5p_OthAsian_ACS_14_18": {
+      "label": "Persons 5 years and over who speak English less than very well and speak some other Asian or Pacific Island language at home in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Not_MrdCple_HHD_CEN_2010": {
+      "label": "Percentage calculated by dividing Not_MrdCple_HHD_CEN_2010 by Tot_Occp_Units_CEN_2010",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Pop_5_17_CEN_2010": {
+      "label": "Percentage calculated by dividing Pop_5_17_CEN_2010 by Tot_Population_CEN_2010",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_PUB_ASST_INC_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing PUB_ASST_INC_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "MrdCple_Fmly_HHD_ACSMOE_14_18": {
+      "label": "MOE - Married-couple families",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Pop_NoCompDevic_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Pop_NoCompDevic_ACS_14_18 by Pop_in_HHD_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Age5p_Vietnames_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Age5p_Vietnamese_ACS_14_18 by Pop_5yrs_Over_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "RURAL_POP_CEN_2010": {
+      "label": "Population living in Area outside of an Urban Area or Urban Cluster in the 2010 Census",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Rel_Child_Under_6_ACSMOE_14_18": {
+      "label": "MOE - Number of families with related children under 6 years old",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Age5p_German_ACS_14_18": {
+      "label": "Persons 5 years and over who speak English less than very well and speak German or another West Germanic language at home in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Tot_Housing_Units_CEN_2010": {
+      "label": "Total Housing Units in the 2010 Census",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Sngl_Prns_HHD_CEN_2010": {
+      "label": "Percentage calculated by dividing Sngl_Prns_HHD_CEN_2010 by Tot_Occp_Units_CEN_2010",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "HHD_w_Computer_ACS_14_18": {
+      "label": "Households that have a desktop or laptop computer in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_HHD_NoCompDevic_ACS_14_18": {
+      "label": "Percentage calculated by dividing HHD_NoCompDevic_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Born_foreign_ACS_14_18": {
+      "label": "Persons who are not US citizens at birth in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "NH_AIAN_alone_CEN_2010": {
+      "label": "Non-Hispanic American Indian and Alaska Native only in the 2010 Census",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Pop_in_HHD_ACS_14_18": {
+      "label": "Population living in households in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Med_HHD_Inc_ACS_14_18": {
+      "label": "Median Household Income - Tract level in the ACS",
+      "predicateType": "string",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Pop_w_BroadComp_ACS_14_18": {
+      "label": "Percentage calculated by dividing Pop_w_BroadComp_ACS_14_18 by Pop_in_HHD_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Age5p_OthUnSp_ACS_14_18": {
+      "label": "Percentage calculated by dividing Age5p_OthUnSp_ACS_14_18 by Pop_5yrs_Over_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Pop_under_5_ACS_14_18": {
+      "label": "Persons less than age 5 in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Pop_45_64_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Pop_45_64_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Age5p_Tagalog_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Age5p_Tagalog_ACS_14_18 by Pop_5yrs_Over_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "NH_SOR_alone_ACSMOE_14_18": {
+      "label": "MOE - Some other race alone, not Hispanic or Latino population",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_NoHealthIns1964_ACS_14_18": {
+      "label": "Percentage calculated by dividing NoHealthIns1964_ACS_14_18 by Civ_noninst_pop1964_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Born_US_ACSMOE_14_18": {
+      "label": "MOE - Persons who are US citizens at birth",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Pop_5yrs_Over_ACSMOE_14_18": {
+      "label": "MOE - Population 5 years and older (denominator for language)",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Tot_Occp_Units_ACSMOE_14_18": {
+      "label": "MOE - Total Occupied Housing Units",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Vacant_Units_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Tot_Vacant_Units_ACS_14_18 by Tot_Housing_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_NH_White_alone_CEN_2010": {
+      "label": "Percentage calculated by dividing NH_White_alone_CEN_2010 by Tot_Population_CEN_2010",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Males_ACSMOE_14_18": {
+      "label": "MOE - Number of Males",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Civ_unemp_25_44_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Civ_unemp_25_44_ACS_14_18 by Civ_labor_25_44_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Age5p_Tagalog_ACSMOE_14_18": {
+      "label": "MOE - Persons 5 years and over who speak English less than very well and speak Tagalog at home",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Diff_HU_1yr_Ago_ACS_14_18": {
+      "label": "Different House One Year Ago in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "NoHealthIns_65P_ACS_14_18": {
+      "label": "Population age 65 and over with no health insurance in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Pop_25yrs_Over_ACS_14_18": {
+      "label": "Number of people 25 years old and over (denominator for educ. attainment) in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "NoHealthIns_65P_ACSMOE_14_18": {
+      "label": "MOE - Population age 65 and over with no health insurance",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Owner_Occp_HU_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Owner_Occp_HU_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Males_ACS_14_18": {
+      "label": "Percentage calculated by dividing Males_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Med_House_Value_ACSMOE_14_18": {
+      "label": "MOE - Median House Value - Tract level",
+      "predicateType": "string",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Sngl_Prns_HHD_ACSMOE_14_18": {
+      "label": "MOE - Single Person households",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Pop_1yr_Over_ACSMOE_14_18": {
+      "label": "MOE - Number of people 1 year and over",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_MLT_U10p_ACS_14_18": {
+      "label": "Percentage calculated by dividing MLT_U10p_ACS_14_18 by Tot_Housing_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Schl_Enroll_3_4_ACSMOE_14_18": {
+      "label": "MOE - Population age 3 and 4 that are enrolled in school",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "NonFamily_HHD_ACSMOE_14_18": {
+      "label": "MOE - Nonfamily households: Unrelated household",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Civ_labor_16_24_ACS_14_18": {
+      "label": "Civilians aged 16 to 24 in the labor force in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Median_Age_ACSMOE_14_18": {
+      "label": "MOE - Median Age",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Single_Unit_ACSMOE_14_18": {
+      "label": "MOE - Housing units in structures containing only 1 housing unit",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Pop_5_17_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Pop_5_17_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "avg_Agg_HH_INC_ACS_14_18": {
+      "label": "Percentage calculated by dividing Aggregate_HH_INC_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "string",
+      "group": "N/A",
+      "limit": 0
+    },
+    "HHD_w_Computer_ACSMOE_14_18": {
+      "label": "MOE - Households that have a desktop or laptop computer",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Sngl_Prns_HHD_CEN_2010": {
+      "label": "Single Person households in the 2010 Census",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Pop_25_44_CEN_2010": {
+      "label": "Persons aged 25 to 44 in the 2010 Census",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Born_US_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Born_US_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Pop_65plus_CEN_2010": {
+      "label": "Percentage calculated by dividing Pop_65plus_CEN_2010 by Tot_Population_CEN_2010",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Rel_Child_Under_6_ACS_14_18": {
+      "label": "Number of families with related children under 6 years old in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Pop_18_24_CEN_2010": {
+      "label": "Persons aged 18 to 24 in the 2010 Census",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "HHD_PPL_Und_18_CEN_2010": {
+      "label": "Households with one or more people under 18 years old in the 2010 Census",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Pop_45_64_ACSMOE_14_18": {
+      "label": "MOE - Persons ages 45 through 64 (Derived)",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Females_ACSMOE_14_18": {
+      "label": "MOE - Number of Females",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Age5p_Korean_ACSMOE_14_18": {
+      "label": "MOE - Persons 5 years and over who speak English less than very well and speak Korean at home",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Owner_Occp_HU_CEN_2010": {
+      "label": "Number of owner occupied units in the 2010 Census",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_NH_Blk_alone_ACS_14_18": {
+      "label": "Percentage calculated by dividing NH_Blk_alone_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Age5p_Russian_ACS_14_18": {
+      "label": "Percentage calculated by dividing Age5p_Russian_ACS_14_18 by Pop_5yrs_Over_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_US_Cit_Nat_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing US_Cit_Nat_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Age5p_Only_Eng_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Age5p_Only_English_ACS_14_18 by Pop_5yrs_Over_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Pop_in_HHD_ACSMOE_14_18": {
+      "label": "MOE - Population living in households",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Tot_Occp_Units_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Tot_Occp_Units_ACS_14_18 by Tot_Housing_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Recent_Built_HU_ACSMOE_14_18": {
+      "label": "MOE - Housing Units built in 2010 or later",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Civ_unemp_16plus_ACSMOE_14_18": {
+      "label": "MOE - Civilians aged 16 years and over and unemployed",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Civ_noninst_pop_65P_ACS_14_18": {
+      "label": "Civilian noninstitutionalized population aged 65 and over in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Two_Plus_Health_Ins_ACS_14_18": {
+      "label": "Number of people with two or more types of health insurance coverage in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "ENG_VW_SPAN_ACSMOE_14_18": {
+      "label": "MOE - Spanish - Limited English speaking household (Use Tot ACS Occ HU as denominator)",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Tot_Prns_in_HHD_ACSMOE_14_18": {
+      "label": "MOE - Total Persons in households",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Tot_Population_CEN_2010": {
+      "label": "Total population in the 2010 Census",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Age5p_OthAsian_ACSMOE_14_18": {
+      "label": "MOE - Persons 5 years and over who speak English less than very well and speak some other Asian or Pacific Island language at home",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "MrdCple_Fmly_HHD_ACS_14_18": {
+      "label": "Married-couple families in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Civ_unemp_16_24_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Civ_unemp_16_24_ACS_14_18 by Civ_labor_16_24_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Civ_labor_16plus_ACSMOE_14_18": {
+      "label": "MOE - Civilians aged 16 years and over and in the labor force",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Crowd_Occp_U_ACS_14_18": {
+      "label": "Occupied Units with more than 1.01 persons per room in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Crowd_Occp_U_ACS_14_18": {
+      "label": "Percentage calculated by dividing Crowd_Occp_U_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Age5p_OthAsian_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Age5p_OthAsian_ACS_14_18 by Pop_5yrs_Over_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Single_Unit_ACSMOE_14_18": {
+      "label": "MOE - Percentage calculated by dividing Single_Unit_ACS_14_18 by Tot_Housing_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "Two_Plus_Health_Ins_ACSMOE_14_18": {
+      "label": "MOE - Number of people with two or more types of health insurance coverage",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_HHD_w_Computer_ACS_14_18": {
+      "label": "Percentage calculated by dividing HHD_w_Computer_ACS_14_18 by Tot_Occp_Units_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "ENG_VW_INDO_EURO_ACS_14_18": {
+      "label": "INDO EURO - Limited English speaking household (Use Tot ACS Occ HU as denominator) in the ACS",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_URBAN_CLUSTER_POP_CEN_2010": {
+      "label": "Percentage calculated by dividing URBAN_CLUSTER_POP_CEN_2010 by Tot_Population_CEN_2010",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_Tot_Occp_Units_CEN_2010": {
+      "label": "Percentage calculated by dividing Tot_Occp_Units_CEN_2010 by Tot_Housing_Units_CEN_2010",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    },
+    "pct_One_Health_Ins_ACS_14_18": {
+      "label": "Percentage calculated by dividing One_Health_Ins_ACS_14_18 by Tot_Population_ACS_14_18",
+      "predicateType": "int",
+      "group": "N/A",
+      "limit": 0
+    }
+  }
+}
