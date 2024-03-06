@@ -43,11 +43,15 @@ def run(query, open_ai_key, census_key):
     st.write("**Identified Data Source:**")
     st.write(doc.page_content)
     st.write("**Searching for Variables:** ", ans["variables"])
+    
+    st.divider()
 
     variable_rag = VariableTreeChain(doc.metadata["c_variablesLink"], open_ai_key)
     vars = variable_rag.invoke(query, ans["variables"], ans["relevant_dataset"])
     st.write("**Variables Found:**")
     # st.write(vars)
+    
+    st.divider()
 
     st.write("**Geographic Region to Search For:** ", ans["geography"])
 
@@ -59,6 +63,8 @@ def run(query, open_ai_key, census_key):
 
     st.write("**Geographies Found:**")
     st.write(geos)
+    
+    st.divider()
 
     st.write("**Retrieved Data:**")
 
@@ -70,11 +76,15 @@ def run(query, open_ai_key, census_key):
     )
     df = query.get_data()
     st.dataframe(df)
+    
+    st.divider()
 
     st.write("**Data Analysis:**")
     analysis = AnalysisChain(df, vars)
     res = analysis.invoke()
     st.write(res)
+    
+    st.divider()
 
     return None
 
@@ -163,9 +173,22 @@ with st.sidebar:
 
 # main page content allowing for queries and data display
 st.title("Census Query Bot")
-input = st.text_input("Ask the Census Bot what you want to know from Census Data!")
 
-with st.container():
+col1, col2 = st.columns([1, 1])
+
+with col1:
+    input = st.text_input("Ask the Bot what you want to know from Census Data!")
+with col2:
+    option = st.selectbox(
+        label='Need Ideas? Pick from here:',
+        options=('How many men are under 45 in Utah?', 'What is the population of Cook County, IL', 'Other'), index=None)
+
+if option is not None:
+    input = option
+
+st.divider()
+
+with st.container(): 
     if input != "":
         if user_open_ai_key != "":
             open_ai_key = user_open_ai_key
@@ -178,6 +201,8 @@ with st.container():
             census_key = os.environ["CENSUS_API_KEY"]
         else:
             census_key = ""
+            
+        st.header("Results:")
 
         run(input, open_ai_key, census_key)
 

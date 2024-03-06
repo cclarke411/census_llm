@@ -523,8 +523,10 @@ class AnalysisChain:
         return column_info, description, info_string, value_counts
 
     def invoke(self):
-        template = """You are a python output interpreter.
+        template = """
+        Role: You are a python output interpreter.
         
+        Context:
         You will recieve 4 pieces of information about a pandas dataframe
         The first thing will be a python dictionary where the keys are the column
         names and the values are a description of the column. The second piece of information
@@ -532,6 +534,9 @@ class AnalysisChain:
         and the third will be the results of calling the info() method on the dataframe.
         The fourth piece of information is the result of calling value_counts()
         on the dataframe.
+        
+        Instructions:
+        Explain that you ran some python code and are explaining the output of that code.
         
         Read the four pieces of information provided. Explain any key findings
         that you find. Base your analysis solely on the information provided in
