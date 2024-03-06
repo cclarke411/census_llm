@@ -24,7 +24,6 @@ def format_docs(docs):
     formatted_str = ""
     for idx, doc in enumerate(docs):
         formatted_str += f"DOCUMENT {idx+1}\nCONTENT: {doc.page_content}\n\n\n\n"
-    # print(formatted_str)
     return formatted_str
 
 
@@ -164,7 +163,6 @@ class SourceRAG:
                 "dataset": dataset,
             }
         )
-        print(self.results)
         res_docs = self.docretriever.get_relevant_documents(self.results["doc_content"])
         self.res_doc = res_docs[0]
 
@@ -207,12 +205,12 @@ class VariableTreeChain:
         ##OBJECTIVE:##
         You are trying to identify all the VARIABLE relevant to the question.
         If the VARIABLE directly answer the question, choose all the VARIABLE.
-        If the VARIABLE do not directly answer the question, choose the VARIABLE that bring you closer to answering the question
+        If the VARIABLE do not directly answer the question, choose the VARIABLE that bring you closer to answering the question.
+        If the VARIABLE do not answer the question, or answer a different question, do not choose the VARIABLE.
 
         ##INFORMATION PROVIDED:##
         You are also given a list of VARIABLE. EACH VARIABLE REPRESENTS A VARIABLE or a VARIABLE STEM.
         Your task is to choose the best one or multiple VARIABLE from the given list of VARIABLE.
-        
 
         Remember, each VARIABLE could be just the partial variable.   
         Remember, each VARIABLE could be the full variable.   
@@ -220,8 +218,11 @@ class VariableTreeChain:
         Do not give multiples if they represent the general same theme. 
         Do give multiples if they are different and add variety. 
 
-        Set Answer equal to a json with the key "var_content" and a value of lists.
-        RETURN THE VARIABLE AS IS, DO NOT CHANGE ANYTHING.
+        Set Answer equal to a json with the keys "var_content", "var_scores". 
+        Set the values of both keys to lists.
+        For "var_content", set each element of the list in the value equal to the DESCRIPTION of the VARIABLE.
+        For "var_score", set each element of the list in the value equal to a score in the range 0-100 of how likely you think the VARIABLE is to answer the question.
+        RETURN THE DESCRIPTION AS IS, DO NOT CHANGE ANYTHING.
         
         INFORMATION:::
         List of Variable: 
@@ -300,7 +301,7 @@ class VariableTreeChain:
     def format_vars(self, v):
         formatted_str = ""
         for idx, (key, item) in enumerate(v.children.items()):
-            item_str = f"\n\nVARIABLE {idx+1}\n"
+            item_str = f"\n\nVARIABLE {idx+1}DESCRIPTION:\n"
             if item.dataset is not None:
                 item_str += item.dataset[0]
             else:
@@ -444,7 +445,6 @@ class CensusQuery:
         # specify dataset variables to extract
         vars = list(self.variables.keys())
         vars_csv = ",".join(vars)
-        print(vars_csv)
         query.append(vars_csv)
 
         # specify geographies to include
@@ -471,11 +471,9 @@ class CensusQuery:
     def dl_data(self):
         try:
             api_url = self.build_query()
-            print(api_url)
             response = requests.get(api_url)
             response.raise_for_status()
             data = response.json()
-            print(data)
             return data
         except requests.RequestException as e:
             print(f"An error occurred: {e}")
