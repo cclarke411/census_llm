@@ -39,10 +39,10 @@ geography_fips = {"state": "49", "county": ["011", "013"]}
 ###
 
 class Query:
-    def __init__(self, api_access_url: str , variables: dict, geography_fips: str):
+    def __init__(self, api_access_url: str , variables: dict, geography: dict):
         self.url = api_access_url
         self.variables = variables
-        self.geographies = geography_fips
+        self.geographies = geography
         
     def build_query(self):
         query = [self.url, '?get=']
