@@ -32,27 +32,22 @@ def run(query, open_ai_key, census_key):
 
     st.write("**Rephrased Question**")
     st.write(ans["rephrased_question"])
-    st.write("**Analyzing your query...**")
 
     source_chain = SourceChain(open_ai_key)
     ans = source_chain.invoke(ans["rephrased_question"])
-
-    st.write("**Dataset to Search For:** ", ans["relevant_dataset"])
-    st.write("**Identifying Data Sources...**")
 
     source_rag = SourceRAG(open_ai_key)
     doc = source_rag.invoke(query, ans["variables"], ans["relevant_dataset"])
     access_link = doc.metadata["distribution"][0]["accessURL"]
 
-    st.write("**Found Data Source:**")
+    st.write("**Identified Data Source:**")
     st.write(doc.page_content)
-    st.write("**Variables to Search For:** ", ans["variables"])
-    st.write("**Searching in Data Source...**")
+    st.write("**Searching for Variables:** ", ans["variables"])
 
     variable_rag = VariableTreeChain(doc.metadata["c_variablesLink"], open_ai_key)
     vars = variable_rag.invoke(query, ans["variables"], ans["relevant_dataset"])
     st.write("**Variables Found:**")
-    st.write(vars)
+    # st.write(vars)
 
     st.write("**Geographic Region to Search For:** ", ans["geography"])
 

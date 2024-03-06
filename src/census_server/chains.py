@@ -360,7 +360,7 @@ class GeographyRAG:
         **JSON FORMAT**
         key: value
         state: list of state
-        county: dictionary of state:county key:value pairs
+        county: list of counties
         type: string of type
         **END OF JSON FORMAT** 
 
