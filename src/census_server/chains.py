@@ -481,8 +481,11 @@ class CensusQuery:
 
     def format_data(self):
         df = pd.DataFrame(self.dl_data())
-        df.columns = df.iloc[0]
-        df = df[1:]
+        try:
+            df.columns = df.iloc[0]
+            df = df.iloc[1:]
+        except IndexError:
+            print('Index Error, empty df')
         return df
 
     def get_data(self):
