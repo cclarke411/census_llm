@@ -26,12 +26,12 @@ if "CENSUS_API_KEY" in os.environ:
 
 
 def geo_lookup(geos):
-    with open("data/fips/national_state2020.txt", "r") as file:
+    with open("src/census_server/data/fips/national_state2020.txt", "r") as file:
         states = file.readlines()
     state_rows = [state.replace("\n", "").split("|") for state in states]
     state_df = pd.DataFrame(state_rows[1:], columns=state_rows[0])
 
-    with open("data/fips/national_county2020.txt", "r") as file:
+    with open("src/census_server/data/fips/national_county2020.txt", "r") as file:
         counties = file.readlines()
     county_rows = [county.replace("\n", "").split("|") for county in counties]
     county_df = pd.DataFrame(county_rows[1:], columns=county_rows[0])
@@ -104,25 +104,18 @@ def run(query, open_ai_key, census_key):
 
     st.divider()
 
-    st.write("**Geographic Region to Search For:** ", ans["geography"])
-
     geos = []
     geo_rag = GeographyRAG(open_ai_key)
     for geo in ans["geography"]:
-        print(f"invoking {geo}")
         res = geo_rag.invoke(geo)
         geos.append(res)
     geos = process_geos(geos)
-    st.write("**Geographies Found:**")
-    st.write(geos)
-
-    st.divider()
-
+    st.write("**Geographies Identified:**")
     st.write(geo_lookup(geos))
+
     st.divider()
 
     st.write("**Pulling Data...**")
-    # todo figure out geography formatting with divij
     dfs = []
     for geo in geos:
         query = CensusQuery(
