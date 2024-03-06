@@ -102,8 +102,7 @@ def run(query, open_ai_key, census_key):
     df = pd.concat(dfs)
     st.dataframe(df)
 
-    # todo analysis re-queries census unnecessarily
-    st.write("**Analyzing Data...**")
+    st.write("**Data Analysis:**")
     analysis = AnalysisChain(df, vars)
     res = analysis.invoke()
     st.write(res)
