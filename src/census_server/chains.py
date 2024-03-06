@@ -1,26 +1,19 @@
-from langchain_openai import OpenAI, ChatOpenAI, OpenAIEmbeddings
-from langchain.llms.fake import FakeListLLM
+from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain.prompts import ChatPromptTemplate, PromptTemplate
-from langchain.output_parsers import RegexParser
-from langchain.output_parsers.json import SimpleJsonOutputParser
-from langchain.chains.question_answering import load_qa_chain
 from langchain.text_splitter import CharacterTextSplitter
 from langchain_community.vectorstores import FAISS
-from langchain_core.runnables import RunnablePassthrough, Runnable, RunnableLambda
 from langchain_core.output_parsers import StrOutputParser
-from operator import itemgetter
-
-import json
-import os
-import re
-from dotenv import load_dotenv
-from pathlib import Path
-import requests
-import io
+from langchain.output_parsers.json import SimpleJsonOutputParser
 
 import pandas as pd
+from pathlib import Path
+from operator import itemgetter
 
-load_dotenv()
+import requests
+import json
+import re
+import io
+import os
 
 script_path = Path(__file__).resolve()
 script_dir = script_path.parent
@@ -52,20 +45,21 @@ def get_data(file_path, key, keep):
     return datasets_to_keep
 
 
-def save_docembedding(embeddings_folder_path, datasets, separator="\n\n"):
+def save_docembedding(embeddings_folder_path, datasets, open_ai_key, separator="\n\n"):
     data, metadata = zip(*datasets)
     splitter = CharacterTextSplitter(
         chunk_size=2750, chunk_overlap=0, separator=separator
     )
     xml_docs = splitter.create_documents(data, metadata)
     docembeddings = FAISS.from_documents(
-        xml_docs, OpenAIEmbeddings(api_key=os.environ["OPENAI_API_KEY"])
+        xml_docs, OpenAIEmbeddings(api_key=open_ai_key)
     )
     docembeddings.save_local(embeddings_folder_path)
 
 
 class RephraseChain:
-    def __init__(self) -> None:
+
+    def __init__(self, open_ai_key) -> None:
         self.template = """Rephrase the following question, if needed, to be more helpful in identifying variables
         
         Format it as a json with the key rephrased_question
@@ -75,7 +69,7 @@ class RephraseChain:
         """
         self.prompt = ChatPromptTemplate.from_template(self.template)
         self.model = ChatOpenAI(
-            model="gpt-3.5-turbo", temperature=0, api_key=os.environ["OPENAI_API_KEY"]
+            model="gpt-3.5-turbo", temperature=0, api_key=open_ai_key
         )
         self.output_parser = SimpleJsonOutputParser()
         self.chain = self.prompt | self.model | self.output_parser
@@ -85,9 +79,10 @@ class RephraseChain:
 
 
 class SourceChain:
-    def __init__(self) -> None:
+
+    def __init__(self, open_ai_key) -> None:
         self.template = """Split the question into three parts, the geographic region(s), 
-        the general category(s) of the variables mentioned, and the relevant dataset name.
+        the core concepts of the variable(s) mentioned, and the relevant dataset name.
         Only use language from the question.
 
         If you don't know the answer, just say that you don't know, don't try to 
@@ -96,7 +91,7 @@ class SourceChain:
         Return a json with the keys "geography", "relevant_dataset", and "variables". 
         the value for the key "geography" should be a list. If no place is mentioned set it to an empty list.
         the value for the key "relevant_dataset" should be a string. If no dataset is mentioned, set it to NA
-        the value for the key "variables" should be a string. 
+        the value for the key "variables" should be a list of the core concepts of the variable(s) in the question.
 
         This should be in the following format
         Question: [question]
@@ -108,7 +103,7 @@ class SourceChain:
         """
         self.prompt = ChatPromptTemplate.from_template(self.template)
         self.model = ChatOpenAI(
-            model="gpt-3.5-turbo", temperature=0, api_key=os.environ["OPENAI_API_KEY"]
+            model="gpt-3.5-turbo", temperature=0, api_key=open_ai_key
         )
         self.output_parser = SimpleJsonOutputParser()
         self.chain = self.prompt | self.model | self.output_parser
@@ -118,7 +113,8 @@ class SourceChain:
 
 
 class SourceRAG:
-    def __init__(self) -> None:
+
+    def __init__(self, open_ai_key) -> None:
         self.template = """
         You are a helpful Census Agent. Only use the provided metadata to answer.
         You are given the question, the identified categories, and the approximate dataset, 
@@ -135,7 +131,7 @@ class SourceRAG:
         Dataset: {dataset}
         Answer: """
 
-        self.docembeddings = self.get_api_discovery_docembedding()
+        self.docembeddings = self.get_api_discovery_docembedding(open_ai_key)
         self.docretriever = self.docembeddings.as_retriever(
             search_kwargs={"k": 3},
         )
@@ -144,7 +140,7 @@ class SourceRAG:
             input_variables=["context", "question", "categories", "dataset"],
         )
         self.model = ChatOpenAI(
-            model="gpt-3.5-turbo", temperature=0, api_key=os.environ["OPENAI_API_KEY"]
+            model="gpt-3.5-turbo", temperature=0, api_key=open_ai_key
         )
         self.output_parser = SimpleJsonOutputParser()
 
@@ -185,21 +181,22 @@ class SourceRAG:
                 datasets_to_keep.append((data_string, data_dict))
         return datasets_to_keep
 
-    def get_api_discovery_docembedding(self):
+    def get_api_discovery_docembedding(self, open_ai_key):
         api_discovery_path = (
             script_dir / "data" / "faiss_index" / "llm_faiss_index_api_discovery"
         )
         if not os.path.exists(api_discovery_path):
             datasets = self.get_api_discovery_data()
-            save_docembedding(api_discovery_path, datasets)
+            save_docembedding(api_discovery_path, datasets, open_ai_key)
         docembeddings = FAISS.load_local(
-            api_discovery_path, OpenAIEmbeddings(api_key=os.environ["OPENAI_API_KEY"])
+            api_discovery_path, OpenAIEmbeddings(api_key=open_ai_key)
         )
         return docembeddings
 
 
 class VariableRAG:
-    def __init__(self, variable_url) -> None:
+
+    def __init__(self, variable_url, open_ai_key) -> None:
         self.save_variables(variable_url)
 
         self.template = """
@@ -236,13 +233,14 @@ class VariableRAG:
         Dataset: {dataset}
         Answer: """
 
+        self.open_ai_key = open_ai_key
         self.prompt = PromptTemplate(
             template=self.template,
             input_variables=["context", "question", "categories", "dataset"],
         )
         self.docembedding_folder_path = self.get_variable_docembedding()
         self.model = ChatOpenAI(
-            model="gpt-3.5-turbo", temperature=0, api_key=os.environ["OPENAI_API_KEY"]
+            model="gpt-3.5-turbo", temperature=0, api_key=open_ai_key
         )
         self.output_parser = SimpleJsonOutputParser()
 
@@ -261,7 +259,7 @@ class VariableRAG:
         path = "root"
         self.docretriever = FAISS.load_local(
             self.docembedding_folder_path / path,
-            OpenAIEmbeddings(api_key=os.environ["OPENAI_API_KEY"]),
+            OpenAIEmbeddings(api_key=self.open_ai_key),
         ).as_retriever(
             search_kwargs={"k": 20},
         )
@@ -297,7 +295,7 @@ class VariableRAG:
             path = next_path
             self.docretriever = FAISS.load_local(
                 self.docembedding_folder_path / next_path,
-                OpenAIEmbeddings(api_key=os.environ["OPENAI_API_KEY"]),
+                OpenAIEmbeddings(api_key=self.open_ai_key),
             ).as_retriever(
                 search_kwargs={"k": 20},
             )
@@ -331,11 +329,13 @@ class VariableRAG:
         if not os.path.exists(docembedding_folder_path):
             var_tree = self.get_variable_data()
             level = "root"
-            save_variable_embedding(docembedding_folder_path, level, var_tree)
+            save_variable_embedding(
+                docembedding_folder_path, level, var_tree, self.open_ai_key
+            )
         return docembedding_folder_path
 
 
-def save_variable_embedding(docembedding_folder_path, level, v):
+def save_variable_embedding(docembedding_folder_path, level, v, open_ai_key):
     if len(v.children.keys()) == 0:
         datasets = [v.dataset[0]]
         metadatas = [v.dataset[1]]
@@ -344,7 +344,7 @@ def save_variable_embedding(docembedding_folder_path, level, v):
         metadatas = []
         for key, child in v.children.items():
             save_variable_embedding(
-                docembedding_folder_path, "!!".join((level, key)), child
+                docembedding_folder_path, "!!".join((level, key)), child, open_ai_key
             )
             metadata = {}
             metadata["key"] = key
@@ -359,9 +359,7 @@ def save_variable_embedding(docembedding_folder_path, level, v):
 
     splitter = CharacterTextSplitter(chunk_size=2750, chunk_overlap=0)
     docs = splitter.create_documents(datasets, metadatas)
-    docembeddings = FAISS.from_documents(
-        docs, OpenAIEmbeddings(api_key=os.environ["OPENAI_API_KEY"])
-    )
+    docembeddings = FAISS.from_documents(docs, OpenAIEmbeddings(api_key=open_ai_key))
     docembeddings.save_local(docembedding_folder_path / level)
 
 
@@ -382,7 +380,8 @@ class VarTree:
 
 
 class GeographyRAG:
-    def __init__(self) -> None:
+
+    def __init__(self, open_ai_key) -> None:
         self.template = """
         As a Census Representative, your objective is to identify the accurate FIPS code 
         for only the place specified in the query, utilizing only the metadata provided.
@@ -436,7 +435,7 @@ class GeographyRAG:
         
         Answer: """
 
-        self.docembeddings = self.get_fips_docembedding()
+        self.docembeddings = self.get_fips_docembedding(open_ai_key)
         self.docretriever = self.docembeddings.as_retriever(
             search_kwargs={"k": 3},
         )
@@ -445,7 +444,7 @@ class GeographyRAG:
             input_variables=["context", "question"],
         )
         self.model = ChatOpenAI(
-            model="gpt-3.5-turbo", temperature=0, api_key=os.environ["OPENAI_API_KEY"]
+            model="gpt-3.5-turbo", temperature=0, api_key=open_ai_key
         )
         self.output_parser = SimpleJsonOutputParser()
 
@@ -471,19 +470,23 @@ class GeographyRAG:
                 datasets_w_meta.append((f.read(), {"file_name": file_name}))
         return datasets_w_meta
 
-    def get_fips_docembedding(self):
+    def get_fips_docembedding(self, open_ai_key):
         fips_path = script_dir / "data" / "faiss_index" / "llm_faiss_index_fips"
         if not os.path.exists(fips_path):
             datasets = self.get_fips_data()
-            save_docembedding(fips_path, datasets, separator="\n")
+            save_docembedding(fips_path, datasets, open_ai_key, separator="\n")
         docembeddings = FAISS.load_local(
-            fips_path, OpenAIEmbeddings(api_key=os.environ["OPENAI_API_KEY"])
+            fips_path, OpenAIEmbeddings(api_key=open_ai_key)
         )
         return docembeddings
 
 
 class Query:
-    def __init__(self, api_access_url: str, variables: dict, geography: dict):
+
+    def __init__(
+        self, api_access_url: str, variables: dict, geography: dict, census_key
+    ):
+        self.census_key = census_key
         self.url = api_access_url
         self.variables = variables
         self.geographies = geography
@@ -512,8 +515,7 @@ class Query:
 
         # include api key at the end of the query
         query.append(geo_string)
-        key = os.getenv("CENSUS_API_KEY")
-        api_key = f"&key={key}"
+        api_key = f"&key={self.census_key}"
         query.append(api_key)
 
         return "".join(query)
@@ -521,9 +523,11 @@ class Query:
     def get_data(self):
         try:
             api_url = self.build_query()
+            print(api_url)
             response = requests.get(api_url)
             response.raise_for_status()
             data = response.json()
+            print(data)
             return data
         except requests.RequestException as e:
             print(f"An error occurred: {e}")

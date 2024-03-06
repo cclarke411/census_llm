@@ -15,66 +15,72 @@ from census_server.chains import (
 
 load_dotenv()
 # check for API Keys:
-open_ai_key = False
+open_ai_key_flag = False
 if "OPENAI_API_KEY" in os.environ:
-    open_ai_key = True
+    open_ai_key_flag = True
 
-census_key = False
+census_key_flag = False
 if "CENSUS_API_KEY" in os.environ:
-    census_key = True
+    census_key_flag = True
 
 
 @st.cache_data
-def run(query):
+def run(query, open_ai_key, census_key):
 
-    rc = RephraseChain()
-    ans = rc.invoke(query)
+    rephrase_chain = RephraseChain(open_ai_key)
+    ans = rephrase_chain.invoke(query)
+
     st.write("**Rephrased Question**")
     st.write(ans["rephrased_question"])
-
     st.write("**Analyzing your query...**")
-    sc = SourceChain()
-    ans = sc.invoke(ans["rephrased_question"])
-    st.write("**Geographic Region to Search For:** ", ans["geography"])
-    st.write("**Dataset to Search For:** ", ans["relevant_dataset"])
-    st.write("**Variables to Search For:** ", ans["variables"])
 
+    source_chain = SourceChain(open_ai_key)
+    ans = source_chain.invoke(ans["rephrased_question"])
+
+    st.write("**Dataset to Search For:** ", ans["relevant_dataset"])
     st.write("**Identifying Data Sources...**")
-    sr = SourceRAG()
-    doc = sr.invoke(query, ans["variables"], ans["relevant_dataset"])
-    st.write("**Found Data Source:**")
-    st.write(doc.page_content)
+
+    source_rag = SourceRAG(open_ai_key)
+    doc = source_rag.invoke(query, ans["variables"], ans["relevant_dataset"])
     access_link = doc.metadata["distribution"][0]["accessURL"]
 
+    st.write("**Found Data Source:**")
+    st.write(doc.page_content)
+    st.write("**Variables to Search For:** ", ans["variables"])
     st.write("**Searching in Data Source...**")
-    vr = VariableRAG(doc.metadata["c_variablesLink"])
-    vars = vr.invoke(query, ans["variables"], ans["relevant_dataset"])
+
+    variable_rag = VariableRAG(doc.metadata["c_variablesLink"], open_ai_key)
+    vars = variable_rag.invoke(query, ans["variables"], ans["relevant_dataset"])
     st.write("**Variables Found:**")
     st.write(vars)
-    access_variable_code = vars.metadata["code"]
-    st.write("Variable Code", access_variable_code)
-    st.write("**Geographies Found:**")
+
+    vars = {var.metadata["code"]: var.metadata for var in [vars]}
+
+    st.write("**Geographic Region to Search For:** ", ans["geography"])
+
     geos = []
-    g = GeographyRAG()
+    geo_rag = GeographyRAG(open_ai_key)
     for geo in ans["geography"]:
-        res = g.invoke(geo)
+        res = geo_rag.invoke(geo)
         geos.append(res)
+
+    st.write("**Geographies Found:**")
     st.write(geos)
 
     st.write("**Pulling Data...**")
     # todo figure out geography formatting with divij
-    df = Query(
+    query = Query(
         api_access_url=access_link,
         variables=vars,
         geography={"state": "49", "county": ["011", "013"]},
-    ).format_data()
+        census_key=census_key,
+    )
+    df = query.format_data()
     st.dataframe(df)
 
     # todo analysis re-queries census unnecessarily
     st.write("**Analyzing Data...**")
-    analysis = Analysis(
-        Query(api_access_url=access_link, variables=res, geography={"state": "49"})
-    ).prompt()
+    analysis = Analysis(query).prompt()
     st.write(analysis)
 
     return None
@@ -83,8 +89,9 @@ def run(query):
 # sidebar with FAQ
 load_dotenv()
 with st.sidebar:
+    global user_open_ai_key, user_census_key
     st.markdown("**Enter your OpenAI API Key**")
-    user_openai_key = st.text_input("For accessing GPT")
+    user_open_ai_key = st.text_input("For accessing GPT")
     st.write(
         "*Get your OpenAI key here* :point_down: https://help.openai.com/en/articles/4936850-where-do-i-find-my-openai-api-key"
     )
@@ -94,9 +101,9 @@ with st.sidebar:
         "*Get your Census API key here* :point_down: https://api.census.gov/data/key_signup.html"
     )
 
-    if user_openai_key == "" and not open_ai_key:
+    if user_open_ai_key == "" and not open_ai_key_flag:
         st.error(f"Please enter your OpenAI API Key!", icon="🚨")
-    if user_census_key == "" and not census_key:
+    if user_census_key == "" and not census_key_flag:
         st.error(f"Please enter your Census API Key!", icon="🚨")
 
     expander1 = st.expander("**Data Source Information**")
@@ -168,7 +175,19 @@ input = st.text_input("Ask the Census Bot what you want to know from Census Data
 
 with st.container():
     if input != "":
-        run(input)
+        if user_open_ai_key != "":
+            open_ai_key = user_open_ai_key
+        elif open_ai_key_flag:
+            open_ai_key = os.environ["OPENAI_API_KEY"]
+
+        if user_census_key != "":
+            census_key = user_census_key
+        elif census_key_flag:
+            census_key = os.environ["CENSUS_API_KEY"]
+        else:
+            census_key = ""
+
+        run(input, open_ai_key, census_key)
 
 
 footer = """<style>
