@@ -25,6 +25,31 @@ if "CENSUS_API_KEY" in os.environ:
     census_key_flag = True
 
 
+def geo_lookup(geos):
+    with open("data/fips/national_state2020.txt", "r") as file:
+        states = file.readlines()
+    state_rows = [state.replace("\n", "").split("|") for state in states]
+    state_df = pd.DataFrame(state_rows[1:], columns=state_rows[0])
+
+    with open("data/fips/national_county2020.txt", "r") as file:
+        counties = file.readlines()
+    county_rows = [county.replace("\n", "").split("|") for county in counties]
+    county_df = pd.DataFrame(county_rows[1:], columns=county_rows[0])
+
+    res = []
+    for geo in geos:
+        if isinstance(geo["state"], list):
+            r = state_df.loc[state_df.STATEFP.isin(geo["state"])]
+            res.append(r.loc[:, ["STATE", "STATE_NAME", "STATEFP"]])
+        else:
+            r = county_df.loc[
+                (county_df.STATEFP == geo["state"])
+                & (county_df.COUNTYFP.isin(geo["county"]))
+            ]
+            res.append(r.loc[:, ["STATE", "STATEFP", "COUNTYNAME", "COUNTYFP"]])
+    return pd.concat(res).fillna("")
+
+
 def process_geos(geos):
     states_only = {"state": []}
     fixed_geos = {}
@@ -86,6 +111,8 @@ def run(query, open_ai_key, census_key):
     geos = process_geos(geos)
     st.write("**Geographies Found:**")
     st.write(geos)
+
+    st.write(geo_lookup(geos))
 
     st.write("**Pulling Data...**")
     # todo figure out geography formatting with divij
