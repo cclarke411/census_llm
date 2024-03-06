@@ -154,8 +154,7 @@ with st.sidebar:
         to try a few times to get sensible output in some cases!
         
         Question Examples: How many men are under 45 in
-        Connectict? How many people commute to work via public transit
-        in New York versus Los Angeles?"""
+        Connectict? How many people commute to work in Cook County, Illinois?"""
     )
     expander4 = st.expander("**Data Privacy**")
     expander4.write(
