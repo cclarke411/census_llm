@@ -60,8 +60,8 @@ def run(query, open_ai_key, census_key):
     st.write("**Geographies Found:**")
     st.write(geos)
 
-    st.write("**Pulling Data...**")
-    # todo figure out geography formatting with divij
+    st.write("**Retrieved Data:**")
+
     query = CensusQuery(
         api_access_url=access_link,
         variables=vars,
@@ -71,8 +71,7 @@ def run(query, open_ai_key, census_key):
     df = query.get_data()
     st.dataframe(df)
 
-    # todo analysis re-queries census unnecessarily
-    st.write("**Analyzing Data...**")
+    st.write("**Data Analysis:**")
     analysis = AnalysisChain(df, vars)
     res = analysis.invoke()
     st.write(res)
