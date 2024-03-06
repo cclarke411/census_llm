@@ -194,7 +194,7 @@ class SourceRAG:
         return docembeddings
 
 
-class VariableRAG:
+class VariableTreeChain:
 
     def __init__(self, variable_url, open_ai_key) -> None:
         self.save_variables(variable_url)
@@ -205,27 +205,26 @@ class VariableRAG:
         You are given the question entered by the user, the categories relevant to the question, and the dataset.
 
         ##OBJECTIVE:##
-        You are trying to identify all the DOCUMENT relevant to the question.
-        If the DOCUMENT directly answer the question, choose all the DOCUMENT.
-        If the DOCUMENT do not directly answer the question, choose the DOCUMENT that bring you closer to answering the question
+        You are trying to identify all the VARIABLE relevant to the question.
+        If the VARIABLE directly answer the question, choose all the VARIABLE.
+        If the VARIABLE do not directly answer the question, choose the VARIABLE that bring you closer to answering the question
 
         ##INFORMATION PROVIDED:##
-        You are also given a list of DOCUMENT. EACH DOCUMENT REPRESENTS A VARIABLE (or a VARIABLE STEM).
-        Your task is to choose the best one or multiple DOCUMENT from the given list of DOCUMENT.
+        You are also given a list of VARIABLE. EACH VARIABLE REPRESENTS A VARIABLE or a VARIABLE STEM.
+        Your task is to choose the best one or multiple VARIABLE from the given list of VARIABLE.
         
 
-        Remember, each DOCUMENT could be just the partial variable.   
-        Remember, each DOCUMENT could be the full variable.   
-        Remember, more that one DOCUMENT could be accurate.   
+        Remember, each VARIABLE could be just the partial variable.   
+        Remember, each VARIABLE could be the full variable.   
+        Remember, more that one VARIABLE could be accurate.   
         Do not give multiples if they represent the general same theme. 
         Do give multiples if they are different and add variety. 
 
-        Set Answer equal to a json with the keys "doc_title" and "doc_content" and a value of lists.
-        In case of choosing multiple DOCUMENT, set the keys "doc_title" and "doc_content" to lists.
-        RETURN THE DOCUMENTS AS IS, DO NOT CHANGE ANYTHING.
+        Set Answer equal to a json with the key "var_content" and a value of lists.
+        RETURN THE VARIABLE AS IS, DO NOT CHANGE ANYTHING.
         
         INFORMATION:::
-        List of Variable Stems: 
+        List of Variable: 
         {context}
 
         Question: {question}
@@ -238,11 +237,12 @@ class VariableRAG:
             template=self.template,
             input_variables=["context", "question", "categories", "dataset"],
         )
-        self.docembedding_folder_path = self.get_variable_docembedding()
+        self.var_tree = self.get_variable_data()
         self.model = ChatOpenAI(
             model="gpt-3.5-turbo", temperature=0, api_key=open_ai_key
         )
         self.output_parser = SimpleJsonOutputParser()
+        self.chain = self.prompt | self.model | self.output_parser
 
     def save_variables(self, variable_url):
         self.url = variable_url
@@ -254,59 +254,37 @@ class VariableRAG:
             with open(self.file_path, "wb") as file:
                 file.write(resp.content)
 
+    def rec_invoke(self, cur_tree):
+        if len(cur_tree.children) == 0:
+            self.results[cur_tree.dataset[1]["code"]] = cur_tree.dataset[1]
+        else:
+            formatted_variable_str = self.format_vars(cur_tree)
+            cur_results = self.chain.invoke(
+                {
+                    "context": formatted_variable_str,
+                    "question": self.question,
+                    "categories": self.categories,
+                    "dataset": self.dataset,
+                }
+            )
+            if isinstance(cur_results["var_content"], list):
+                for next_child_result in cur_results["var_content"]:
+                    next_child = next_child_result.split("---")[0].split("!!")[-1]
+                    next_tree = cur_tree.children[next_child]
+                    self.rec_invoke(next_tree)
+            else:
+                next_child = cur_results["var_content"].split("---")[0].split("!!")[-1]
+                next_tree = cur_tree.children[next_child]
+                self.rec_invoke(next_tree)
+
     def invoke(self, question, categories, dataset):
-
-        path = "root"
-        self.docretriever = FAISS.load_local(
-            self.docembedding_folder_path / path,
-            OpenAIEmbeddings(api_key=self.open_ai_key),
-        ).as_retriever(
-            search_kwargs={"k": 20},
-        )
-        while True:
-            self.chain = (
-                {
-                    "context": itemgetter("question") | self.docretriever | format_docs,
-                    "question": itemgetter("question"),
-                    "categories": itemgetter("categories"),
-                    "dataset": itemgetter("dataset"),
-                }
-                | self.prompt
-                | self.model
-                | self.output_parser
-            )
-            self.results = self.chain.invoke(
-                {
-                    "question": question,
-                    "categories": categories,
-                    "dataset": dataset,
-                }
-            )
-            print(self.results)
-            print("~!~!~!")
-            if isinstance(self.results["doc_content"], list):
-                next_path = self.results["doc_content"][0]
-            else:
-                next_path = self.results["doc_content"]
-            next_path = (
-                next_path.replace("CONTENT:", "").strip().split("---")[0].strip()
-            )
-            next_path = "!!".join((path, next_path))
-            path = next_path
-            self.docretriever = FAISS.load_local(
-                self.docembedding_folder_path / next_path,
-                OpenAIEmbeddings(api_key=self.open_ai_key),
-            ).as_retriever(
-                search_kwargs={"k": 20},
-            )
-            rel_docs = self.docretriever.get_relevant_documents(question)
-            if len(rel_docs) == 1:
-                break
-            else:
-                print("continue")
-                continue
-
-        return rel_docs[0]
+        cur_tree = self.var_tree
+        self.question = question
+        self.categories = ", ".join(categories)
+        self.dataset = dataset
+        self.results = {}
+        self.rec_invoke(cur_tree)
+        return self.results
 
     def get_variable_data(self):
         key = "variables"
@@ -319,48 +297,16 @@ class VariableRAG:
             v.append(branch, (data, metadata))
         return v
 
-    def get_variable_docembedding(self):
-        docembedding_folder_path = (
-            script_dir
-            / "data"
-            / "faiss_index"
-            / f"llm_faiss_index_{self.url.replace(HEAD, '').replace('/', '_').replace('.json', '')}_folder"
-        )
-        if not os.path.exists(docembedding_folder_path):
-            var_tree = self.get_variable_data()
-            level = "root"
-            save_variable_embedding(
-                docembedding_folder_path, level, var_tree, self.open_ai_key
-            )
-        return docembedding_folder_path
-
-
-def save_variable_embedding(docembedding_folder_path, level, v, open_ai_key):
-    if len(v.children.keys()) == 0:
-        datasets = [v.dataset[0]]
-        metadatas = [v.dataset[1]]
-    else:
-        datasets = []
-        metadatas = []
-        for key, child in v.children.items():
-            save_variable_embedding(
-                docembedding_folder_path, "!!".join((level, key)), child, open_ai_key
-            )
-            metadata = {}
-            metadata["key"] = key
-            cur_dataset = []
-            cur_dataset.append(key)
-            if v.dataset is not None:
-                metadata["metadata"] = v.dataset[1]
-                cur_dataset.append(v.dataset[0])
-            dataset = "---".join(cur_dataset)
-            datasets.append(dataset)
-            metadatas.append(metadata)
-
-    splitter = CharacterTextSplitter(chunk_size=2750, chunk_overlap=0)
-    docs = splitter.create_documents(datasets, metadatas)
-    docembeddings = FAISS.from_documents(docs, OpenAIEmbeddings(api_key=open_ai_key))
-    docembeddings.save_local(docembedding_folder_path / level)
+    def format_vars(self, v):
+        formatted_str = ""
+        for idx, (key, item) in enumerate(v.children.items()):
+            item_str = f"\n\nVARIABLE {idx+1}\n"
+            if item.dataset is not None:
+                item_str += item.dataset[0]
+            else:
+                item_str += key
+            formatted_str += item_str
+        return formatted_str
 
 
 class VarTree:

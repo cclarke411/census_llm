@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 from census_server.chains import (
     SourceChain,
     SourceRAG,
-    VariableRAG,
+    VariableTreeChain,
     RephraseChain,
     GeographyRAG,
     CensusQuery,
@@ -49,12 +49,10 @@ def run(query, open_ai_key, census_key):
     st.write("**Variables to Search For:** ", ans["variables"])
     st.write("**Searching in Data Source...**")
 
-    variable_rag = VariableRAG(doc.metadata["c_variablesLink"], open_ai_key)
+    variable_rag = VariableTreeChain(doc.metadata["c_variablesLink"], open_ai_key)
     vars = variable_rag.invoke(query, ans["variables"], ans["relevant_dataset"])
     st.write("**Variables Found:**")
     st.write(vars)
-
-    vars = {var.metadata["code"]: var.metadata for var in [vars]}
 
     st.write("**Geographic Region to Search For:** ", ans["geography"])
 
