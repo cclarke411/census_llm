@@ -3,6 +3,11 @@ This application makes US Census Data easily accessible via natural language que
 
 This is a website built for a user to be able to access US Census data and ACS data to get information for any question available in these data sources. This site is meant to return relevant data, perform basic analysis and describe the results of the analysis. The main objective of this site is to make data more accessible for anyone interested in Census or ACS data, whether or not they have a technical background. This site is intended to be a tool that might not find solutions in the first go, but to guide the user through the search for the data. The website talks the user through its result analysis, and the user can accordingly tweak the inputs to get better results.
 
+
+## Github Repo
+
+[https://github.com/abejburton/census_llm](https://github.com/abejburton/census_llm)
+
 ## How to Use It
 
 ### Through the Web at [https://censusbot.streamlit.app/](https://censusbot.streamlit.app/)
