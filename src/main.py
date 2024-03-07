@@ -134,7 +134,7 @@ def run(query, open_ai_key, census_key):
     st.divider()
 
     st.write("**Data Analysis:**")
-    analysis = AnalysisChain(df, vars)
+    analysis = AnalysisChain(df, vars, open_ai_key)
     res = analysis.invoke()
     st.write(res)
 
