@@ -168,16 +168,12 @@ class SourceRAG:
 
         return self.res_doc
 
-    def get_api_discovery_data(self, vintage=2020):
+    def get_api_discovery_data(self):
         file_path = script_dir / Path("data/api_discovery.json")
         key = "dataset"
         keep = ["title", "description"]
         datasets = get_data(file_path, key, keep)
-        datasets_to_keep = []
-        for data_string, data_dict in datasets:
-            if data_dict.get("c_vintage", None) == vintage:
-                datasets_to_keep.append((data_string, data_dict))
-        return datasets_to_keep
+        return datasets
 
     def get_api_discovery_docembedding(self, open_ai_key):
         api_discovery_path = (
