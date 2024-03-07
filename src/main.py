@@ -279,7 +279,7 @@ text-align: center;
 }
 </style>
 <div class="footer">
-<p>Developed with ❤ by Abe Burton and Divij Sinha 2024</p>
+<p>Developed with ❤ by Abe Burton and Divij Sinha 2024 (v0.1)</p>
 </div>
 """
 st.markdown(footer, unsafe_allow_html=True)
