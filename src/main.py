@@ -98,8 +98,10 @@ def run(query, open_ai_key, census_key):
     variable_rag = VariableTreeChain(doc.metadata["c_variablesLink"], open_ai_key)
     vars = variable_rag.invoke(query, ans["variables"], ans["relevant_dataset"])
     st.write("**Variables Found:**")
-    var_df = pd.DataFrame([(var["code"], var["label"]) for var in vars.values()])
-    var_df.columns = ["code", "label"]
+    var_df = pd.DataFrame(
+        [(var["code"], var["concept"], var["label"]) for var in vars.values()]
+    )
+    var_df.columns = ["code", "concept", "label"]
     st.write(var_df)
 
     st.divider()

@@ -201,8 +201,11 @@ class VariableTreeChain:
         ##OBJECTIVE:##
         You are trying to identify all the VARIABLE relevant to the question.
         If the VARIABLE directly answer the question, choose all the VARIABLE.
-        If the VARIABLE do not directly answer the question, choose the VARIABLE that bring you closer to answering the question.
         If the VARIABLE do not answer the question, or answer a different question, do not choose the VARIABLE.
+        Do not choose a VARIABLE that is only tangentially related to the question.
+        Do not choose a VARIABLE that is more detailed than needed. Stick to the question.
+        If the question does not have a race mentioned, do not choose a VARIABLE that has a race mentioned in the VARIABLE.
+        If the question does have a race mentioned, only choose the VARIABLE that has the race mentioned in the VARIABLE corresponding to the question.
 
         ##INFORMATION PROVIDED:##
         You are also given a list of VARIABLE. EACH VARIABLE REPRESENTS A VARIABLE or a VARIABLE STEM.
@@ -217,7 +220,7 @@ class VariableTreeChain:
         Set Answer equal to a json with the keys "var_content", "var_scores". 
         Set the values of both keys to lists.
         For "var_content", set each element of the list in the value equal to the DESCRIPTION of the VARIABLE.
-        For "var_score", set each element of the list in the value equal to a score in the range 0-100 of how likely you think the VARIABLE is to answer the question.
+        For "var_score", set each element of the list in the value equal to a score in the range 0-100 of how perfectly the VARIABLE is to answer the question.
         RETURN THE DESCRIPTION AS IS, DO NOT CHANGE ANYTHING.
         
         INFORMATION:::
@@ -254,26 +257,40 @@ class VariableTreeChain:
     def rec_invoke(self, cur_tree):
         if len(cur_tree.children) == 0:
             self.results[cur_tree.dataset[1]["code"]] = cur_tree.dataset[1]
+        elif len(cur_tree.children) == 1:
+            next_tree = cur_tree.children[list(cur_tree.children.keys())[0]]
+            self.rec_invoke(next_tree)
         else:
             formatted_variable_str = self.format_vars(cur_tree)
-            cur_results = self.chain.invoke(
-                {
-                    "context": formatted_variable_str,
-                    "question": self.question,
-                    "categories": self.categories,
-                    "dataset": self.dataset,
-                }
-            )
-            print(cur_results)
-            if isinstance(cur_results["var_content"], list):
-                for next_child_result in cur_results["var_content"]:
-                    next_child = next_child_result.split("---")[0].split("!!")[-1]
-                    next_tree = cur_tree.children[next_child]
-                    self.rec_invoke(next_tree)
-            else:
-                next_child = cur_results["var_content"].split("---")[0].split("!!")[-1]
-                next_tree = cur_tree.children[next_child]
-                self.rec_invoke(next_tree)
+            splitter = CharacterTextSplitter(chunk_size=30_000)
+            splitted_variable_str = splitter.split_text(formatted_variable_str)
+            for var_str in splitted_variable_str:
+                print(var_str)
+                cur_results = self.chain.invoke(
+                    {
+                        "context": var_str,
+                        "question": self.question,
+                        "categories": self.categories,
+                        "dataset": self.dataset,
+                    }
+                )
+                # print(cur_tree.children)
+                print(cur_results)
+                if isinstance(cur_results["var_content"], list):
+                    for idx, next_child_result in enumerate(cur_results["var_content"]):
+                        if int(cur_results["var_scores"][idx]) > 30:
+                            next_child = next_child_result.split("---")[0].split("!!")[
+                                -1
+                            ]
+                            next_tree = cur_tree.children[next_child]
+                            self.rec_invoke(next_tree)
+                else:
+                    if int(cur_results["var_scores"]) > 30:
+                        next_child = (
+                            cur_results["var_content"].split("---")[0].split("!!")[-1]
+                        )
+                        next_tree = cur_tree.children[next_child]
+                        self.rec_invoke(next_tree)
 
     def invoke(self, question, categories, dataset):
         cur_tree = self.var_tree
@@ -290,15 +307,33 @@ class VariableTreeChain:
         datasets = get_data(self.file_path, key, keep)
         v = VarTree()
         for data, metadata in datasets:
-            branch = metadata["label"].strip().replace(":", "")
-            branch = re.sub("^!!", "", branch).strip().split("!!")
-            v.append(branch, (data, metadata))
+            if metadata["label"] not in [
+                "Geography",
+                "Census API FIPS 'for' clause",
+                "Census API FIPS 'in' clause",
+                "Uniform Census Geography Identifier clause",
+                "Summary Level code",
+                "GEO_ID Component",
+            ]:
+                try:
+                    branch = (
+                        metadata["label"]
+                        .strip()
+                        .replace(":", "")
+                        .replace("--", "")
+                        .strip()
+                    )
+                    branch = re.sub("^!!", "", branch).strip().split("!!")
+                    branch = [metadata["concept"]] + branch
+                    v.append(branch, (data, metadata))
+                except:
+                    pass
         return v
 
     def format_vars(self, v):
         formatted_str = ""
         for idx, (key, item) in enumerate(v.children.items()):
-            item_str = f"\n\nVARIABLE {idx+1}DESCRIPTION:\n"
+            item_str = f"\n\nVARIABLE {idx+1}\nDESCRIPTION:"
             if item.dataset is not None:
                 item_str += item.dataset[0]
             else:
