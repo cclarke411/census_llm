@@ -203,7 +203,8 @@ with st.sidebar:
         
         We've restricted the API to look for states and counties, so for best results,
         make sure your questions are either about the US, or are on the state or county level.
-        City or Census Tract level questions will have worse output.
+        City or Census Tract level questions will have worse output or just return statistics for
+        the counties they are in.
         
         If the model can find relevant data, it will give you the best response it can.
         
@@ -211,8 +212,11 @@ with st.sidebar:
         question and asking again. The GPT model is doing its best, but you may have
         to try a few times to get sensible output in some cases!
         
-        Question Examples: How many men are under 45 in
-        Connectict? How many people commute to work in Cook County, Illinois?"""
+        Think of this site like an aid for learning about the Census without 
+        navigating the huge Census website or learning to write API calls. You may
+        have to workshop your questions for best results, but this will have you
+        accessing answers to any Census/ACS questions fast!  
+      """
     )
     expander4 = st.expander("**Data Privacy**")
     expander4.write(
@@ -239,8 +243,7 @@ with col2:
             "How many men are under 45 in Utah?",
             "How many people commute via public transit in New Jersey?",
             "What percent of people work in arts and entertainment in California?",
-            "What percent of Arizona is African American?",
-            "What is the average income in each state?"
+            "What percent of  Maricopa County, Arizona is Hispanic?",
         ),
         index=None,
     )
