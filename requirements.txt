@@ -36,6 +36,7 @@ emoji==2.10.1
 et-xmlfile==1.1.0
 executing==2.0.1
 faiss-cpu==1.7.4
+faiss-gpu==1.7.2
 fastjsonschema==2.19.1
 filelock==3.13.1
 filetype==1.2.0
