@@ -237,8 +237,10 @@ with col2:
         label="Need Ideas? Pick from here:",
         options=(
             "How many men are under 45 in Utah?",
-            "What is the population of Cook County, IL",
-            "Other",
+            "How many people commute via public transit in New Jersey?",
+            "What percent of people work in arts and entertainment in California?",
+            "What percent of Arizona is African American?",
+            "What is the average income in each state?"
         ),
         index=None,
     )
