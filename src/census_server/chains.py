@@ -210,7 +210,7 @@ class VariableTreeChain:
 
         Remember, each VARIABLE could be just the partial variable.   
         Remember, each VARIABLE could be the full variable.   
-        Remember, more that one VARIABLE could be accurate.   
+        Remember, more than one VARIABLE could be accurate.   
         Do not give multiples if they represent the general same theme. 
         Do give multiples if they are different and add variety. 
 
@@ -264,6 +264,7 @@ class VariableTreeChain:
                     "dataset": self.dataset,
                 }
             )
+            print(cur_results)
             if isinstance(cur_results["var_content"], list):
                 for next_child_result in cur_results["var_content"]:
                     next_child = next_child_result.split("---")[0].split("!!")[-1]
