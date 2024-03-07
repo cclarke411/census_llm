@@ -534,26 +534,11 @@ class CensusQuery:
 
 class AnalysisChain:
 
-    def __init__(self, df, variables):
+    def __init__(self, df, variables, open_ai_key):
         self.df = df
         self.variables = variables
         self.info = self.df_info()
 
-    def df_info(self):
-        column_info = {}
-        for d in self.variables:
-            column_info[d] = self.variables[d]["label"]
-        description = self.df.describe()
-
-        buffer = io.StringIO()
-        self.df.info(buf=buffer)
-        info_string = buffer.getvalue()
-
-        value_counts = self.df.value_counts()
-
-        return column_info, description, info_string, value_counts
-
-    def invoke(self):
         template = """
         Role: You are a python output interpreter.
         
@@ -579,6 +564,22 @@ class AnalysisChain:
         Information: {information}
         """
         prompt = ChatPromptTemplate.from_template(template)
-        model = ChatOpenAI(model="gpt-3.5-turbo", temperature=0)
-        chain = prompt | model | StrOutputParser()
-        return chain.invoke({"information": self.info})
+        model = ChatOpenAI(model="gpt-3.5-turbo", temperature=0, api_key=open_ai_key)
+        self.chain = prompt | model | StrOutputParser()
+
+    def df_info(self):
+        column_info = {}
+        for d in self.variables:
+            column_info[d] = self.variables[d]["label"]
+        description = self.df.describe()
+
+        buffer = io.StringIO()
+        self.df.info(buf=buffer)
+        info_string = buffer.getvalue()
+
+        value_counts = self.df.value_counts()
+
+        return column_info, description, info_string, value_counts
+
+    def invoke(self):
+        return self.chain.invoke({"information": self.info})
