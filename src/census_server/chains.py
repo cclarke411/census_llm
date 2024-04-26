@@ -57,6 +57,7 @@ def save_docembedding(embeddings_folder_path, datasets, open_ai_key, separator="
 
 
 class RephraseChain:
+    """Rephrases a user question in a more parseable way"""
 
     def __init__(self, open_ai_key) -> None:
         self.template = """Rephrase the following question, if needed, to be more helpful in identifying variables
@@ -78,6 +79,9 @@ class RephraseChain:
 
 
 class SourceChain:
+    """Identifies geographies, datasets, and variables that are referenced in a
+    user question
+    """
 
     def __init__(self, open_ai_key) -> None:
         self.template = """Split the question into three parts, the geographic region(s), 
@@ -112,6 +116,9 @@ class SourceChain:
 
 
 class SourceRAG:
+    """RAG identifies the most relevant documents in Census Metadata based on
+    previous functions identified question, categories and datasets
+    """
 
     def __init__(self, open_ai_key) -> None:
         self.template = """
@@ -189,6 +196,9 @@ class SourceRAG:
 
 
 class VariableTreeChain:
+    """Gets all relevant census variables by constructing a variable tree then
+    traversing the tree and selecting the highest scoring options using a RAG
+    """
 
     def __init__(self, variable_url, open_ai_key) -> None:
         self.save_variables(variable_url)
@@ -274,7 +284,6 @@ class VariableTreeChain:
                         "dataset": self.dataset,
                     }
                 )
-                # print(cur_tree.children)
                 print(cur_results)
                 if isinstance(cur_results["var_content"], list):
                     for idx, next_child_result in enumerate(cur_results["var_content"]):
@@ -343,6 +352,10 @@ class VariableTreeChain:
 
 
 class VarTree:
+    """Variable Tree that creates hierarchical variable category structure for
+    identifying all variables that fit a category
+    """
+
     def __init__(self) -> None:
         self.children = {}
         self.dataset = None
@@ -359,6 +372,7 @@ class VarTree:
 
 
 class GeographyRAG:
+    """Class to identify and return geographic variables identified in a query"""
 
     def __init__(self, open_ai_key) -> None:
         self.template = """
@@ -461,6 +475,7 @@ class GeographyRAG:
 
 
 class CensusQuery:
+    """Builds a valid census query using identified parameters and api key"""
 
     def __init__(
         self, api_access_url: str, variables: dict, geography: dict, census_key
@@ -516,7 +531,7 @@ class CensusQuery:
             df.columns = df.iloc[0]
             df = df.iloc[1:]
         except IndexError:
-            print('Index Error, empty df')
+            print("Index Error, empty df")
         return df
 
     def get_data(self):
@@ -533,6 +548,9 @@ class CensusQuery:
 
 
 class AnalysisChain:
+    """Runs basic pandas EDA functions on a dataframe and explains those results
+    using GPT 3.5 Turbo
+    """
 
     def __init__(self, df, variables, open_ai_key):
         self.df = df
