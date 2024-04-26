@@ -74,14 +74,24 @@ def process_geos(geos):
 
 
 @st.cache_data
-def run(query, open_ai_key, census_key):
+def run(query: str, open_ai_key: str, census_key: str) -> None:
+    """Run streamlit site with calls to server
 
+    Args:
+        query (str): user query
+        open_ai_key (str): llm api key
+        census_key (str): census api key
+
+    Returns: None
+    """
+    # rephrase question
     rephrase_chain = RephraseChain(open_ai_key)
     ans = rephrase_chain.invoke(query)
 
     st.write("**Rephrased Question**")
     st.write(ans["rephrased_question"])
 
+    # indentify sources
     source_chain = SourceChain(open_ai_key)
     ans = source_chain.invoke(ans["rephrased_question"])
 
@@ -95,6 +105,7 @@ def run(query, open_ai_key, census_key):
 
     st.divider()
 
+    # identify relevant variables in sources
     variable_rag = VariableTreeChain(doc.metadata["c_variablesLink"], open_ai_key)
     vars = variable_rag.invoke(query, ans["variables"], ans["relevant_dataset"])
     st.write("**Variables Found:**")
@@ -106,6 +117,7 @@ def run(query, open_ai_key, census_key):
 
     st.divider()
 
+    # identify relevant geographies to the query
     geos = []
     geo_rag = GeographyRAG(open_ai_key)
     for geo in ans["geography"]:
@@ -117,6 +129,7 @@ def run(query, open_ai_key, census_key):
 
     st.divider()
 
+    # build and run census api call
     st.write("**Pulling Data...**")
     dfs = []
     for geo in geos:
@@ -133,6 +146,7 @@ def run(query, open_ai_key, census_key):
 
     st.divider()
 
+    # perform basic analysis of the data
     st.write("**Data Analysis:**")
     analysis = AnalysisChain(df, vars, open_ai_key)
     res = analysis.invoke()
@@ -284,7 +298,7 @@ text-align: center;
 }
 </style>
 <div class="footer">
-<p>Developed with ❤ by Abe Burton and Divij Sinha 2024 (v0.21)</p>
+<p>Developed with ❤ by Abe Burton and Divij Sinha 2024</p>
 </div>
 """
 st.markdown(footer, unsafe_allow_html=True)

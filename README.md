@@ -1,12 +1,8 @@
 # census_llm
 This application makes US Census Data easily accessible via natural language queries.
 
-This is a website built for a user to be able to access US Census data and ACS data to get information for any question available in these data sources. This site is meant to return relevant data, perform basic analysis and describe the results of the analysis. The main objective of this site is to make data more accessible for anyone interested in Census or ACS data, whether or not they have a technical background. This site is intended to be a tool that might not find solutions in the first go, but to guide the user through the search for the data. The website talks the user through its result analysis, and the user can accordingly tweak the inputs to get better results.
+This is a website built for a user to be able to access US Census data and ACS data to get information for any question available in these data sources. This site is meant to return relevant data, perform basic analysis and describe the results of the analysis. The main objective of this site is to make data more accessible for anyone interested in Census or ACS data, whether or not they have a technical background. It is intended to be a tool that might not find solutions in the first go, but to guide the user through the search for the data. The website talks the user through its result analysis, and the user can accordingly tweak the inputs to get better results.
 
-
-## Github Repo
-
-[https://github.com/abejburton/census_llm](https://github.com/abejburton/census_llm)
 
 ## How to Use It
 
@@ -67,14 +63,3 @@ Once we realised that the breaking up of the question into smaller sections work
 
 ## Feedback
 Let us know if you find any bugs and feel free to submit any improvements!
-
-## Work Split
-
-### Combined
-Ideation, debugging, cleaning, util functions, prompt engineering, etc.
-
-### Abe Burton
-Entirety of the frontend, `AnalysisChain` class, `CensusQuery` class
-
-### Divij Sinha
-`VariableTreeChain` and `VarTree` class, `GeographyRAG` class, `SourceRAG` class
