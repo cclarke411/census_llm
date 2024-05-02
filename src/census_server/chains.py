@@ -116,8 +116,8 @@ class SourceChain:
 
 
 class SourceRAG:
-    """RAG identifies the most relevant documents in Census Metadata based on
-    previous functions identified question, categories and datasets
+    """RAG identifies the most relevant source dataset in Census Metadata based
+    on previous functions identified question, categories and datasets
     """
 
     def __init__(self, open_ai_key) -> None:
@@ -196,8 +196,8 @@ class SourceRAG:
 
 
 class VariableTreeChain:
-    """Gets all relevant census variables by constructing a variable tree then
-    traversing the tree and selecting the highest scoring options using a RAG
+    """Given a Census source dataset, returns relevant census variables scored
+    above a threshold by constructing and traversing a tree using a RAG
     """
 
     def __init__(self, variable_url, open_ai_key) -> None:
@@ -265,6 +265,10 @@ class VariableTreeChain:
                 file.write(resp.content)
 
     def rec_invoke(self, cur_tree):
+        """Searches the variable tree. Only traverses to next depth if current
+        level scored above a threshold. If level scored higher than threshold,
+        and variable exists at leaf node, adds to result.
+        """
         if len(cur_tree.children) == 0:
             self.results[cur_tree.dataset[1]["code"]] = cur_tree.dataset[1]
         elif len(cur_tree.children) == 1:
@@ -352,8 +356,9 @@ class VariableTreeChain:
 
 
 class VarTree:
-    """Variable Tree that creates hierarchical variable category structure for
-    identifying all variables that fit a category
+    """Variable Tree that creates hierarchical variable category structure
+    exploiting the tree-like structure of the census. Uses concept as root to
+    branch out on.
     """
 
     def __init__(self) -> None:
@@ -372,7 +377,7 @@ class VarTree:
 
 
 class GeographyRAG:
-    """Class to identify and return geographic variables identified in a query"""
+    """Class to identify and return most relevent county/state FIPS code identified in a query"""
 
     def __init__(self, open_ai_key) -> None:
         self.template = """

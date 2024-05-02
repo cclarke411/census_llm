@@ -26,6 +26,8 @@ if "CENSUS_API_KEY" in os.environ:
 
 
 def geo_lookup(geos):
+    """Formats identified geographies from GeographyRAG into a dataframe for
+    display to the user"""
     with open("src/census_server/data/fips/national_state2020.txt", "r") as file:
         states = file.readlines()
     state_rows = [state.replace("\n", "").split("|") for state in states]
@@ -51,6 +53,8 @@ def geo_lookup(geos):
 
 
 def process_geos(geos):
+    """Formats identified geographies from GeographyRAG to a format usable by
+    CensusQuery"""
     states_only = {"state": []}
     fixed_geos = {}
     for geo in geos:
