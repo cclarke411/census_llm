@@ -190,7 +190,9 @@ class SourceRAG:
             datasets = self.get_api_discovery_data()
             save_docembedding(api_discovery_path, datasets, open_ai_key)
         docembeddings = FAISS.load_local(
-            api_discovery_path, OpenAIEmbeddings(api_key=open_ai_key)
+            api_discovery_path, OpenAIEmbeddings(api_key=open_ai_key),
+            allow_dangerous_deserialization=True
+
         )
         return docembeddings
 
@@ -474,7 +476,9 @@ class GeographyRAG:
             datasets = self.get_fips_data()
             save_docembedding(fips_path, datasets, open_ai_key, separator="\n")
         docembeddings = FAISS.load_local(
-            fips_path, OpenAIEmbeddings(api_key=open_ai_key)
+            fips_path, OpenAIEmbeddings(api_key=open_ai_key),
+            allow_dangerous_deserialization=True
+
         )
         return docembeddings
 
